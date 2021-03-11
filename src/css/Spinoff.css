@@ -1,0 +1,10 @@
+@media only screen and (max-width:660px)
+{
+    .spinoff .content p ,a{
+        font-size: small;
+    }
+    .spinoff .content h4{
+        font-size: medium;
+    }
+    
+}

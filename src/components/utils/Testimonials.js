@@ -1,0 +1,73 @@
+import React from "react";
+import "../../css/testimonials.css";
+
+export default function Testimonials() {
+  return (
+
+    <section className="testimonial text-center">
+      <div className="container">
+        <div className="pageTitle titleBold headingc white-headingc" data-aos="fade-down" style={{marginBottom:'5px', marginTop:'-20', paddingTop:'0'}} >
+          Testimonials
+            </div>
+            <div className="miniSep" style={{marginBottom:'20px'}} ></div>
+        <div id="testimonial4" className="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x" data-ride="carousel" data-pause="hover" data-interval={5000} data-duration={2000} data-aos="zoom-in-down">
+          <div className="carousel-inner" role="listbox">
+            <div className="carousel-item active">
+              <div className="testimonial4_slide">
+                <img src="https://images.unsplash.com/photo-1501623021299-5a9e5f95960b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" className="img-circle img-responsive" />
+                <p className="testfont">"This club is one of the best platforms to learn something new & the best part is the implementation of your imagination. As humans, we're always curious to fly like birds; this platform gives you the wings to pursue that. It also has a great career opportunity if we take it further beyond the club. As a club member, you also get to interact with people with different ideas, which helps to enhance your visualization and thinking abilities. Being part of this club was one of the best phases in my college life."</p>
+                <div className="miniSep" style={{marginBottom:'25px', width: '70%', height:'3px'}} ></div>
+                <h4>Surendra Singh Jayant</h4>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <div className="testimonial4_slide">
+                <img src="https://images.unsplash.com/photo-1501623021299-5a9e5f95960b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" className="img-circle img-responsive" /><p className="testfont">"It was an honor being part of the Aeromodelling Club, MNNIT. I will remember all those priceless moments that I had with my supporting friends, guiding professors, visionary seniors, and enthusiastic juniors throughout my college life. The experiences made me a better person and prepared me in unpredictable ways for my career. I wish I had a time machine to relive all of those memories for eternity. Memories worth being cherished!!"</p>
+                <div className="miniSep" style={{marginBottom:'25px', width: '70%', height:'3px'}} ></div>
+                <h4>Shrey Dixit</h4>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <div className="testimonial4_slide">
+                <img src="https://images.unsplash.com/photo-1501623021299-5a9e5f95960b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" className="img-circle img-responsive" />
+                <p className="testfont">"I remember my 1st day in Aeroclub, where I was assigned to start making my first RC Plane. I mostly remember my happy days with club members while working on various projects and models. I am pleased that Aeroclub seniors have always taught me technical and nontechnical experiences. I am glad that I was one of the members of Aeroclub during my final year"</p>
+                <div className="miniSep" style={{marginBottom:'25px', width: '70%', height:'3px'}} ></div>
+                <h4>Mohammed Maaz Latifee</h4>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <div className="testimonial4_slide">
+                <img src="https://images.unsplash.com/photo-1501623021299-5a9e5f95960b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" className="img-circle img-responsive" />
+                <p className="testfont">"The time I spent while working on my project as a part of Aero Club under Kishan sir was a great learning experience for me, and I think it ended up being a pivotal part of my placement."</p>
+                <div className="miniSep" style={{marginBottom:'25px', width: '70%', height:'3px'}} ></div>
+                <h4>Soumya Khanna</h4>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <div className="testimonial4_slide">
+                <img src="https://images.unsplash.com/photo-1501623021299-5a9e5f95960b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" className="img-circle img-responsive" />
+                <p className="testfont">"The journey began with Aero Club from the day when I took part in a flying challenging event in the first year. Learning aerodynamics, flying practice under the guidance of supportive and friendly seniors were excellent experiences for me. I'll always cherish all memories from participant to coordinator at Aero Club."</p>
+                <div className="miniSep" style={{marginBottom:'25px', width: '70%', height:'3px'}} ></div>
+                <h4>Sarita Chaudhary</h4>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <div className="testimonial4_slide">
+                <img src="https://images.unsplash.com/photo-1501623021299-5a9e5f95960b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" className="img-circle img-responsive" />
+                <p className="testfont">"Thanks to the club for everything. Being student president for the session 2018-19, we reimagined the whole way of doing things. We launched around 20+ projects, initiated Prosang, connected club projects to the companies, and launched my startup TSAW Drones during the event. The club's time, with the members, transformed me a lot, taught me to dare things & do it uniquely, being fearless."</p>
+                <div className="miniSep" style={{marginBottom:'25px', width: '70%', height:'3px'}} ></div>
+                <h4>Kishan Tiwari</h4>
+              </div>
+            </div>
+          </div>
+          <a className="carousel-control-prev" href="#testimonial4" data-slide="prev">
+            <span className="carousel-control-prev-icon" />
+          </a>
+          <a className="carousel-control-next" href="#testimonial4" data-slide="next">
+            <span className="carousel-control-next-icon" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}

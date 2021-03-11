@@ -1,0 +1,12 @@
+
+/* .i-am-centered { margin: auto; max-width: 300px;} */
+
+@media (max-width: 640px){
+    .card-title{
+        font-size: medium;
+    }
+.card-text {
+    font-size: small;
+    /* text-align: center; */
+}
+}

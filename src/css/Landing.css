@@ -1,0 +1,103 @@
+.container-fluid {
+  margin: 0px 0px;
+  width: 100%;
+  padding: 0px 0px;
+  display: flex;
+  flex-flow: column;
+}
+
+.pagesl {
+  height: 90vh;
+  width: 100%;
+  margin: 0vh 0vw;
+
+  background: url("../images/utils/banner1.jpg") center center no-repeat;
+  background-size: cover;
+  padding-bottom: 0px;
+  background-attachment: fixed;
+
+  background-color: #eee;
+  background-position: center;
+}
+
+.overlayl {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  padding-bottom: 80px;
+  color: white;
+  background-color: rgba(37, 37, 37, 0.637);
+}
+
+.rempad {
+  padding: 0 0;
+}
+
+.landing {
+  height: 90vh;
+  width: 100%;
+  margin: 0vh 0vw;
+  margin: 0vh 0vw;
+  position: relative;
+  color: white;
+  text-shadow: 5px 2px 2px rgb(41, 41, 41);
+}
+
+.landing-logo {
+  height: 14rem;
+  position: relative;
+  left: 5rem;
+}
+
+@media (max-width: 1050px) {
+  .landing-logo {
+    right: 0;
+  }
+  .landing-about {
+    margin-top: 3rem;
+    text-align: center;
+  }
+}
+@media (max-width: 992px) {
+  .landing {
+    height: 70vh;
+  }
+  .landing-logo {
+    left: 0;
+    margin-top: 4rem;
+  }
+}
+@media (max-width: 770px) {
+  .landing {
+    height: 55vh;
+  }
+  .landing-logo {
+    height: 10rem;
+    width: auto;
+    padding-right: 4px;
+  }
+  .landing-about h1 {
+    font-size: larger;
+  }
+  .landing-about h2 {
+    font-size: large;
+    padding: 2px;
+  }
+}
+@media (max-width: 400px) {
+  .landing {
+    height: 50vh;
+  }
+  .landing-logo {
+    height: 8.5rem;
+    width: auto;
+  }
+  .landing-about h1 {
+    font-size: 1.5rem;
+  }
+  .landing-about h2 {
+    font-size: large;
+  }
+}
