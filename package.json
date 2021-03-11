@@ -1,7 +1,6 @@
 {
   "name": "aeroclub",
   "version": "0.1.0",
-  "proxy": "http://localhost:9500",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
@@ -34,7 +33,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "set PORT=9000 && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
