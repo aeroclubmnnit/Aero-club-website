@@ -25,7 +25,6 @@ export default function configureStore() {
                 sagaMiddleware,
                 routerMiddleware(history),
             ),
-            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
         ),
     )
     sagaMiddleware.run(saga)
