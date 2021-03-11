@@ -47,12 +47,6 @@
   padding-top: 1.7em;
 }
 
-@media screen and (max-width: 619px) {
-  .header {
-    font-size: larger !important;
-    margin-bottom: -1rem !important;
-  }
-}
 
 .card-item {
   margin: 3rem 3rem;
@@ -70,9 +64,17 @@
   text-decoration: none;
 }
 
+.faculty-container img{
+  height: 20rem;
+  width: 20rem;
+}
+.faculty-container .side-content p{
+  font-weight: 600;
+}
+
 .alumni-container {
   font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana,
-    sans-serif !important;
+  sans-serif !important;
   font-size: 14px !important;
   margin: 50px auto 0 auto !important;
 }
@@ -125,6 +127,26 @@
   content: "\f054";
 }
 
+@media screen and (max-width: 619px) {
+  .header {
+    font-size: larger !important;
+    margin-bottom: -1rem !important;
+  }
+  .faculty-container .content{
+    font-size: small;
+  }
+  .faculty-container .side-content{
+    float: none !important;
+    text-align: center;
+  }
+  .faculty-container .side-content h5{
+    font-size: medium;
+  }
+  .faculty-container .side-content p{
+    font-size: smaller;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   .topic {
     font-size: 16px;
@@ -138,5 +160,12 @@
   }
   .achievement div {
     font-size: small !important;
+  }
+}
+
+@media only screen and (max-width: 960px){
+  .faculty-container img{
+    width: 15rem;
+    height: 15rem;
   }
 }

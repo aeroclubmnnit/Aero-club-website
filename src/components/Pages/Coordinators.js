@@ -33,7 +33,7 @@ export default function Coordinators() {
       photo: f1,
       linkedinId: "https://www.linkedin.com/in/amit-gupta-0b64991bb/",
       areaOfInterests:
-        "Drone Automation (Pixhawk, SITL), Coding, Design Software",
+        "Drone Automation, Deep Learning, Path Planning",
     },
     {
       emailAddress: "sandeepsingh.avanti@gmail.com",
@@ -41,7 +41,7 @@ export default function Coordinators() {
       year: "2nd",
       photo: f2,
       linkedinId: "https://www.linkedin.com/in/sandeep-singh-b020a6168/",
-      areaOfInterests: "Coding,Drone automation, updation in series of drone.",
+      areaOfInterests: "Drone Automation, Flying, Electronics",
     },
     {
       emailAddress: "devanshsethi77@gmail.com",
@@ -50,7 +50,7 @@ export default function Coordinators() {
       photo: f3,
       linkedinId: "https://www.linkedin.com/in/devansh-sethi-2a97721b3/",
       areaOfInterests:
-        " Fixed Wing planes, Construction of planes, wings dynamics.",
+        "Electronics, Aerodynamics",
     },
     {
       emailAddress: "akanak101@gmail.com",
@@ -58,7 +58,7 @@ export default function Coordinators() {
       year: "2nd",
       photo: f4,
       linkedinId: "https://www.linkedin.com/in/kanak-agrawal-03b55b159/",
-      areaOfInterests: "Design and Analysis of Quadcopter",
+      areaOfInterests: "Mechanical Design and Analysis, Controls",
     },
     {
       emailAddress: "nitishkumarkushwaha89@gmail.com",
@@ -66,7 +66,7 @@ export default function Coordinators() {
       year: "2nd",
       photo: f5,
       linkedinId: "https://www.linkedin.com/in/nitish-kumar-9b1b84206/",
-      areaOfInterests: "Plane & Drone designing",
+      areaOfInterests: "Mechanical Design and Analysis, Aerodynamics",
     },
     {
       emailAddress: "prasannamkumar43@gmail.com",
@@ -74,7 +74,7 @@ export default function Coordinators() {
       year: "2nd",
       photo: f6,
       linkedinId: "https://www.linkedin.com/in/prasannam-kumar-sah-a4125b1b2/",
-      areaOfInterests: "Drones , electronics , software , coding",
+      areaOfInterests: "Drone Automation, Electronics, Aerodynamics",
     },
     {
       emailAddress: "ruchi1112200@gmail.com",
@@ -83,7 +83,7 @@ export default function Coordinators() {
       photo: f7,
       linkedinId: "https://www.linkedin.com/in/ruchi-srivastava-aaa2701b3",
       areaOfInterests:
-        "Fixed wing planes, Design software, Structural analysis",
+        "Design and Simulations, CFD",
     },
     {
       emailAddress: "prasannasneha1322@gmail.com",
@@ -91,6 +91,7 @@ export default function Coordinators() {
       year: "2nd",
       photo: f8,
       linkedinId: "Prasanna Sneha",
+      areaOfInterests: "CAD, Aerodynamics"
     },
     {
       emailAddress: "ayushchaturvedi702@gmail.com",
@@ -106,7 +107,7 @@ export default function Coordinators() {
       year: "2nd",
       photo: f10,
       linkedinId: "https://www.linkedin.com/in/rishabh-dwivedi-8b85491a2",
-      areaOfInterests: "AUTOCAD, Aerodynamics, ",
+      areaOfInterests: "CAD, Aerodynamics",
     },
     {
       emailAddress: "harshkumarsingh325@gmail.com",
@@ -114,7 +115,7 @@ export default function Coordinators() {
       year: "2nd",
       photo: f11,
       linkedinId: "harshkumarsingh325@gmail.com",
-      areaOfInterests: "Drone automation",
+      areaOfInterests: "Drone Automation, Computer Vision, Simulation",
     },
     {
       emailAddress: "bhuvanjhamb29@gmail.com",
@@ -123,7 +124,7 @@ export default function Coordinators() {
       photo: f12,
       linkedinId: "https://www.linkedin.com/in/bhuvanjhamb",
       areaOfInterests:
-        "Drone Automation, Controls, Deep Learning, Simulations.",
+        "Drone Automation, Controls, Path Planning, AI, Simulations",
     },
     {
       emailAddress: "apoorva011199@gmail.com",
@@ -131,7 +132,7 @@ export default function Coordinators() {
       year: "Final",
       photo: f13,
       linkedinId: "https://www.linkedin.com/in/apoorva-singh-0111",
-      areaOfInterests: "ML, CV",
+      areaOfInterests: "Machine Learning, Computer Vision, Path Planning",
     },
     {
       emailAddress: "chaudharyarchit2000@gmail.com",
@@ -139,13 +140,14 @@ export default function Coordinators() {
       year: "Final",
       photo: f14,
       linkedinId: "https://www.linkedin.com/in/archit-chaudhary-010a78164/",
-      areaOfInterests: "Automation, aerodynamics",
+      areaOfInterests: "Automation, Aerodynamics, Propulsion",
     },
     {
       emailAddress: "ayan.santania@gmail.com",
       name: "Ayan Kishore",
       year: "Final",
       photo: f15,
+      areaOfInterests: "CAD, 3D Printing, Manufacturing",
     },
     {
       emailAddress: "abhishekgautam689@gmail.com",
@@ -153,7 +155,7 @@ export default function Coordinators() {
       year: "Final",
       photo: f16,
       linkedinId: "https://www.linkedin.com/in/abhishekgautam01",
-      areaOfInterests: "Design and analysis of planes, Control and Electronics",
+      areaOfInterests: "Mechanical Design and Analysis, Controls and Electronics",
     },
     {
       emailAddress: "karimulla17999@gmail.com",
@@ -161,7 +163,7 @@ export default function Coordinators() {
       year: "2nd",
       photo: f17,
       linkedinId: "https://www.linkedin.com/in/karimulla1098/",
-      areaOfInterests: "Stimulation, ROS, ML",
+      areaOfInterests: "Deep Learning, Path Planning, ROS, AI",
     },
     {
       emailAddress: "as096255@gmail.com",
@@ -170,7 +172,7 @@ export default function Coordinators() {
       photo: f18,
       linkedinId: "https://linkedin.com/in/ankur-singh-82496514b/",
       areaOfInterests:
-        "Gaming, Autonomous vehicles, Data Science, Computer Vision, Drone Racing, etc.",
+        "Autonomous Systems, Data Science, Computer Vision",
     },
   ];
 
