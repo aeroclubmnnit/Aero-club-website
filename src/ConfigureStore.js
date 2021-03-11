@@ -10,7 +10,7 @@ const persistConfig = {
     storage,
 }
 
-export const history = createHashHistory()
+export const history = createHashHistory({ basename: `${process.env.PUBLIC_URL}` })
 const rootReducer = Reducer.rootReducer
 const saga = Reducer.saga
 const sagaMiddleware = Reducer.sagaMiddleware
@@ -25,7 +25,6 @@ export default function configureStore() {
                 sagaMiddleware,
                 routerMiddleware(history),
             ),
-            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
         ),
     )
     sagaMiddleware.run(saga)
