@@ -115,7 +115,7 @@ function Blogs() {
                   SetPage((page) => page + 1);
                 }}
               >
-                Next <i class="fa fa-angle-double-right"></i>
+                Next <i className="fa fa-angle-double-right"></i>
               </Button>
             )}
           </div>

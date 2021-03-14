@@ -41,8 +41,8 @@ export default function DashNews() {
               >
                 <div>
                   {singleNews.title}
-                  <em className="float-right" style={{ fontSize: "small" }}>
-                    {new Date(singleNews.publishedAt).toLocaleDateString()}
+                  <em className="float-right font-weight-bold" style={{ fontSize: "small" }}>
+                    ~ {new Date(singleNews.publishedAt).toLocaleDateString()}
                   </em>
                 </div>
               </Accordion.Toggle>

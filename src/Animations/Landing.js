@@ -7,14 +7,16 @@ class Landing extends React.Component {
     return (
       <div className="container-fluid">
         <div className="pagesl">
-          <div className="landing d-flex align-items-center justify-content-start flex-wrap">
-            <div className="landing-logo">
-              <img src={m} alt="aero" srcSet="" />
-            </div>
-            <div className="landing-about">
-              <h1 className="font-weight-bold text-uppercase">
-                AeroClub MNNIT
+          <div className="landing d-flex align-items-center justify-content-start">
+            <div className='d-flex flex-column justify-content-center align-items-center'>
+              <div className="landing-logo">
+                <img src={m} alt="aero" srcSet="" />
+              </div>
+              <div className="landing-about">
+                <h1 className="font-weight-bold text-uppercase">
+                  AeroClub MNNIT
                 </h1>
+              </div>
             </div>
           </div>
         </div>

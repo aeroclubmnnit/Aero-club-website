@@ -23,6 +23,9 @@ import {
   BooleanInput,
   BooleanField,
   SelectInput,
+  ReferenceInput,
+  ReferenceField,
+  ChipField,
 } from "react-admin";
 
 import RichTextInput from "ra-input-rich-text";
@@ -33,7 +36,6 @@ export const ProjectList = (props) => {
       <Datagrid>
         <TextField source="id" />
         <TextField source="title" />
-        <TextField source="teamname" label="Team Name" />
         <DateField source="issuedon" label="Issued On" />
         <TextField source="status" />
         <BooleanField source="approved" />
@@ -50,7 +52,6 @@ export const ProjectCreate = (props) => {
     <Create {...props}>
       <SimpleForm redirect="/projects">
         <TextInput source="title" label="Project Name" />
-        <TextInput source="teamname" label="Team Name" />
 
         <RichTextInput
           source="description"
@@ -99,9 +100,13 @@ export const ProjectCreate = (props) => {
             { id: "Completed", name: "Completed" },
           ]}
         />
-        <ArrayInput source="member" label="Members">
+        <ArrayInput source="members">
           <SimpleFormIterator>
-            <TextInput source="member" />
+            <ReferenceInput label="User" source="user" reference="users">
+              <SelectInput optionText="name" />
+            </ReferenceInput>
+            <BooleanInput source="accepted" label="Accepted" />
+            <BooleanInput source="leader" label="Leader" />
           </SimpleFormIterator>
         </ArrayInput>
         <DateInput
@@ -121,15 +126,23 @@ export const ProjectShow = (props) => {
     <Show {...props} title="Project Show">
       <SimpleShowLayout>
         <TextField source="title" label="Project Name" />
-        <RichTextField source="teamname" label="Team Name" />
         <RichTextField source="description" label="Description" />
         <RichTextField source="objective" label="Objective" />
 
         <ImageField source="pic" label="Image" />
         <TextField source="status" label="Status" />
-        <ArrayField source="member">
+        <ArrayField source="members">
           <Datagrid>
-            <TextField source="member" />
+            <ReferenceField
+              label="Name"
+              source="user._id"
+              reference="users"
+              linkType="show"
+            >
+              <ChipField source="name" />
+            </ReferenceField>
+            <BooleanField source="accepted" />
+            <BooleanField source="leader" />
           </Datagrid>
         </ArrayField>
         <DateField source="issuedon" label="Issued On" />
@@ -146,11 +159,6 @@ export const ProjectEdit = (props) => {
       <SimpleForm redirect="/projects">
         <TextInput disabled label="Id" source="id" />
         <TextInput source="title" validate={required()} label="Project Name" />
-        <TextInput
-          source="teamname"
-          validate={required()}
-          label="Project Name"
-        />
         <RichTextInput
           source="description"
           validate={required()}
@@ -203,11 +211,15 @@ export const ProjectEdit = (props) => {
         />
 
         <TextInput source="pic" label="Image Link" />
-        <ArrayField source="member" label="Members">
-          <Datagrid>
-            <TextField source="member" />
-          </Datagrid>
-        </ArrayField>
+        <ArrayInput source="members">
+          <SimpleFormIterator>
+            <ReferenceInput label="User" source="user._id" reference="users">
+              <SelectInput optionText="name" />
+            </ReferenceInput>
+            <BooleanInput source="accepted" label="Accepted" />
+            <BooleanInput source="leader" label="Leader" />
+          </SimpleFormIterator>
+        </ArrayInput>
         <DateInput source="issuedon" label="Issued On" validate={required()} />
         <BooleanInput source="open" />
         <BooleanInput source="approved" />

@@ -60,8 +60,8 @@ export default function Footer() {
                     </li>
                   </ul>
                 </div>
-                <div className="col-lg-4 col-md-6 footer-logo">
-                  <img src={m} alt="mnnit" />
+                <div className="col-lg-4 col-md-6 footer-logo float-right">
+                  <img src={m} alt="mnnit" className='float-right' />
                 </div>
               </div>
               <br />

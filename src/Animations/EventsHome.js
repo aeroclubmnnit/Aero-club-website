@@ -6,7 +6,7 @@ export default function EventHome() {
   const history = useHistory();
 
   useEffect(() => {
-    fetch(`/api/news`, {
+    fetch(`${process.env.REACT_APP_SERVER}/api/news/public`, {
       method: "get",
     })
       .then((res) => res.json())
@@ -15,7 +15,7 @@ export default function EventHome() {
   return (
     <div className="container-fluid">
       <div className="pages">
-        <div className="jumbotron overlay" style={{marginBottom:"0"}}>
+        <div className="jumbotron overlay" style={{ marginBottom: "0" }}>
           <div
             className="pageTitle titleBold headingc white-headingc"
             style={{ color: "white", marginBottom: "10px" }}

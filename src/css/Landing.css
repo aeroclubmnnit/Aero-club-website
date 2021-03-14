@@ -7,7 +7,7 @@
 }
 
 .pagesl {
-  height: 90vh;
+  height: 91vh;
   width: 100%;
   margin: 0vh 0vw;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0,0,0,0.4)), url("../images/utils/drone-1.jpg") center center no-repeat;
@@ -31,8 +31,6 @@
 
 .landing-logo {
   height: 8rem;
-  position: relative;
-  right: 2rem;
 }
 @media (max-width: 770px) {
   .landing {
@@ -51,13 +49,13 @@
     padding: 2px;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 1000px) {
   .landing {
     height: 70vh;
-    flex-direction: column ;
     justify-content: center !important;
-    align-items: center !important;
+    align-items: flex-start !important;
     margin: 0 !important;
+    margin-top: 4rem !important;
   }
   .landing-logo {
     height: 6rem;
@@ -66,8 +64,5 @@
   }
   .landing-about h1 {
     font-size: 1.5rem;
-  }
-  .landing-about h2 {
-    font-size: large;
   }
 }
