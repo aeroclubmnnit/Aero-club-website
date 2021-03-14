@@ -12,7 +12,7 @@ export default function News() {
 
   useEffect(() => {
     document.title = `Updates | ${process.env.REACT_APP_BASE_TITLE}`;
-    fetch(`${process.env.REACT_APP_SERVER}/api/news`, {
+    fetch(`${process.env.REACT_APP_SERVER}/api/news/public`, {
       method: "get",
     })
       .then((res) => res.json())

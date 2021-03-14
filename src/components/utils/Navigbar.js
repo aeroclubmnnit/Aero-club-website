@@ -20,14 +20,13 @@ const Login = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        toast.success(data.message);
         localStorage.removeItem("jwtToken");
         localStorage.removeItem("role");
-        localStorage.removeItem('persist:root')
         dispatch({ type: "CLEAR" });
         setLoggedIn(false);
         history.push("/");
         window.location.reload();
+        toast.success(data.message);
       });
   };
 

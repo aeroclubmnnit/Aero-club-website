@@ -13,6 +13,7 @@
 }
 
 .login i{
+    cursor: pointer;
     position: relative;
     left: 0px;
     bottom:50px;

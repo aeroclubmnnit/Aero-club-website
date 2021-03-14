@@ -128,7 +128,7 @@ function Signup() {
                   />
                   <label htmlFor="inputPassword" >Password</label><i className="fa fa-eye-slash float-right" id='eye' onClick={passwordToggle}></i>
                   <em style={{ fontSize: "x-small" }}>
-                    * password must between 8-15 characters containing at least
+                    * password must between 8-30 characters containing at least
                     one lowercase and one uppercase letter, one numeric digit,
                     and one special character
                   </em>
@@ -140,7 +140,6 @@ function Signup() {
                     className="form-control"
                     placeholder="Retype Password"
                     required
-                    maxLength={30}
                     maxLength={30}
                     ref={confirmPassword}
                   />

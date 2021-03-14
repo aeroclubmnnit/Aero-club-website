@@ -1,5 +1,7 @@
 import React from "react";
 import {
+    BooleanField,
+    BooleanInput,
     Create,
     Datagrid,
     DateField,
@@ -26,6 +28,7 @@ export const NewsList = (props) => {
             <Datagrid>
                 <TextField source="id" />
                 <TextField source="title" />
+                <BooleanField source="private" />
                 <DateField source="publishedAt" label="Published At" />
                 <ShowButton basePath='/news' />
                 <EditButton basePath="/news" />
@@ -59,6 +62,7 @@ export const NewsCreate = (props) => {
                     label="Published At"
                     defaultValue={new Date()}
                 />
+                <BooleanInput source="private" />
             </SimpleForm>
         </Create>
     );
@@ -71,6 +75,7 @@ export const NewsShow = (props) => {
                 <TextField source="title" label="Title" />
                 <RichTextField source="body" label="Body" />
                 <DateField source="publishedAt" label="Published At" />
+                <BooleanField source="private" />
             </SimpleShowLayout>
         </Show>
     );
@@ -97,6 +102,7 @@ export const NewsEdit = (props) => {
                     ['link', 'image', 'video'],
                     ['clean']]}
                 />
+                <BooleanInput source="private" />
                 <DateInput
                     source="publishedAt"
                     label="Published At"

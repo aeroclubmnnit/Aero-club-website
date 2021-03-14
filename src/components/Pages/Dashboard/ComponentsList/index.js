@@ -31,8 +31,8 @@ export default function CompIssue() {
         {types.map((type) => (
           <Tab eventKey={type} title={type.toUpperCase()} key={type}>
             <div className="d-flex flex-wrap">
-              {components[type].map((comp) => (
-                <CompCard comp={comp} />
+              {components[type].map((comp, i) => (
+                <CompCard comp={comp} key={i} />
               ))}
             </div>
           </Tab>

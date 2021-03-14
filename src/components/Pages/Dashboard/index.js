@@ -9,11 +9,11 @@ import DashProfile from "./Profile/DashProfile";
 import DashBlogs from "./Blogs/DashBlogs";
 import ComponentsList from "./ComponentsList";
 import { useDispatch } from "react-redux";
-import News from "./News/News";
+import DashNews from "./News/DashNews";
 
 function Dashboard() {
-  const history = useHistory()
-  const dispatch = useDispatch()
+  const history = useHistory();
+  const dispatch = useDispatch();
   document.title = `Dashboard | ${process.env.REACT_APP_BASE_TITLE}`;
   useEffect(() => {
     if (!localStorage.getItem("jwtToken")) {
@@ -34,12 +34,12 @@ function Dashboard() {
           history.push("/user/login");
           return;
         }
-        dispatch({ type: 'SET', payload: data.user })
+        dispatch({ type: "SET", payload: data.user });
       });
   }, []);
 
   return (
-    <div className="container col-10" style={{ minHeight: '76vh' }}>
+    <div className="container col-10" style={{ minHeight: "76vh" }}>
       <nav>
         <div className="nav nav-tabs" id="nav-tab" role="tablist">
           <a
@@ -110,11 +110,11 @@ function Dashboard() {
           </a>
           <a
             className="nav-item nav-link"
-            id="nav-updates-tab"
+            id="nav-news-tab"
             data-toggle="tab"
-            href="#nav-updates"
+            href="#nav-news"
             role="tab"
-            aria-controls="nav-updates"
+            aria-controls="nav-news"
             aria-selected="false"
           >
             Updates
@@ -172,11 +172,11 @@ function Dashboard() {
         </div>
         <div
           className="tab-pane fade"
-          id="nav-updates"
+          id="nav-news"
           role="tabpanel"
-          aria-labelledby="nav-updates-tab"
+          aria-labelledby="nav-news-tab"
         >
-          <News />
+          <DashNews />
         </div>
       </div>
     </div>
