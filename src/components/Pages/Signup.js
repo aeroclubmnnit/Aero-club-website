@@ -15,6 +15,7 @@ function Signup() {
   useEffect(() => {
     document.title = `Signup | ${process.env.REACT_APP_BASE_TITLE}`;
     if (localStorage.getItem("jwtToken")) history.push("/404");
+    toast.warn('Account Signup is available only for MNNIT Students...!')
   }, []);
 
   const handleSubmit = (e) => {
@@ -46,6 +47,34 @@ function Signup() {
         }
       });
   };
+
+  const passwordToggle = () => {
+    const eye = document.getElementById('eye')
+    if (eye.classList.contains('fa-eye')) {
+      eye.classList.remove('fa-eye')
+      eye.classList.add('fa-eye-slash')
+      document.getElementById('inputPassword').type = 'password'
+    }
+    else {
+      eye.classList.remove('fa-eye-slash')
+      eye.classList.add('fa-eye')
+      document.getElementById('inputPassword').type = 'text'
+    }
+  }
+  const passwordToggle1 = () => {
+    const eye1 = document.getElementById('eye1')
+    if (eye1.classList.contains('fa-eye')) {
+      eye1.classList.remove('fa-eye')
+      eye1.classList.add('fa-eye-slash')
+      document.getElementById('inputretypePassword').type = 'password'
+    }
+    else {
+      eye1.classList.remove('fa-eye-slash')
+      eye1.classList.add('fa-eye')
+      document.getElementById('inputretypePassword').type = 'text'
+    }
+  }
+
 
   return (
     <div className="login">
@@ -94,9 +123,10 @@ function Signup() {
                     className="form-control"
                     placeholder="Password"
                     required
+                    maxLength={30}
                     ref={password}
                   />
-                  <label htmlFor="inputPassword">Password</label>
+                  <label htmlFor="inputPassword" >Password</label><i className="fa fa-eye-slash float-right" id='eye' onClick={passwordToggle}></i>
                   <em style={{ fontSize: "x-small" }}>
                     * password must between 8-15 characters containing at least
                     one lowercase and one uppercase letter, one numeric digit,
@@ -105,14 +135,16 @@ function Signup() {
                 </div>
                 <div className="form-label-group">
                   <input
-                    type="password"
+                    type="text"
                     id="inputretypePassword"
                     className="form-control"
                     placeholder="Retype Password"
                     required
+                    maxLength={30}
+                    maxLength={30}
                     ref={confirmPassword}
                   />
-                  <label htmlFor="inputretypePassword">Retype Password</label>
+                  <label htmlFor="inputretypePassword">Retype Password</label><i className="fa fa-eye-slash float-right" id='eye1' onClick={passwordToggle1}></i>
                 </div>
                 <button
                   className="btn btn-primary btn-block text-uppercase btn-dark l1 mb-3"

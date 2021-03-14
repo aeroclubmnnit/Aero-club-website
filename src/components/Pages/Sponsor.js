@@ -38,16 +38,16 @@ export default function Ṣponsors() {
           <p className="cent">
             <a
               class="btn btn-outline-dark btn-lg"
-              data-toggle="collapse"
+              // data-toggle="collapse"
               href="#collapseExample1"
-              role="button"
-              aria-expanded="false"
-              aria-controls="collapseExample1"
+              // role="button"
+              // aria-expanded="false"
+              // aria-controls="collapseExample1"
             >
               About Us
               </a>
           </p>
-          <div className="collapse" id="collapseExample1">
+          <div className="" id="collapseExample1">
             <div className="text-center">
               <p>
 

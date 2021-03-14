@@ -12,6 +12,21 @@
   overflow: auto;
 }
 
+.login i{
+    position: relative;
+    left: 0px;
+    bottom:50px;
+    font-size: 20px;
+    background:#495057 !important;
+    color:rgb(142, 249, 243);
+    padding: 15.5px 14px;
+    border-radius: 1rem;
+    transition: all 0.3s ease-in-out;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+
 .l1 {
   color: rgb(142, 249, 243);
 }
@@ -25,7 +40,6 @@
   position: relative;
   border: 0;
   border-radius: 1rem;
-  /* box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1); */
   background-color: rgb(32, 30, 30) !important;
   background: transparent;
 }

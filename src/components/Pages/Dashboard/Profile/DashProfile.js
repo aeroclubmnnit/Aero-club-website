@@ -42,6 +42,13 @@ export default function DashProfile() {
   }, [user]);
 
   const handleSaveChange = () => {
+
+    if (parseInt(regis_no[4]) === 7) {
+      toast.warn('Invalid registration number !')
+      return
+    }
+
+
     if (year <= 4) {
       setDisabled(true);
       setLoading(true);
@@ -154,16 +161,22 @@ export default function DashProfile() {
       <br />
       {disabled ? (
         <button
-          className="btn btn-primary mr-2"
+          className="btn btn-primary mr-2 my-1"
           onClick={() => setDisabled(false)}
         >
           {loading ? "loading..." : "Edit Profile"}
         </button>
       ) : (
-        <button className="btn btn-primary" onClick={handleSaveChange}>
-          Save Changes
+        <>
+          <button className="btn btn-primary my-1" onClick={handleSaveChange}>
+            Save Changes
         </button>
+          <button className="btn btn-primary mx-1 my-1" onClick={() => setDisabled(true)}>
+            Cancel
+        </button>
+        </>
       )}
+      <button className="btn btn-success mr-1 my-1">Resources</button>
       {user?.role !== "User" && (
         <a className="btn btn-danger mx-1" href="/1208e2fe-b5f6-439b-94e0-aef5dde3b777/admin">
           Go to Admin Panel

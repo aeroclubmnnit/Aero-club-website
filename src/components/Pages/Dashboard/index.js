@@ -9,6 +9,7 @@ import DashProfile from "./Profile/DashProfile";
 import DashBlogs from "./Blogs/DashBlogs";
 import ComponentsList from "./ComponentsList";
 import { useDispatch } from "react-redux";
+import News from "./News/News";
 
 function Dashboard() {
   const history = useHistory()
@@ -33,13 +34,12 @@ function Dashboard() {
           history.push("/user/login");
           return;
         }
-        console.log(data.user);
         dispatch({ type: 'SET', payload: data.user })
       });
   }, []);
 
   return (
-    <div className="container" style={{ minHeight: '76vh' }}>
+    <div className="container col-10" style={{ minHeight: '76vh' }}>
       <nav>
         <div className="nav nav-tabs" id="nav-tab" role="tablist">
           <a
@@ -108,6 +108,17 @@ function Dashboard() {
           >
             Blogs
           </a>
+          <a
+            className="nav-item nav-link"
+            id="nav-updates-tab"
+            data-toggle="tab"
+            href="#nav-updates"
+            role="tab"
+            aria-controls="nav-updates"
+            aria-selected="false"
+          >
+            Updates
+          </a>
         </div>
       </nav>
       <div className="tab-content" id="nav-tabContent">
@@ -158,6 +169,14 @@ function Dashboard() {
           aria-labelledby="nav-blogs-tab"
         >
           <DashBlogs />
+        </div>
+        <div
+          className="tab-pane fade"
+          id="nav-updates"
+          role="tabpanel"
+          aria-labelledby="nav-updates-tab"
+        >
+          <News />
         </div>
       </div>
     </div>

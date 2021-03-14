@@ -25,7 +25,7 @@ export default function Dashprojects(props) {
     <div>
       <div className="container" style={{ minHeight: "60vh" }}>
         <Accordion>
-          {projects.map((project) => {
+          {projects?.map((project) => {
             let badge;
             if (project.status === "Ongoing")
               badge = (

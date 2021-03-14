@@ -72,16 +72,15 @@ export default function Footer() {
             <div className="row">
               <div className="col-md-8 col-sm-6 col-xs-12">
                 <p className="copyright-text">
-                  Copyright © 2021 All Rights Reserved by
-                  <a href="#"> Aero-Club MNNIT</a>.
+                  Copyright © 2021 All Rights Reserved by AERO CLUB MNNIT
                 </p>
               </div>
               <div className="col-md-4 col-sm-6 col-xs-12">
                 <ul className="social-icons">
-                  <SocialIcon url="http://twitter.com/" />
-                  <SocialIcon url="http://facebook.com/" />
-                  <SocialIcon url="http://github.com/" />
-                  <SocialIcon url="http://youtube.com/" />
+                  <SocialIcon url="https://www.facebook.com/AeroClubMNNIT/" target="_blank" />
+                  <SocialIcon url="https://www.youtube.com/channel/UCm7uHtNLbmq--wBzt7Yf23w" target="_blank" />
+                  <SocialIcon url="https://www.instagram.com/aeroclubmnnit/?hl=en" target="_blank" />
+                  <SocialIcon url="mailto:aeroclub@mnnit.ac.in" target="_blank" />
                 </ul>
               </div>
             </div>

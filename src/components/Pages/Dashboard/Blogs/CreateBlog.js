@@ -18,23 +18,42 @@ export default function CreateBlog() {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [pic, setPic] = useState("");
-  const [postedBy, setPostedBy] = useState("");
   const [loading, setLoading] = useState(false);
 
+
+  const year = {
+    1: "1st year",
+    2: "2nd year",
+    3: "3rd year",
+    4: "final year",
+  };
+
+  const branch = {
+    '0': 'Biotechnology',
+    '1': 'Civil Engg.',
+    '2': 'Electrical Engg.',
+    '3': 'Mechanical Engg.',
+    '4': 'Computer Science Engg.',
+    '5': 'Electronics and Comm. Engg.',
+    '6': 'Production and Industrial Engg.',
+    '8': 'Information Technology',
+    '9': 'Chemical Engg.',
+    'x': 'NA'
+  }
+
   useEffect(() => {
-    console.log(user._id)
     if (!localStorage.getItem("jwtToken")) {
       history.push("/user/login");
       toast.warn("You must be logged in !");
       return;
     }
-    setPostedBy(`${user?.name} (${user?.email})`);
-  }, [user]);
+  }, []);
 
   const handleCreateBlog = () => {
     setLoading(true);
     if (!title || !body || !pic) {
       toast.warn("Please specify all the details before you create the blog !");
+      setLoading(false);
       return;
     }
 
@@ -131,22 +150,10 @@ export default function CreateBlog() {
                 value={body}
                 onChange={setBody}
               />
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                  <span className="input-group-text">Posted By : </span>
-                </div>
-                <input
-                  type="text"
-                  className="form-control"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                  value={postedBy}
-                  disabled
-                />
-              </div>
             </div>
             <Button
               className="create-btn"
+              size='lg'
               variant="danger"
               onClick={handleCreateBlog}
             >
@@ -166,8 +173,23 @@ export default function CreateBlog() {
                     {title}
                     <p className="meta">
                       <em style={{ fontSize: "0.8rem" }}>
-                        Posted by {postedBy} on{" "}
-                        {new Date(Date.now()).toLocaleDateString()}
+                        <em style={{ fontSize: "0.8rem" }}>
+                          Posted by{" "}
+                          {user?.linkedin_url !==
+                            "https://www.linkedin.com/in/username/" ? (
+                            <a href={user?.linkedin_url} target="_blank">
+                              {user?.name}
+                            </a>
+                          ) : (
+                            user?.name
+                          )}{" "}
+                          {`( branch - ${branch[user?.registration_no[4]]} , ${user?.year == -1
+                            ? "year - NA"
+                            : year[user?.year]
+                            } )`}{" "}
+                on {new Date(Date.now()).toLocaleDateString()}
+                        </em>
+
                       </em>
                     </p>
                   </div>

@@ -91,7 +91,7 @@ function App() {
             <Redirect to="/404" />
           )}
         </Route>
-        <Route path="/user/forgotpassword" exact>
+        <Route path="/user/forgetpassword" exact>
           {!localStorage.getItem("jwtToken") ? (
             <ForgetPassword />
           ) : (

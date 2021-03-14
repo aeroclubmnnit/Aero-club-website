@@ -101,7 +101,7 @@ img {
   position: relative;
   overflow: hidden;
 }
-.featured-proj img:hover {
+.cards_item:hover {
   transform: scale(1.15);
 }
 

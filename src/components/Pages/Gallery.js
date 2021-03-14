@@ -61,24 +61,26 @@ export default function Gallery() {
       <div className="float-right mr-5 mb-5">
         {page > 1 && (
           <Button
+            variant='danger'
             className="mx-1"
             onClick={() => {
               SetPage((page) => page - 1);
               checkp -= 1;
             }}
           >
-            🡨 Previous
+            <i class="fa fa-angle-double-left"></i> Previous
           </Button>
         )}
         {page < no_of_pages && (
           <Button
+            variant='danger'
             className="mx-1"
             onClick={() => {
               SetPage((page) => page + 1);
               checkp += 1;
             }}
           >
-            Next 🡪
+            Next <i class="fa fa-angle-double-right"></i>
           </Button>
         )}
       </div>

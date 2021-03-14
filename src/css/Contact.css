@@ -84,12 +84,6 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-/* 
-.white-headingc:after {
-    background: url(https://i.ibb.co/d7tSD1R/heading-line-white.png);
-    background-repeat: no-repeat;
-    background-position: center;
-} */
 
 .headerc span {
   font-size: 18px;
@@ -120,8 +114,8 @@
 
 .contact-information i {
   font-size: 20px;
-  background: #f32b2b;
-  color: #151515;
+  background:#c82333;;
+  color:white;
   float: left;
   width: 44px;
   height: 44px;

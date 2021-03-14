@@ -6,9 +6,26 @@ import "../../css/featured-proj.css";
 function Projects() {
 
   const [projects, SetProjects] = useState([]);
+  const [signedin, setsignedin] = useState(false)
   document.title = `Projects | ${process.env.REACT_APP_BASE_TITLE}`;
 
   useEffect(() => {
+
+    fetch(`${process.env.REACT_APP_SERVER}/api/isSignedIn`, {
+      method: "post",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.error) {
+          localStorage.removeItem("jwtToken");
+          return ;
+        }
+        setsignedin(true);
+      });
+
     fetch(`${process.env.REACT_APP_SERVER}/api/projects/approved`, {
       method: "get",
     })
@@ -41,7 +58,7 @@ function Projects() {
             {projects
               .slice((page - 1) * projects_per_page, page * projects_per_page)
               .map((project) =>
-                project.open ? (
+                project.open || signedin ? (
                   <li
                     className="cards_item"
                     data-aos="fade-down"

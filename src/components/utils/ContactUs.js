@@ -1,14 +1,15 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../../css/Contact.css";
 import logo from "../../images/utils/collegelogo.png";
 import $ from "jquery";
+import { toast } from "react-toastify";
 
 const ContactUs = () => {
   const name = useRef("");
   const email = useRef("");
   const subject = useRef("");
   const body = useRef("");
-
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     $("#contact-more").on("click", function () {
       const text = $("#contact-more").text();
@@ -21,16 +22,36 @@ const ContactUs = () => {
   }, []);
 
   const handleContactSubmit = (e) => {
+    setLoading(true);
     e.preventDefault();
-    document.getElementById("contactus").classList.remove("show");
-
-    // isko daal dena body me
-    // body:JSON.stringify({
-    //   name:name.current.value,
-    //   email:email.current.value,
-    //   subject:subject.current.value,
-    //   body:body.current.value,
-    // })
+    fetch(`${process.env.REACT_APP_SERVER}/api/contact`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name: name.current.value,
+        email: email.current.value,
+        subject: subject.current.value,
+        body: body.current.value,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setLoading(false);
+        name.current.value = ""
+        email.current.value = ""
+        subject.current.value = ""
+        body.current.value = ""
+        if (data.error) {
+          toast.warn(data.error);
+        } else {
+          toast.success(
+            "Your query has been saved, we will get back to you shortly."
+          );
+          toast.success("Feel free to mail us too.");
+        }
+      });
   };
 
   return (
@@ -106,7 +127,7 @@ const ContactUs = () => {
               <div className="after-logo">
                 <h4> Email : </h4>
                 <br />
-                aeroclubmnnit@mnnit.ac.in
+                aeroclub@mnnit.ac.in
               </div>
             </div>
             <br />
@@ -120,7 +141,7 @@ const ContactUs = () => {
               <div className="after-logo">
                 <h4> Contact : </h4>
                 <br />
-                +91 7390909434 +91 7275195776
+                +91 8295018236 <br />+91 9521818693
               </div>
             </div>
           </div>
@@ -133,18 +154,7 @@ const ContactUs = () => {
           // data-aos-easing="ease-out-cubic"
           data-aos-duration="1000"
         >
-          <a
-            className="btn btn-danger btn-lg mx-auto"
-            data-toggle="collapse"
-            href="#contactus"
-            role="button"
-            aria-expanded="false"
-            aria-controls="contactus"
-            id="contact-more"
-          >
-            More
-          </a>
-          <div className="collapse" id="contactus">
+          <div>
             <div className="container">
               <form
                 method="POST"
@@ -207,8 +217,12 @@ const ContactUs = () => {
                   <div className="validate"></div>
                 </div>
                 <div className="text-center">
-                  <button type="submit" className="btn btn-danger">
-                    Send Message
+                  <button type="submit" className="btn btn-danger px-3 py-2">
+                    {loading ? (
+                        <span >Loading...</span>
+                    ) : (
+                      <span>Send Message</span>
+                    )}
                   </button>
                 </div>
               </form>

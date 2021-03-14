@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import Loading from "../../Animations/Loading";
 import "../../css/Event.css";
 import m from "../../images/utils/avishkar.png";
+import Phantom from "../../images/Events/Phantom.PNG";
+import guardian from "../../images/Events/guardian2.PNG";
+import lostinspace from "../../images/Events/lostinspace.PNG";
 
 export default function Avishkar() {
     useEffect(() => {
@@ -42,16 +45,7 @@ export default function Avishkar() {
                             >
                                 {/* <div > */}
                                 <p className="texte">
-                                    MNNIT's techno management festival Avishkar is held every year
-                                    in the month of September. Equipped with technical and
-                                    managerial events, Avishkar is the best platform for students
-                                    to learn and build their CVs. With the teaching classes
-                                    starting almost a month before the D-day, and being mentored
-                                    by extremely capable seniors, it is indeed an opportunity for
-                                    students to hone their skills and build a good network.
-                                    Avishkar and Gnotalks go hand in hand and one is exposed to
-                                    great personalities' heart touching and inspirational
-                                    struggles and their journey.
+                                    Avishkar is MNNIT's annual techno-management festival and is held either in September or October. Equipped with many technical and managerial events, Avishkar is an excellent platform for students to hone their skills, create outstanding projects, expand their networks, and build a superb CV.
                 </p>
                                 {/* </div> */}
                             </div>
@@ -92,16 +86,7 @@ export default function Avishkar() {
                                 >
                                     <div style={{ padding: "10px" }}>
                                         <p class="text-gray-700 texte" style={{ fontSize: "16px" }}><i>
-                                            MNNIT's techno management festival Avishkar is held every
-                                            year in the month of September. Equipped with technical
-                                            and managerial events, Avishkar is the best platform for
-                                            students to learn and build their CVs. With the teaching
-                                            classes starting almost a month before the D-day, and
-                                            being mentored by extremely capable seniors, it is indeed
-                                            an opportunity for students to hone their skills and build
-                                            a good network. Avishkar and Gnotalks go hand in hand and
-                                            one is exposed to great personalities' heart touching and
-                      inspirational struggles and their journey.</i>
+                                            Avishkar is MNNIT's annual techno-management festival and is held either in September or October. Equipped with many technical and managerial events, Avishkar is an excellent platform for students to hone their skills, create outstanding projects, expand their networks, and build a superb CV.</i>
                                         </p>
 
 
@@ -145,6 +130,59 @@ Aeroclub organises an RC Airshow where professional aeromodellers amuse the audi
                                 </ul>
                             </p>
 
+                        </div>
+                    </div>
+                    <div className="cont featured-proj">
+                        <div className="main">
+                            
+                            <ul className="cards">
+                                <li className="cards_item" data-aos="fade-up">
+                                    <div className="card">
+                                        <div className="card_image">
+                                            <img src={Phantom} style={{marginBottom:"2px"}}/>
+                                        </div>
+                                        <div className="card_content">
+                                            <h2 className="card_title">Phantom</h2>
+                                            <p className="card_text" style={{fontSize:"small"}}>
+                                            Phantom provides you with the opportunity to experiment with various parameters
+and design features of an aircraft, and yield the best results.
+                </p>
+                                            {/* <button className="btns card_btns">Read More</button> */}
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="cards_item" data-aos="zoom-up">
+                                    <div className="card">
+                                        <div className="card_image">
+                                            <img className="evavishkar" src={guardian} style={{marginBottom:"2px"}} />
+                                        </div>
+                                        <div className="card_content">
+                                            <h2 className="card_title">Guardian</h2>
+                                            <p className="card_text"  style={{fontSize:"small"}}>
+                                            This event is concerned with the automation of
+drones on software in the loop simulator and mission planner software.
+                </p>
+                                            {/* <button className="btns card_btns">Read More</button> */}
+                                        </div>
+                                    </div>
+                                </li>
+                                <li className="cards_item" data-aos="fade-up">
+                                    <div className="card">
+                                        <div className="card_image">
+                                            <img className="evavishkar" src={lostinspace} style={{marginBottom:"2px"}} />
+                                        </div>
+                                        <div className="card_content">
+                                            <h2 className="card_title">Lost in Space</h2>
+                                            <p className="card_text">
+                                            This quizing event can help you gain a feel of how
+exactly space missions are planned and executed, down to controls and choice of parts
+for designing your own craft.
+                </p>
+                                            {/* <button className="btns card_btns">Read More</button> */}
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
@@ -212,7 +250,7 @@ Aeroclub organises an RC Airshow where professional aeromodellers amuse the audi
                                                         </a>
                                                     </h4>
                                                     <p className="phonetxt">
-                                                        {/* Home Automation event */}
+                                                        Aircraft Design event
                                                         <br></br><br></br>
                                                     </p>
 
@@ -243,7 +281,7 @@ Aeroclub organises an RC Airshow where professional aeromodellers amuse the audi
                             </a>
                                                     </h4>
                                                     <p className="phonetxt">
-                                                        {/* Manual Robotics event */}
+                                                        Drone and Aerial Robotics
                                                         <br></br><br></br>
                                                     </p>
                                                 </div>
@@ -272,7 +310,7 @@ Aeroclub organises an RC Airshow where professional aeromodellers amuse the audi
                             </a>
                                                     </h4>
                                                     <p className="phonetxt">
-                                                        {/* QuadCopter Frame construction and Flight Test */}<br></br><br></br>
+                                                        Quizing Event<br></br><br></br>
                                                     </p>
                                                 </div>
                                                 <div className="card-read-more">
@@ -361,7 +399,7 @@ Aeroclub organises an RC Airshow where professional aeromodellers amuse the audi
                                                         </a>
                                                     </h4>
                                                     <p className="phonetxt">
-                                                        {/* Home Automation event */}
+                                                        Aircraft Design Event
                                                         <br></br><br></br>
                                                     </p>
 
@@ -392,7 +430,7 @@ Aeroclub organises an RC Airshow where professional aeromodellers amuse the audi
                             </a>
                                                     </h4>
                                                     <p className="phonetxt">
-                                                        {/* Manual Robotics event */}
+                                                        Drone and Aerial Robotics
                                                         <br></br><br></br>
                                                     </p>
                                                 </div>
@@ -421,7 +459,7 @@ Aeroclub organises an RC Airshow where professional aeromodellers amuse the audi
                             </a>
                                                     </h4>
                                                     <p className="phonetxt">
-                                                        {/* QuadCopter Frame construction and Flight Test */}<br></br><br></br>
+                                                        quizing event<br></br><br></br>
                                                     </p>
                                                 </div>
                                                 <div className="card-read-more">
@@ -435,6 +473,129 @@ Aeroclub organises an RC Airshow where professional aeromodellers amuse the audi
                                                 </div>
                                             </div>
                                         </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        {/* </div> */}
+                    </div>
+                </div>
+            </section>
+
+            <section className="wrapper">
+                <div className="container-f">
+                    <div>
+                        <p className="cent">
+                            <a
+                                class="btn btn-outline-dark btn-lg"
+                                data-toggle="collapse"
+                                href="#collapseExample3"
+                                role="button"
+                                aria-expanded="false"
+                                aria-controls="collapseExample3"
+                            >
+                                Avishkar 2018
+              </a>
+                        </p>
+                        {/* <div className="colarea"> */}
+                        <div className="collapse colarea" id="collapseExample3">
+                            <div className="content yearevent">
+                                <div class="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24">
+                                    <div class="sm:w-2/3 sm:mr-10">
+                                        <div class="text">
+                                            {/* <span class="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
+
+                                            <h5 class="font-bold text-3xl my-4 sm:text-4xl">
+                                                <span class="text-indigo-300 font-bold">Avishkar 2018 was organised from 26th - 29th September 2018
+
+</span>
+                                            </h5>
+                                            <div
+                                                className="miniSep"
+                                                style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
+                                            ></div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div className="text">
+                                    <h3 class="font-bold text-3xl my-4 sm:text-4xl">
+                                        <span class="text-indigo-300 font-bold">Competitions</span>
+                                    </h3>
+                                    <div
+                                        className="miniSep"
+                                        style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
+                                    ></div>
+                                    <div className="row">
+                                        <div className="col-xs-12 col-sm-4">
+                                            <div className="card cardev">
+                                                {/* <a
+                                                    className="img-card"
+
+                                                >
+                                                    <img src={Smarthome} />
+                                                </a> */}
+                                                <div className="card-content cardev-content">
+                                                    <h4 className="card-title cardev-title">
+                                                        <a>
+                                                            {" "}
+                                                            Phantom
+                                                        </a>
+                                                    </h4>
+                                                    <p className="phonetxt">
+                                                        Pushpak Viman
+                                                        <br></br><br></br>
+                                                    </p>
+
+                                                </div>
+                                                <div className="card-read-more">
+                                                    <a
+                                                        href="https://drive.google.com/file/d/1_iLi0nKKLjZWRsxo_pCFtOR6VesxT94n/view?usp=sharing"
+                                                        className="btn btn-link btn-block"
+                                                    >
+                                                        Problem Statement
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="col-xs-12 col-sm-4">
+                                            <div className="card cardev">
+                                                {/* <a
+                                                    className="img-card"
+
+                                                >
+                                                    <img src={Daksha} />
+                                                </a> */}
+                                                <div className="card-content cardev-content">
+                                                    <h4 className="card-title cardev-title">
+                                                        <a>
+                                                            {" "}
+                                                            Guardian
+                            </a>
+                                                    </h4>
+                                                    <p className="phonetxt">
+                                                        Aerial Robotics Championship
+                                                        <br></br><br></br>
+                                                    </p>
+                                                </div>
+                                                <div className="card-read-more">
+                                                    <a
+                                                        href="https://drive.google.com/file/d/1esfVc1cHSjwqU4USsJdQwiHct5FWNGUa/view?usp=sharing"
+                                                        className="btn btn-link btn-block"
+                                                    >
+                                                        Problem Statement
+                          </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
 
                                     </div>
                                 </div>

@@ -25,6 +25,19 @@ function Blogs() {
     4: "final year",
   };
 
+  const branch = {
+    '0': 'Biotechnology',
+    '1': 'Civil Engg.',
+    '2': 'Electrical Engg.',
+    '3': 'Mechanical Engg.',
+    '4': 'Computer Science Engg.',
+    '5': 'Electronics and Comm. Engg.',
+    '6': 'Production and Industrial Engg.',
+    '8': 'Information Technology',
+    '9': 'Chemical Engg.',
+    'x': 'NA'
+  }
+
   return (
     <div>
       <div className=" pagesg">
@@ -55,23 +68,22 @@ function Blogs() {
                 <Container>
                   <h2 className="blog-container-head">{blog.title}</h2>
                   <p className="blog-container-para">
-                    Posted by{" "}
-                    {blog.postedBy.linkedin_url !==
-                      "https://www.linkedin.com/in/username/" ? (
-                      <a href={blog.postedBy.linkedin_url} target="_blank">
-                        {blog.postedBy.name}
-                      </a>
-                    ) : (
-                      blog.postedBy.name
-                    )}{" "}
-                    {`(reg. no :- ${blog.postedBy.registration_no == "xxxxxxxx"
-                      ? "NA"
-                      : blog.postedBy.registration_no
-                      }, ${blog.postedBy.year == -1
+                    <em>
+                      Posted by{" "}
+                      {blog.postedBy.linkedin_url !==
+                        "https://www.linkedin.com/in/username/" ? (
+                        <a href={blog.postedBy.linkedin_url} target="_blank">
+                          {blog.postedBy.name}
+                        </a>
+                      ) : (
+                        blog.postedBy.name
+                      )}{" "}
+                      {`( branch - ${branch[blog.postedBy.registration_no[4]]}, ${blog.postedBy.year == -1
                         ? "year - NA"
                         : year[blog.postedBy.year]
-                      })`}{" "}
+                        } )`}{" "}
                     on {new Date(blog.publishedAt).toLocaleDateString()}
+                    </em>
                   </p>
                   <Button href={`/blogs/${blog._id}`} variant="danger">
                     See More

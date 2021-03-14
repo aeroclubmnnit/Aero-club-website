@@ -9,13 +9,25 @@ function SingleBlog() {
   const [blog, setBlog] = useState(undefined);
   const history = useHistory();
 
-
   const year = {
     1: "1st year",
     2: "2nd year",
     3: "3rd year",
     4: "final year",
   };
+
+  const branch = {
+    '0': 'Biotechnology',
+    '1': 'Civil Engg.',
+    '2': 'Electrical Engg.',
+    '3': 'Mechanical Engg.',
+    '4': 'Computer Science Engg.',
+    '5': 'Electronics and Comm. Engg.',
+    '6': 'Production and Industrial Engg.',
+    '8': 'Information Technology',
+    '9': 'Chemical Engg.',
+    'x': 'NA'
+  }
 
   useEffect(() => {
     document.title = `Blog-${blogId} | ${process.env.REACT_APP_BASE_TITLE}`;
@@ -24,6 +36,7 @@ function SingleBlog() {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data)
         if (data.error) history.push("/404");
         else setBlog(data);
       });
@@ -53,13 +66,10 @@ function SingleBlog() {
                 ) : (
                   blog?.postedBy.name
                 )}{" "}
-                {`(reg. no :- ${blog?.postedBy.registration_no == "xxxxxxxx"
-                  ? "NA"
-                  : blog?.postedBy.registration_no
-                  }, ${blog?.postedBy.year == -1
-                    ? "year - NA"
-                    : year[blog?.postedBy.year]
-                  })`}{" "}
+                {`( branch - ${branch[blog?.postedBy.registration_no[4]]} , ${blog?.postedBy.year == -1
+                  ? "year - NA"
+                  : year[blog?.postedBy.year]
+                  } )`}{" "}
                 on {new Date(blog?.publishedAt).toLocaleDateString()}
               </em>
             </p>

@@ -41,6 +41,11 @@
   margin-bottom: 10px;
 }
 
+/* .card_image{
+ max-height: 16rem;
+ max-width: 25rem;
+} */
+
 .dropworkshop{
   border: 2px solid rgb(204, 67, 67);
   border-radius: 5px;

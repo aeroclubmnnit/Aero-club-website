@@ -16,7 +16,6 @@ export default function CompIssue() {
       .then((res) => res.json())
       .then((data) => {
         setComponents(data);
-        console.log(data);
         setTypes(Object.keys(data));
       });
   }, []);
