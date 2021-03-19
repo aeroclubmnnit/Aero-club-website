@@ -14,10 +14,11 @@ import f10 from "../../images/alumni/sarita chaudhary1.jpeg";
 import f11 from "../../images/alumni/unnamed.jpg";
 import f12 from "../../images/alumni/Kishan Tiwari.jfif";
 import f13 from "../../images/alumni/Aniket Kumar.jpg";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 export default function Alumni() {
   useEffect(() => {
-    document.title = `Alumni | ${process.env.REACT_APP_BASE_TITLE}`;
+    document.title = `Alumni | ${REACT_APP_BASE_TITLE}`;
   }, [])
 
   const members = [

@@ -3,10 +3,37 @@
 
 @media (max-width: 640px){
     .card-title{
-        font-size: medium;
+        font-size: x-large;
+        font-family: monospace;
     }
 .card-text {
-    font-size: small;
+    font-size: medium;
+    font-family: "Roboto";
     /* text-align: center; */
 }
+.cardhgt {
+    height: auto;
+    background-color : transparent;
+    /* margin: 0 1rem 0 1rem; */
 }
+}
+
+.card-text {
+    font-family: "Roboto";
+}
+.cardhgt {
+    height: 18rem;
+    background-color : transparent;
+    /* margin: 0 1rem 0 1rem; */
+}
+.cardbd {
+    font-family: monospace;
+}
+.cardbd:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+ul {
+    list-style-type:circle;
+    padding-inline-start: 10px;
+  }

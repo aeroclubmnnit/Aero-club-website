@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { toast } from "react-toastify";
 import { Accordion, Card } from 'react-bootstrap';
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../../../grobalVars"
 
 export default function DashNews() {
   const [news, setnews] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER}/api/news/private`, {
+    fetch(`${REACT_APP_SERVER}/api/news/private`, {
       method: "get",
       headers: {
         "Content-Type": "application/json",

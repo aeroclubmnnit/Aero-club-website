@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../../../grobalVars"
+
 export default function Popup(props) {
   const [num, setnum] = useState(0);
   const [reason, setreason] = useState("");
@@ -79,7 +81,7 @@ function LoadingButton(props) {
 
   useEffect(() => {
     if (isLoading) {
-      fetch(`${process.env.REACT_APP_SERVER}/api/issue/${props.id}`, {
+      fetch(`${REACT_APP_SERVER}/api/issue/${props.id}`, {
         method: "post",
         headers: {
           "Content-Type": "application/json",

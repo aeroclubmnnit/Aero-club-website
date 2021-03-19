@@ -8,16 +8,18 @@ import cosmo3d from "../../images/Sponsors/cosmo3d.png";
 import knowhow from "../../images/Sponsors/knowhow.png";
 import pcb from "../../images/Sponsors/pcb.png";
 import ultratech from "../../images/Sponsors/ultra.png";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import tsaw from "../../images/Sponsors/tsawlogo.png";
 
 export default function Ṣponsors() {
   useEffect(() => {
-    document.title = `Sponsors | ${process.env.REACT_APP_BASE_TITLE}`;
+    document.title = `Sponsors | ${REACT_APP_BASE_TITLE}`;
   }, [])
 
 
   return (
     <>
-      <Loading />
+      <Loading time={2} />
       <div className=" pagesg">
         <div className="overlayg">
           <div className="pageTitleg titleBoldg">Sponsors</div>
@@ -40,9 +42,9 @@ export default function Ṣponsors() {
               class="btn btn-outline-dark btn-lg"
               // data-toggle="collapse"
               href="#collapseExample1"
-              // role="button"
-              // aria-expanded="false"
-              // aria-controls="collapseExample1"
+            // role="button"
+            // aria-expanded="false"
+            // aria-controls="collapseExample1"
             >
               About Us
               </a>
@@ -205,7 +207,7 @@ export default function Ṣponsors() {
               >
                 <img
                   className="card-img-top mx-auto sponimg"
-                  src="https://tsaw.tech/images/tsawlogo.png"
+                  src={tsaw}
                   alt="tsaw"
                   srcset=""
                 />

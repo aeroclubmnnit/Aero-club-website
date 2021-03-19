@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import "../../css/Login.css";
 import { toast } from "react-toastify";
 import m from "../../images/utils/logo-aero2.png";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 function Signup() {
 
@@ -13,9 +14,8 @@ function Signup() {
   const history = useHistory();
 
   useEffect(() => {
-    document.title = `Signup | ${process.env.REACT_APP_BASE_TITLE}`;
+    document.title = `Signup | ${REACT_APP_BASE_TITLE}`;
     if (localStorage.getItem("jwtToken")) history.push("/404");
-    toast.warn('Account Signup is available only for MNNIT Students...!')
   }, []);
 
   const handleSubmit = (e) => {
@@ -26,7 +26,7 @@ function Signup() {
       return;
     }
 
-    fetch(`${process.env.REACT_APP_SERVER}/api/signup`, {
+    fetch(`${REACT_APP_SERVER}/api/signup`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -91,6 +91,7 @@ function Signup() {
               >
                 Account Signup
               </h5>
+              <p className='text-center'>( Only for MNNIT Students )</p>
               <form className="form-signin">
                 <div className="form-label-group">
                   <input
@@ -123,24 +124,24 @@ function Signup() {
                     className="form-control"
                     placeholder="Password"
                     required
-                    maxLength={30}
+                    maxLength={25}
                     ref={password}
                   />
                   <label htmlFor="inputPassword" >Password</label><i className="fa fa-eye-slash float-right" id='eye' onClick={passwordToggle}></i>
                   <em style={{ fontSize: "x-small" }}>
-                    * password must between 8-30 characters containing at least
+                    * password must between 8-25 characters containing at least
                     one lowercase and one uppercase letter, one numeric digit,
                     and one special character
                   </em>
                 </div>
                 <div className="form-label-group">
                   <input
-                    type="text"
+                    type="password"
                     id="inputretypePassword"
                     className="form-control"
                     placeholder="Retype Password"
                     required
-                    maxLength={30}
+                    maxLength={25}
                     ref={confirmPassword}
                   />
                   <label htmlFor="inputretypePassword">Retype Password</label><i className="fa fa-eye-slash float-right" id='eye1' onClick={passwordToggle1}></i>

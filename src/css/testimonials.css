@@ -209,7 +209,8 @@
   padding: 20px;
   position: relative;
   text-align: center;
-  /* background-color: rgb(168, 168, 168); */
+  background-color: rgb(79 23 23);
+    border-radius: 20px;
 }
 .testimonial4_slide:after {
     content:'';
@@ -252,7 +253,7 @@
     margin: 40px 0 20px 0;
 }
 .testimonial4_slide h4 {
-  color: rgb(202, 202, 202);
+  color: rgb(241, 241, 241);
   font-weight: bold;
   font-size: 22px;
 }

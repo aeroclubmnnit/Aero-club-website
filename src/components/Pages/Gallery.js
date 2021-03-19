@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import Loading from "../../Animations/Loading";
 import "../../css/Gallery.css";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 export default function Gallery() {
   useEffect(() => {
-    document.title = `Gallery | ${process.env.REACT_APP_BASE_TITLE}`;
+    document.title = `Gallery | ${REACT_APP_BASE_TITLE}`;
   }, [])
 
   const [page, SetPage] = useState(1);

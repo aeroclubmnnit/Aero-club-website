@@ -5,10 +5,11 @@ import m from "../../images/utils/avishkar.png";
 import Phantom from "../../images/Events/Phantom.PNG";
 import guardian from "../../images/Events/guardian2.PNG";
 import lostinspace from "../../images/Events/lostinspace.PNG";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 export default function Avishkar() {
     useEffect(() => {
-        document.title = `Avishkar | ${process.env.REACT_APP_BASE_TITLE}`;
+        document.title = `Avishkar | ${REACT_APP_BASE_TITLE}`;
     }, [])
 
     return (
@@ -134,49 +135,49 @@ Aeroclub organises an RC Airshow where professional aeromodellers amuse the audi
                     </div>
                     <div className="cont featured-proj">
                         <div className="main">
-                            
+
                             <ul className="cards">
-                                <li className="cards_item" data-aos="fade-up">
+                                <li className="cards_item" data-aos="flip-left" data-aos-duration="1000">
                                     <div className="card">
                                         <div className="card_image">
-                                            <img src={Phantom} style={{marginBottom:"2px"}}/>
+                                            <img className="evavishkar" src={Phantom} style={{ marginBottom: "2px" }} />
                                         </div>
-                                        <div className="card_content">
+                                        <div className="card_content avishkar_cont">
                                             <h2 className="card_title">Phantom</h2>
-                                            <p className="card_text" style={{fontSize:"small"}}>
-                                            Phantom provides you with the opportunity to experiment with various parameters
-and design features of an aircraft, and yield the best results.
+                                            <p className="card_text" style={{ fontSize: "small" }}>
+                                                Phantom provides you with the opportunity to experiment with various parameters
+                                                and design features of an aircraft, and yield the best results.
                 </p>
                                             {/* <button className="btns card_btns">Read More</button> */}
                                         </div>
                                     </div>
                                 </li>
-                                <li className="cards_item" data-aos="zoom-up">
+                                <li className="cards_item" data-aos="flip-left" data-aos-duration="1000">
                                     <div className="card">
                                         <div className="card_image">
-                                            <img className="evavishkar" src={guardian} style={{marginBottom:"2px"}} />
+                                            <img className="evavishkar" src={guardian} style={{ marginBottom: "2px" }} />
                                         </div>
-                                        <div className="card_content">
+                                        <div className="card_content avishkar_cont">
                                             <h2 className="card_title">Guardian</h2>
-                                            <p className="card_text"  style={{fontSize:"small"}}>
-                                            This event is concerned with the automation of
-drones on software in the loop simulator and mission planner software.
+                                            <p className="card_text" style={{ fontSize: "small" }}>
+                                                This event is concerned with the automation of
+                                                drones on software in the loop simulator and mission planner software.
                 </p>
                                             {/* <button className="btns card_btns">Read More</button> */}
                                         </div>
                                     </div>
                                 </li>
-                                <li className="cards_item" data-aos="fade-up">
+                                <li className="cards_item" data-aos="flip-left" data-aos-duration="1000">
                                     <div className="card">
                                         <div className="card_image">
-                                            <img className="evavishkar" src={lostinspace} style={{marginBottom:"2px"}} />
+                                            <img className="evavishkar" src={lostinspace} style={{ marginBottom: "2px" }} />
                                         </div>
-                                        <div className="card_content">
+                                        <div className="card_content avishkar_cont">
                                             <h2 className="card_title">Lost in Space</h2>
-                                            <p className="card_text">
-                                            This quizing event can help you gain a feel of how
-exactly space missions are planned and executed, down to controls and choice of parts
-for designing your own craft.
+                                            <p className="card_text" style={{ fontSize: "small" }}>
+                                                This quizing event can help you gain a feel of how
+                                                exactly space missions are planned and executed, down to controls and choice of parts
+                                                for designing your own craft.
                 </p>
                                             {/* <button className="btns card_btns">Read More</button> */}
                                         </div>

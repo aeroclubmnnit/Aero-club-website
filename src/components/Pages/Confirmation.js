@@ -2,15 +2,16 @@ import React, { useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loading from "../../Animations/Loading";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 export default function Confirmation() {
   const { token } = useParams();
   const history = useHistory();
 
   useEffect(() => {
-    document.title = `Confirmation | ${process.env.REACT_APP_BASE_TITLE}`;
+    document.title = `Confirmation | ${REACT_APP_BASE_TITLE}`;
     if (token) {
-      fetch(`${process.env.REACT_APP_SERVER}/api/user/confirm`, {
+      fetch(`${REACT_APP_SERVER}/api/user/confirm`, {
         method: "post",
         headers: {
           Authorization: `Bearer ${token}`,

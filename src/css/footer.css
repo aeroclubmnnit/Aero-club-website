@@ -103,6 +103,11 @@
     text-align:center
   }
 }
+
+a.hov:hover{
+  color: rgb(207, 67, 67);
+}
+
 .social-icons
 {
   padding-left:0;

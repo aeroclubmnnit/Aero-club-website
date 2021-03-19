@@ -18,7 +18,6 @@ import SingleProject from "./components/Pages/SingleProject";
 import Blogs from "./components/Pages/Blogs";
 import SingleBlog from "./components/Pages/SingleBlog";
 import Signup from "./components/Pages/Signup";
-import EventHome from "./Animations/EventsHome";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import ForgetPassword from "./components/Pages/ForgetPassword";
@@ -38,6 +37,7 @@ import Coordinators from "./components/Pages/Coordinators.js";
 import Nontech from "./components/Pages/Nontech.js";
 import ResearchThemes from "./components/utils/ResearchThemes.js";
 import Sponsors from "./components/Pages/Sponsor";
+import Sponsorhome from "./components/utils/Sponsorhome";
 import Achievements from "./components/Pages/Achievements.js";
 import Collaboration from "./components/Pages/Collaboration.js";
 import Spinoff from "./components/Pages/Spinoff.js";
@@ -108,7 +108,7 @@ function App() {
               <Featuredproject />
               <ResearchThemes />
               <Testimonials />
-              <EventHome />
+              <Sponsorhome />
               <ContactUs />
             </Route>
             <Route path="/gallery" exact>
@@ -168,7 +168,7 @@ function App() {
             <Route path="/workshop" exact>
               <Workshop />
             </Route>
-            <Route path="/sponsor" exact>
+            <Route path="/sponsors" exact>
               <Sponsors />
             </Route>
             <Route>

@@ -3,6 +3,7 @@ import "../../css/Contact.css";
 import logo from "../../images/utils/collegelogo.png";
 import $ from "jquery";
 import { toast } from "react-toastify";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 const ContactUs = () => {
   const name = useRef("");
@@ -24,7 +25,7 @@ const ContactUs = () => {
   const handleContactSubmit = (e) => {
     setLoading(true);
     e.preventDefault();
-    fetch(`${process.env.REACT_APP_SERVER}/api/contact`, {
+    fetch(`${REACT_APP_SERVER}/api/contact`, {
       method: "post",
       headers: {
         "Content-Type": "application/json"

@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import Loading from "../../Animations/Loading";
 import "../../css/Alumni.css";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 export default function Collaboration() {
   useEffect(() => {
-    document.title = `Collaborate | ${process.env.REACT_APP_BASE_TITLE}`;
+    document.title = `Collaborate | ${REACT_APP_BASE_TITLE}`;
   }, [])
 
   return (

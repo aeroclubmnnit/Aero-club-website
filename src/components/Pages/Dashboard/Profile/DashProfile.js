@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import { REACT_APP_SERVER } from "../../../../grobalVars"
 
 export default function DashProfile() {
   const user = useSelector(state => state.user);
@@ -18,26 +19,6 @@ export default function DashProfile() {
       setRegis_no(user.registration_no);
       setYear(user.year);
       setLinkedin(user.linkedin_url);
-
-      user.notifications.forEach((notification) => {
-        toast.success(notification.message);
-
-        fetch(`${process.env.REACT_APP_SERVER}/api/my/deleteNotification`, {
-          method: "post",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
-          },
-          body: JSON.stringify({
-            id: notification._id,
-          }),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.error) toast.warn(data.error);
-            else dispatch({ type: "SET", payload: data.User });
-          });
-      });
     }
   }, [user]);
 
@@ -48,10 +29,10 @@ export default function DashProfile() {
       return
     }
 
-    if (year <= 4) {
+    if (year && year <= 4) {
       setDisabled(true);
       setLoading(true);
-      fetch(`${process.env.REACT_APP_SERVER}/api/my/updateProfile`, {
+      fetch(`${REACT_APP_SERVER}/api/my/updateProfile`, {
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -79,7 +60,7 @@ export default function DashProfile() {
   return (
     <div className="container">
       <div className="mb-3 row">
-        <label htmlFor="name" className="col-sm-2 col-form-label fw-blold">
+        <label htmlFor="name" className="col-sm-2 col-form-label font-weight-bold">
           Name :{" "}
         </label>
         <div className="col-sm-10">
@@ -94,7 +75,7 @@ export default function DashProfile() {
         </div>
       </div>
       <div className="mb-3 row">
-        <label htmlFor="email" className="col-sm-2 col-form-label">
+        <label htmlFor="email" className="col-sm-2 col-form-label font-weight-bold">
           Email :{" "}
         </label>
         <div className="col-sm-10">
@@ -108,7 +89,7 @@ export default function DashProfile() {
         </div>
       </div>
       <div className="mb-3 row">
-        <label htmlFor="regis" className="col-sm-2 col-form-label">
+        <label htmlFor="regis" className="col-sm-2 col-form-label font-weight-bold">
           Registration no. :{" "}
         </label>
         <div className="col-sm-10">
@@ -124,15 +105,15 @@ export default function DashProfile() {
         </div>
       </div>
       <div className="mb-3 row">
-        <label htmlFor="year" className="col-sm-2 col-form-label">
+        <label htmlFor="year" className="col-sm-2 col-form-label font-weight-bold">
           Year :{" "}
         </label>
         <div className="col-sm-10">
           <input
             type="number"
-            min="1"
-            max="4"
-            maxLength="1"
+            min={1}
+            max={4}
+            maxLength={1}
             className="form-control"
             id="year"
             value={year}
@@ -142,7 +123,7 @@ export default function DashProfile() {
         </div>
       </div>
       <div className="mb-3 row">
-        <label htmlFor="linkedin" className="col-sm-2 col-form-label">
+        <label htmlFor="linkedin" className="col-sm-2 col-form-label font-weight-bold">
           Linkedin URL :{" "}
         </label>
         <div className="col-sm-10">
@@ -175,9 +156,9 @@ export default function DashProfile() {
         </button>
         </>
       )}
-      <button className="btn btn-success mr-1 my-1">Resources</button>
+      <a className="btn btn-success mr-1 my-1" href='https://docs.google.com/document/d/1jrgm6h7DVs173Cjfc2kjc32yuPFj0R4TFRNsdN6E150/edit?usp=sharing' target='_blank'>Resources</a>
       {user?.role !== "User" && (
-        <a className="btn btn-danger mx-1" href="/1208e2fe-b5f6-439b-94e0-aef5dde3b777/admin">
+        <a className="btn btn-danger mx-1" href="/1208e2fe-b5f6-439b-94e0-aef5dde3b777/admin" target='_blank'>
           Go to Admin Panel
         </a>
       )}

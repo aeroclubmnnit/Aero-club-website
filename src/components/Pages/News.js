@@ -4,6 +4,8 @@ import { Container, Jumbotron } from "react-bootstrap";
 import { animateScroll as scroll } from "react-scroll";
 import createHistory from "history/createBrowserHistory";
 import Loading from "../../Animations/Loading";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import "../../css/news.css";
 
 export default function News() {
 
@@ -11,8 +13,8 @@ export default function News() {
   const [eventKey, setEventKey] = useState("");
 
   useEffect(() => {
-    document.title = `Updates | ${process.env.REACT_APP_BASE_TITLE}`;
-    fetch(`${process.env.REACT_APP_SERVER}/api/news/public`, {
+    document.title = `Updates | ${REACT_APP_BASE_TITLE}`;
+    fetch(`${REACT_APP_SERVER}/api/news/public`, {
       method: "get",
     })
       .then((res) => res.json())
@@ -48,50 +50,42 @@ export default function News() {
             width: "100%",
             margin: "auto",
             paddingBottom: "1rem",
-          }}
-        >
+          }}>
           <Container>
-            <div className="container" id="123456789">
-              <Accordion
-                activeKey={eventKey}
-                onSelect={(e) => setEventKey(e)}
-                style={{ margin: "1.5rem" }}
-              >
-                {news.map((singleNews) => (
-                  <Card
-                    key={singleNews.id}
-                    id={singleNews.id}
-                    style={{ padding: "0.15rem" }}
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
-                  >
-                    <Card.Header style={{ cursor: "pointer" }}>
-                      <Accordion.Toggle
-                        as={Card.Header}
-                        eventKey={singleNews.id}
-                        style={{ fontSize: "1.3rem" }}
+            <div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true" activeKey={eventKey}
+              onSelect={(e) => setEventKey(e)}
+              style={{ margin: "1.5rem" }}>
+              {news.map((singleNews, i) => (
+                <div className="panel panel-default" key={singleNews.id}
+                  style={{ padding: "0.15rem" }}
+                  data-aos="fade-up"
+                  data-aos-duration="1000">
+                  <div className="panel-heading" role="tab" id="headingOne"
+                    eventKey={singleNews.id}
+                    style={{ fontSize: "1.3rem" }}>
+                    <h4 className="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href={`#collapse${singleNews.id}`} aria-expanded="false" aria-controls={`collapse${singleNews.id}`} >
+                        {/* <div> */}
+                        {singleNews.title}
+
+                        {/* </div> */}
+                      </a>
+                    </h4>
+                  </div>
+                  <div id={`collapse${singleNews.id}`} className="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" eventKey={singleNews.id}>
+                    <div className="panel-body my-3 mx-4">
+                      <em
+                        style={{ fontSize: "small" }}
                       >
-                        <div>
-                          {singleNews.title}
-                          <em
-                            className="float-right"
-                            style={{ fontSize: "small" }}
-                          >
-                            {new Date(
-                              singleNews.publishedAt
-                            ).toLocaleDateString()}
-                          </em>
-                        </div>
-                      </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey={singleNews.id}>
-                      <Card.Body
-                        dangerouslySetInnerHTML={{ __html: singleNews.body }}
-                      ></Card.Body>
-                    </Accordion.Collapse>
-                  </Card>
-                ))}
-              </Accordion>
+                        Published on ~ {new Date(
+                        singleNews.publishedAt
+                      ).toLocaleDateString()}
+                      </em>
+                    </div>
+                    <div className="panel-body my-5 mx-4" dangerouslySetInnerHTML={{ __html: singleNews.body }}></div>
+                  </div>
+                </div>
+              ))}
             </div>
           </Container>
         </Jumbotron>

@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 import Particles from "react-particles-js";
 
 export default function NotFound() {
   useEffect(() => {
-    document.title = `404 | ${process.env.REACT_APP_BASE_TITLE}`;
+    document.title = `404 | ${REACT_APP_BASE_TITLE}`;
   }, [])
 
   const particlesOptions = {

@@ -4,10 +4,11 @@ import "../../css/Alumni.css";
 import f1 from "../../images/gallery/faculty1.jpeg";
 import f2 from "../../images/gallery/faculty2.jpeg";
 import f3 from "../../images/gallery/faculty3.jpeg";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 export default function Faculty() {
   useEffect(() => {
-    document.title = `Faculty | ${process.env.REACT_APP_BASE_TITLE}`;
+    document.title = `Faculty | ${REACT_APP_BASE_TITLE}`;
   }, [])
   return (
     <>

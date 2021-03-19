@@ -4,7 +4,9 @@ import {
   DeleteButton,
   Edit,
   EditButton,
+  FileInput,
   ImageField,
+  ImageInput,
   List,
   number,
   NumberInput,
@@ -39,7 +41,15 @@ export const ComponentCreate = (props) => {
       <SimpleForm redirect="/component">
         <TextInput source="name" label="Name" validate={[required()]} />
         <TextInput source="type" label="Type" validate={[required()]} />
-        <TextInput source="image_url" label="Component Image Link" validate={[required()]} />
+        <FileInput
+          source="compImage"
+          label="Image"
+          accept="image/*"
+          multiple={false}
+          placeholder={<p>Drop your file here</p>}
+        >
+          <ImageField source="src" title="title" validate={[required()]} />
+        </FileInput>
         <NumberInput source="available" validate={[required(), number()]} />
       </SimpleForm>
     </Create>
@@ -68,6 +78,5 @@ export const ComponentShow = (props) => {
         <TextField source="issued" />
       </SimpleShowLayout>
     </Show>
-  )
-}
-
+  );
+};

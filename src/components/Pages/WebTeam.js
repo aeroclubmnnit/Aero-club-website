@@ -3,10 +3,11 @@ import Loading from '../../Animations/Loading';
 import f1 from "../../images/coordinators&Nontech/Abhinav Anand.png";
 import f2 from "../../images/coordinators&Nontech/Ishan Gupta.jpeg";
 import f3 from "../../images/coordinators&Nontech/Parnab Ghosh.jpeg";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 export default function WebTeam() {
     useEffect(() => {
-        document.title = `Webteam | ${process.env.REACT_APP_BASE_TITLE}`
+        document.title = `Webteam | ${REACT_APP_BASE_TITLE}`
     }, [])
 
 

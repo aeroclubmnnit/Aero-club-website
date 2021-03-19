@@ -10,18 +10,19 @@ import DashBlogs from "./Blogs/DashBlogs";
 import ComponentsList from "./ComponentsList";
 import { useDispatch } from "react-redux";
 import DashNews from "./News/DashNews";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../../grobalVars"
 
 function Dashboard() {
   const history = useHistory();
   const dispatch = useDispatch();
-  document.title = `Dashboard | ${process.env.REACT_APP_BASE_TITLE}`;
+  document.title = `Dashboard | ${REACT_APP_BASE_TITLE}`;
   useEffect(() => {
     if (!localStorage.getItem("jwtToken")) {
       history.push("/user/login");
       toast.warn("You must be logged in !");
     }
 
-    fetch(`${process.env.REACT_APP_SERVER}/api/my/details`, {
+    fetch(`${REACT_APP_SERVER}/api/my/details`, {
       method: "post",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,

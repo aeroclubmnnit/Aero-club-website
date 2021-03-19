@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Accordion, Card, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../../../grobalVars"
 
 export default function Dashprojects(props) {
   const [projects, setProjects] = useState([]);
   const user = useSelector((state) => state.user);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER}/api/my/invites`, {
+    fetch(`${REACT_APP_SERVER}/api/my/invites`, {
       method: "get",
       headers: {
         "Content-Type": "application/json",
@@ -108,7 +109,7 @@ function LoadingButton(props) {
   const dispatch = useDispatch();
   useEffect(() => {
     if (isLoading) {
-      fetch(`${process.env.REACT_APP_SERVER}/api/my/invites/accept/${props.projectId}`, {
+      fetch(`${REACT_APP_SERVER}/api/my/invites/accept/${props.projectId}`, {
         method: "get",
         headers: {
           "Content-Type": "application/json",

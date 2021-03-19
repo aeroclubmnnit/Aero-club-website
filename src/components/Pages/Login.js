@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import "../../css/Login.css";
 import m from "../../images/utils/logo-aero2.png";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 function Login() {
   const email = useRef();
@@ -10,14 +11,14 @@ function Login() {
   const history = useHistory();
 
   useEffect(() => {
-    document.title = `Login | ${process.env.REACT_APP_BASE_TITLE}`;
+    document.title = `Login | ${REACT_APP_BASE_TITLE}`;
     if (localStorage.getItem("jwtToken")) history.push("/404");
   }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`${process.env.REACT_APP_SERVER}/api/signin`, {
+    fetch(`${REACT_APP_SERVER}/api/signin`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",

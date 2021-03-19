@@ -191,10 +191,10 @@ export default function Navigbar() {
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/news" eventKey="news">
-                News Section
+                Updates
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link eventKey="sponsors" href="/sponsor" className="nav-items">
+            <Nav.Link eventKey="sponsors" href="/sponsors" className="nav-items">
               Sponsors
             </Nav.Link>
             <Nav.Link eventKey="collaborate" href="/collaborate" className="nav-items">

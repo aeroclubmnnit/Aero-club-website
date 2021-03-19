@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import ProjForm from "./ProjForm";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../../../grobalVars"
 
 export default function Dashprojects(props) {
   const [modalShow, setModalShow] = React.useState(false);
@@ -11,7 +12,7 @@ export default function Dashprojects(props) {
   const history = useHistory();
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_SERVER}/api/isSignedIn`, {
+    fetch(`${REACT_APP_SERVER}/api/isSignedIn`, {
       method: "post",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,

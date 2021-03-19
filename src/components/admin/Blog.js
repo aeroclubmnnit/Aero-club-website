@@ -10,7 +10,6 @@ import {
   DeleteButton,
   Edit,
   EditButton,
-  ImageField,
   List,
   ReferenceField,
   ReferenceInput,
@@ -24,8 +23,8 @@ import {
   TextField,
   TextInput,
 } from "react-admin";
-
 import RichTextInput from "ra-input-rich-text";
+import ImageResize from 'quill-image-resize'
 
 export const BlogList = (props) => {
   return (
@@ -59,32 +58,40 @@ export const BlogCreate = (props) => {
         <RichTextInput
           source="body"
           label="Body"
-          toolbar={[
-            ["bold", "italic", "underline", "strike"],
-            [{ header: [1, 2, 3, 4, 5, 6, false] }],
-            [{ size: ["small", false, "large", "huge"] }],
-            [{ font: [] }],
-            [{ color: [] }, { background: [] }],
-            [{ list: "ordered" }, { list: "bullet" }],
-            [{ script: "sub" }, { script: "super" }],
-            ["blockquote", "code-block"],
-            [{ indent: "-1" }, { indent: "+1" }],
-            [{ direction: "rtl" }],
-            [{ align: [] }],
-            ["image"],
-            ["clean"],
-          ]}
+          options={{
+            modules: {
+              "imageResize": ImageResize,
+              toolbar: [
+                ["bold", "italic", "underline", "strike"],
+                [{ header: [1, 2, 3, 4, 5, 6, false] }],
+                [{ size: ["small", false, "large", "huge"] }],
+                [{ font: [] }],
+                [{ color: [] }, { background: [] }],
+                [{ list: "ordered" }, { list: "bullet" }],
+                [{ script: "sub" }, { script: "super" }],
+                ["blockquote", "code-block"],
+                [{ indent: "-1" }, { indent: "+1" }],
+                [{ direction: "rtl" }],
+                [{ align: [] }],
+                ["link", "image", "video"],
+                ["clean"],
+              ]
+            },
+          }}
+          validate={required()}
         />
         <ReferenceInput label="Posted By" source="postedBy" reference="users">
-          <SelectInput optionText="name" />
+          <SelectInput optionText="email" />
         </ReferenceInput>
-        <TextInput source="pic" label="Image Link" />
         <DateInput
           source="publishedAt"
           label="Published At"
           defaultValue={new Date()}
         />
         <BooleanInput source="accepted" />
+        <ReferenceInput label="Accepted By" source="acceptedBy" reference="users">
+          <SelectInput optionText="email" />
+        </ReferenceInput>
       </SimpleForm>
     </Create>
   );
@@ -96,8 +103,6 @@ export const BlogShow = (props) => {
       <SimpleShowLayout>
         <TextField source="title" label="Title" />
         <RichTextField source="body" label="Body" />
-        <TextField source="postedBy" label="Posted By" />
-        <ImageField source="pic" label="Image" />
         <ReferenceField
           label="Posted By"
           source="postedBy"
@@ -107,6 +112,14 @@ export const BlogShow = (props) => {
           <ChipField source="name" />
         </ReferenceField>
         <BooleanField source="accepted" />
+        <ReferenceField
+          label="Accepted By"
+          source="acceptedBy"
+          reference="users"
+          linkType="show"
+        >
+          <ChipField source="name" />
+        </ReferenceField>
       </SimpleShowLayout>
     </Show>
   );
@@ -119,34 +132,43 @@ export const BlogEdit = (props) => {
         <TextInput disabled label="Id" source="id" />
         <TextInput source="title" validate={required()} label="Title" />
         <RichTextInput
+          label="Body"
           source="body"
           validate={required()}
-          toolbar={[
-            ["bold", "italic", "underline", "strike"],
-            [{ header: [1, 2, 3, 4, 5, 6, false] }],
-            [{ size: ["small", false, "large", "huge"] }],
-            [{ font: [] }],
-            [{ color: [] }, { background: [] }],
-            [{ list: "ordered" }, { list: "bullet" }],
-            [{ script: "sub" }, { script: "super" }],
-            ["blockquote", "code-block"],
-            [{ indent: "-1" }, { indent: "+1" }],
-            [{ direction: "rtl" }],
-            [{ align: [] }],
-            ["link", "image", "video"],
-            ["clean"],
-          ]}
+          options={{
+            modules: {
+              "imageResize": ImageResize,
+              toolbar: [
+                ["bold", "italic", "underline", "strike"],
+                [{ header: [1, 2, 3, 4, 5, 6, false] }],
+                [{ size: ["small", false, "large", "huge"] }],
+                [{ font: [] }],
+                [{ color: [] }, { background: [] }],
+                [{ list: "ordered" }, { list: "bullet" }],
+                [{ script: "sub" }, { script: "super" }],
+                ["blockquote", "code-block"],
+                [{ indent: "-1" }, { indent: "+1" }],
+                [{ direction: "rtl" }],
+                [{ align: [] }],
+                ["link", "image", "video"],
+                ["clean"],
+              ]
+            },
+          }
+          }
         />
         <ReferenceInput label="Posted By" source="postedBy" reference="users">
-          <SelectInput optionText="name" />
+          <SelectInput optionText="email" />
         </ReferenceInput>
-        <TextInput source="pic" label="Image Link" />
         <DateInput
           source="publishedAt"
           label="Published At"
           validate={required()}
         />
         <BooleanInput source="accepted" />
+        <ReferenceInput label="Accepted By" source="acceptedBy" reference="users">
+          <SelectInput optionText="email" />
+        </ReferenceInput>
       </SimpleForm>
     </Edit>
   );

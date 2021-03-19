@@ -9,10 +9,11 @@ import Blueprint from "../../images/Events/Blueprint.jpg"
 import Idea from "../../images/Events/Idea.jpg"
 import CodeWarz from "../../images/Events/CodeWarz.jpg"
 import { Jumbotron, NavDropdown } from "react-bootstrap";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 export default function Prosang() {
     useEffect(() => {
-        document.title = `Prosang | ${process.env.REACT_APP_BASE_TITLE}`;
+        document.title = `Prosang | ${REACT_APP_BASE_TITLE}`;
     }, [])
 
     return (

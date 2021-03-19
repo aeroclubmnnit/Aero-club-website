@@ -89,7 +89,7 @@
 
 img {
   /* display: block; */
-  height: 35vh;
+  /* height: 35vh; */
   max-height: 100%;
   max-width: 100%;
   vertical-align: middle;
@@ -101,8 +101,51 @@ img {
   position: relative;
   overflow: hidden;
 }
+
+.forphone1{
+  height: 15rem ;
+}
+.forphone2{
+  height: 3.5rem;
+  font-size: 1rem !important;
+}
+.forphone3{
+  height: 6.7rem;
+  font-size: 0.85rem !important;
+}
+
+.evavishkar{
+  height: 17rem;
+}
+
+.evavishkar:hover {
+  transform:scale(1.5);
+  -ms-transform:scale(1.5); /* IE 9 */
+  -moz-transform:scale(1.5); /* Firefox */
+  -webkit-transform:scale(1.5); /* Safari and Chrome */
+  -o-transform:scale(1.5); /* Opera */
+}
+
+.evfeatured{
+  height: 30vh;
+}
+
+.evfeatured:hover {
+  transform:scale(1.5);
+  -ms-transform:scale(1.5); /* IE 9 */
+  -moz-transform:scale(1.5); /* Firefox */
+  -webkit-transform:scale(1.5); /* Safari and Chrome */
+  -o-transform:scale(1.5); /* Opera */
+}
+
+.card_image {
+  display: inline-block; /* change the default display type to inline-block */
+  overflow: hidden;      /* hide the overflow */
+}
+
 .cards_item:hover {
-  transform: scale(1.15);
+  transform: scale(1.08);
+  transition: transform 400ms ease-out;
 }
 
 .btns {
@@ -140,14 +183,38 @@ img {
 
 @media (min-width: 40rem) {
   .cards_item {
-    width: 50%;
+    width: 70%;
+  }
+  .card_content {
+    height: auto;
+  }
+}
+@media (max-width: 40rem) {
+  /* .forphone1{
+    height: auto ;
+  }
+  .forphone2{
+    height: auto;
+  }
+  .forphone3{
+    height: auto;
+  } */
+  .card_content{
+    height: auto;
+  }
+  .phoneheight {
+    height: auto !important;
   }
 }
 
 @media (min-width: 56rem) {
   .cards_item {
-    width: 33.3333%;
+    width: 33.333%;
   }
+  .avishkar_cont {
+    height: 20vh !important;
+  }
+  
 }
 
 .cardproj {
@@ -160,6 +227,7 @@ img {
 }
 
 .card_content {
+  /* height: 20vh; */
   padding: 1rem;
   background: transparent;
   /* background: linear-gradient(to left, rgb(51, 60, 97), #d1d1d1 100%); */

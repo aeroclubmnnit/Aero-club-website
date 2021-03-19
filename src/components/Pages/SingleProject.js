@@ -3,6 +3,7 @@ import { useHistory, useParams } from "react-router-dom";
 import "../../css/SingleProject.css";
 import Loading from "../../Animations/Loading";
 import { Container, Jumbotron } from "react-bootstrap";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 function SingleProject() {
   const { projectId } = useParams();
@@ -11,8 +12,8 @@ function SingleProject() {
 
 
   useEffect(() => {
-    document.title = `Project-${projectId} | ${process.env.REACT_APP_BASE_TITLE}`;
-    fetch(`${process.env.REACT_APP_SERVER}/api/projects/${projectId}`, {
+    document.title = `Project-${projectId} | ${REACT_APP_BASE_TITLE}`;
+    fetch(`${REACT_APP_SERVER}/api/projects/${projectId}`, {
       method: "get",
     })
       .then((res) => res.json())

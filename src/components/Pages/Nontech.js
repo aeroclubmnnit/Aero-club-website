@@ -15,10 +15,11 @@ import f11 from "../../images/coordinators&Nontech/Prasanna Sneha.jpg";
 import f12 from "../../images/coordinators&Nontech/Devansh Sethi.jpg";
 import f13 from "../../images/coordinators&Nontech/Hamza Siddiqui.jpg";
 import f14 from "../../images/coordinators&Nontech/Harsh Kumar Singh.jpg";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 export default function Nontech() {
   useEffect(() => {
-    document.title = `Non-Tech | ${process.env.REACT_APP_BASE_TITLE}`;
+    document.title = `Non-Tech | ${REACT_APP_BASE_TITLE}`;
   }, [])
 
   const members = [

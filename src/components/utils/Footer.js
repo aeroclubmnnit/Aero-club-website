@@ -33,31 +33,36 @@ export default function Footer() {
                   <h6>Quick-Links</h6>
                   <ul className="footer-links">
                     <li>
-                      <a href="https://mnnit.ac.in">
+                      <a className="hov" href="https://mnnit.ac.in">
                         <i className="fa fa-caret-right"></i> MNNIT
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a className="hov" href="#">
                         <i className="fa fa-caret-right"></i> Home
                       </a>
                     </li>
                     <li>
-                      <a href="https://mnnit.ac.in">
-                        <i className="fa fa-caret-right"></i> Home
+                      <a className="hov" href="/workshop">
+                        <i className="fa fa-caret-right"></i> Workshop
                       </a>
                     </li>
                     <li>
-                      <Scroll
-                        to="contact"
-                        spy={true}
-                        style={{ cursor: "pointer" }}
-                        smooth={true}
-                        duration={1000}
-                      >
-                        Contacts
-                      </Scroll>
+                      <a className="hov" href="/sponsor">
+                        <i className="fa fa-caret-right"></i> Sponsors
+                      </a>
                     </li>
+                    <li>
+                      <a className="hov" href="/collaborate">
+                        <i className="fa fa-caret-right"></i> Collaborate
+                      </a>
+                    </li>
+                    <li>
+                      <a className="hov" href="https://roboticsclubmnnit.website/">
+                        <i className="fa fa-caret-right"></i> RoboClub
+                      </a>
+                    </li>
+                    
                   </ul>
                 </div>
                 <div className="col-lg-4 col-md-6 footer-logo float-right">

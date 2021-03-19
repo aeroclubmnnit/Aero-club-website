@@ -3,6 +3,7 @@ import { useHistory, useParams } from "react-router-dom";
 import "../../css/SingleBlog.css";
 import Loading from "../../Animations/Loading";
 import { Container, Jumbotron } from "react-bootstrap";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 function SingleBlog() {
   const { blogId } = useParams();
@@ -30,13 +31,12 @@ function SingleBlog() {
   }
 
   useEffect(() => {
-    document.title = `Blog-${blogId} | ${process.env.REACT_APP_BASE_TITLE}`;
-    fetch(`${process.env.REACT_APP_SERVER}/api/blogstoUI/${blogId}`, {
+    document.title = `Blog-${blogId} | ${REACT_APP_BASE_TITLE}`;
+    fetch(`${REACT_APP_SERVER}/api/blogstoUI/${blogId}`, {
       method: "get",
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
         if (data.error) history.push("/404");
         else setBlog(data);
       });
@@ -49,14 +49,14 @@ function SingleBlog() {
       <div
         className="pagesp"
         style={{
-          background: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,.4)), url(${blog?.pic})`,
+          background: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,.4))`,
         }}
       >
         <div className="overlayp">
           <div className="pageTitlep titleBoldp">
             {blog?.title}
             <p className="meta">
-              <em style={{ fontSize: "0.8rem" }}>
+              <em style={{ fontSize: "1rem" }}>
                 Posted by{" "}
                 {blog?.postedBy.linkedin_url !==
                   "https://www.linkedin.com/in/username/" ? (

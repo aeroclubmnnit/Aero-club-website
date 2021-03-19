@@ -4,6 +4,8 @@ import authProvider from "./authProvider";
 import { BlogCreate, BlogEdit, BlogList, BlogShow } from "./Blog";
 import { ComponentCreate, ComponentEdit, ComponentList, ComponentShow } from "./Component";
 import { IssueEdit, IssueList } from "./Issues";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+
 import {
   ProjectCreate,
   ProjectEdit,
@@ -33,7 +35,7 @@ import { dataProvider } from "./dataProvider";
 import { history } from "../../ConfigureStore";
 
 function AdminComp() {
-  document.title = `Admin Panel | ${process.env.REACT_APP_BASE_TITLE}`;
+  document.title = `Admin Panel | ${REACT_APP_BASE_TITLE}`;
 
   const user = useSelector(state => state.user)
 

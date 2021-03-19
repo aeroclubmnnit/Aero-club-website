@@ -163,13 +163,13 @@
 
 @keyframes image {
   0% {
-    background-image: url("../images/utils/dronebg.jpg");
+    background-image: url("../images/utils/about.jpg");
   }
   50% {
-    background-image: url("https://unsplash.it/602/602");
+    background-image: url("../images/utils/about.jpg");
   }
   100% {
-    background-image: url("https://unsplash.it/601/601");
+    background-image: url("../images/utils/about.jpg");
   }
 }
 

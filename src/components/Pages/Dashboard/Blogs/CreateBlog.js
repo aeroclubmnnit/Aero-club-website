@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import ReactQuill, { Quill } from "react-quill";
@@ -6,20 +6,19 @@ import ImageResize from "quill-image-resize";
 import "react-quill/dist/quill.snow.css";
 import "../../../../css/CreateBlog.css";
 import "../../../../css/SingleBlog.css";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../../../grobalVars"
 import { Button, Container, Jumbotron, Tab, Tabs } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 Quill.register("modules/imageResize", ImageResize);
 
 export default function CreateBlog() {
-  document.title = "CreateBlog | Aero Club";
+  document.title = `CreateBlog | ${REACT_APP_BASE_TITLE}`;
   const user = useSelector(state => state.user)
   const dispatch = useDispatch()
   const history = useHistory();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [pic, setPic] = useState("");
   const [loading, setLoading] = useState(false);
-
 
   const year = {
     1: "1st year",
@@ -51,13 +50,13 @@ export default function CreateBlog() {
 
   const handleCreateBlog = () => {
     setLoading(true);
-    if (!title || !body || !pic) {
+    if (!title || !body) {
       toast.warn("Please specify all the details before you create the blog !");
       setLoading(false);
       return;
     }
 
-    fetch(`${process.env.REACT_APP_SERVER}/api/blogs`, {
+    fetch(`${REACT_APP_SERVER}/api/blogs`, {
       method: "post",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
@@ -66,7 +65,6 @@ export default function CreateBlog() {
       body: JSON.stringify({
         title,
         body,
-        pic,
         postedBy: user.id,
         publishedAt: Date.now(),
       }),
@@ -107,17 +105,6 @@ export default function CreateBlog() {
                   aria-describedby="basic-addon1"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
-                />
-              </div>
-              <div className="input-group mb-3">
-                <input
-                  type="text"
-                  className="form-control"
-                  id="basic-url"
-                  aria-describedby="basic-addon3"
-                  placeholder="Background image URL"
-                  value={pic}
-                  onChange={(e) => setPic(e.target.value)}
                 />
               </div>
               <ReactQuill
@@ -165,31 +152,28 @@ export default function CreateBlog() {
               <div
                 className="pagesp"
                 style={{
-                  background: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,.4)), url(${pic})`,
+                  background: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,.4)),`,
                 }}
               >
                 <div className="overlayp">
                   <div className="pageTitlep titleBoldp">
                     {title}
                     <p className="meta">
-                      <em style={{ fontSize: "0.8rem" }}>
-                        <em style={{ fontSize: "0.8rem" }}>
-                          Posted by{" "}
-                          {user?.linkedin_url !==
-                            "https://www.linkedin.com/in/username/" ? (
-                            <a href={user?.linkedin_url} target="_blank">
-                              {user?.name}
-                            </a>
-                          ) : (
-                            user?.name
-                          )}{" "}
-                          {`( branch - ${branch[user?.registration_no[4]]} , ${user?.year == -1
-                            ? "year - NA"
-                            : year[user?.year]
-                            } )`}{" "}
+                      <em style={{ fontSize: "1rem" }}>
+                        Posted by{" "}
+                        {user?.linkedin_url !==
+                          "https://www.linkedin.com/in/username/" ? (
+                          <a href={user?.linkedin_url} target="_blank">
+                            {user?.name}
+                          </a>
+                        ) : (
+                          user?.name
+                        )}{" "}
+                        {`( branch - ${branch[user?.registration_no[4]]} , ${user?.year == -1
+                          ? "year - NA"
+                          : year[user?.year]
+                          } )`}{" "}
                 on {new Date(Date.now()).toLocaleDateString()}
-                        </em>
-
                       </em>
                     </p>
                   </div>

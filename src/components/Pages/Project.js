@@ -2,16 +2,17 @@ import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import Loading from "../../Animations/Loading";
 import "../../css/featured-proj.css";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 function Projects() {
 
   const [projects, SetProjects] = useState([]);
   const [signedin, setsignedin] = useState(false)
-  document.title = `Projects | ${process.env.REACT_APP_BASE_TITLE}`;
+  document.title = `Projects | ${REACT_APP_BASE_TITLE}`;
 
   useEffect(() => {
 
-    fetch(`${process.env.REACT_APP_SERVER}/api/isSignedIn`, {
+    fetch(`${REACT_APP_SERVER}/api/isSignedIn`, {
       method: "post",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
@@ -26,7 +27,7 @@ function Projects() {
         setsignedin(true);
       });
 
-    fetch(`${process.env.REACT_APP_SERVER}/api/projects/approved`, {
+    fetch(`${REACT_APP_SERVER}/api/projects/approved`, {
       method: "get",
     })
       .then((res) => res.json())

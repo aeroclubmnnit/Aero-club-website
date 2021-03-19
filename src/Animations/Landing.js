@@ -9,6 +9,7 @@ class Landing extends React.Component {
         <div className="pagesl">
           <div className="landing d-flex align-items-center justify-content-start">
             <div className='d-flex flex-column justify-content-center align-items-center'>
+              {/* <div className="logoback"> */}
               <div className="landing-logo">
                 <img src={m} alt="aero" srcSet="" />
               </div>

@@ -1,7 +1,9 @@
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+
 const authProvider = {
 
   login: ({ username, password }) => {
-    return fetch(`${process.env.REACT_APP_SERVER}/api/adminlogin`, {
+    return fetch(`${REACT_APP_SERVER}/api/adminlogin`, {
       method: "post",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
@@ -19,7 +21,7 @@ const authProvider = {
   },
   checkAuth: () => {
     return localStorage.getItem("role") && localStorage.getItem("jwtToken")
-      ? fetch(`${process.env.REACT_APP_SERVER}/api/isAdmin`, {
+      ? fetch(`${REACT_APP_SERVER}/api/isAdmin`, {
         method: "post",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
