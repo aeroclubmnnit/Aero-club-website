@@ -79,6 +79,11 @@ export default function Workshop() {
           paddingBottom: "1rem",
         }}>
         <div className="container">
+          <h4 className='my-3' style={{ marginBottom: "0px", textAlign: "center" }}>Workshop Updates</h4>
+          <div
+            className="miniSep"
+            style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
+          ></div>
           <Accordion className="shadow rounded">
             {workshops.map(workshop => (
               <Card className="rounded" key={workshop.id}>
