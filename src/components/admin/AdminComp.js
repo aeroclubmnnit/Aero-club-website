@@ -4,7 +4,7 @@ import authProvider from "./authProvider";
 import { BlogCreate, BlogEdit, BlogList, BlogShow } from "./Blog";
 import { ComponentCreate, ComponentEdit, ComponentList, ComponentShow } from "./Component";
 import { IssueEdit, IssueList } from "./Issues";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE } from "../../grobalVars"
 
 import {
   ProjectCreate,
@@ -12,7 +12,7 @@ import {
   ProjectList,
   ProjectShow,
 } from "./Project";
-import{ 
+import {
   ContactList,
   ContactShow
 } from "./Contact";
@@ -45,7 +45,6 @@ function AdminComp() {
         authProvider={authProvider}
         dataProvider={dataProvider}
         history={history}
-
       >
         <Resource
           name="users"
