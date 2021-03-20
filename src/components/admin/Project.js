@@ -118,7 +118,6 @@ export const ProjectShow = (props) => {
         <TextField source="title" label="Project Name" />
         <RichTextField source="description" label="Description" />
         <TextField source="objective" label="Objective" />
-
         <ImageField source="pic" label="Image" />
         <TextField source="status" label="Status" />
         <ArrayField source="members">

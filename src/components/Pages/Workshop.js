@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Accordion, Card } from "react-bootstrap";
 import { Container, Jumbotron } from "react-bootstrap";
 import "../../css/Event.css";
+import {Link} from 'react-bootstrap';
 import Loading from "../../Animations/Loading";
 import m from "../../images/utils/Jigyasa_logo.png";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
@@ -46,7 +47,7 @@ export default function Workshop() {
                   />
                 </div>
               </div>
-              <div className="text-wrapper">
+              <div className="text-wrapper" style={{ border: "2px solid white", borderRadius: "10px", padding: "10px", textAlign: "justify" }}>
                 <p className="texte">
                   Jigyasa is the workshop venture of the Technical clubs of
                   MNNIT, namely Robotics, Astrowing and AeroClub, motivated by
@@ -75,42 +76,92 @@ export default function Workshop() {
           width: "100%",
           margin: "auto",
           paddingBottom: "1rem",
+        }}>
+        <Container>
+          <div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true" activeKey={workshops}
+            onSelect={(e) => SetWorkshops(e)}
+            style={{ margin: "1.5rem" }}>
+            {workshops.map((singleNews, i) => (
+              <div className="panel panel-default" key={singleNews.id}
+                style={{ padding: "0.15rem" }}
+                data-aos="fade-up"
+                data-aos-duration="1000">
+                <div className="panel-heading" role="tab" id="headingOne"
+                  eventKey={singleNews.id}
+                  style={{ fontSize: "1.3rem" }}>
+                  <h6 className="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href={`#collapse${singleNews.id}`} aria-expanded="false" aria-controls={`collapse${singleNews.id}`} >
+                      {singleNews.title}
+                      <div className="panel-body" dangerouslySetInnerHTML={{ __html: singleNews.about }} style={{width: "70%"}}></div>
+                      <div className="panel-body">
+                        <em
+                          style={{ fontSize: "small" }}
+                        >
+                          --  {new Date(
+                          singleNews.date
+                        ).toLocaleDateString()}
+                        </em>
+                      </div>
+                    </a>
+                    
+                  </h6>
+                </div>
+                <div id={`collapse${singleNews.id}`} className="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" eventKey={singleNews.id}>
+
+                  <a className="panel-body" dangerouslySetInnerHTML={{ __html: singleNews.brochure }} style={{color:"white"}}>Brochure Link</a>
+
+                </div>
+              </div>
+            ))}
+
+          </div>
+
+        </Container>
+      </Jumbotron>
+
+      {/* <Jumbotron
+        fluid
+        style={{
+          background: "white",
+          width: "100%",
+          margin: "auto",
+          paddingBottom: "1rem",
         }}
         className='my-5'
       >
-        <div className="container col-11">
-          <h4 className="my-3 titleBold d-flex justify-content-center topic">
-            <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>Workshop Updates</p>
-          </h4>
-          <div
-            className="miniSep"
-            style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
-          ></div>
-          <Accordion>
-            {workshops.map((singlews) => (
-              <Card key={singlews.id} className='rounded shadow'>
-                <Card.Header style={{ cursor: "pointer" }}>
-                  <Accordion.Toggle as={Card.Header} eventKey={singlews.id}>
-                    {singlews.name}
-                  </Accordion.Toggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey={singlews.id}>
-                  <Card.Body>
-                    <div className="my-3 mx-3" style={{ fontSize: 'small' }}>
-                      Published on {new Date(singlews.date).toLocaleDateString()}
-                    </div>
-                    <div
-                      className='mx-3'
-                      dangerouslySetInnerHTML={{ __html: singlews.about }}
-                    ></div>
-                    <a href={singlews.brochure} className='mx-3' target='_blank'>Brochure Link</a>
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-            ))}
-          </Accordion>
-        </div>
-      </Jumbotron >
+        <Container>
+          <div className="container">
+            <Accordion>
+              {workshops.map((singlews) => (
+                <Card key={singlews.id}>
+                  <Card.Header style={{ cursor: "pointer" }}>
+                    <Accordion.Toggle as={Card.Header} eventKey={singlews.id}>
+                      <div>
+                        {singlews.name}
+                        <em
+                          className="float-right"
+                          style={{ fontSize: "10px" }}
+                        >
+                          -on
+                          {new Date(singlews.date).toLocaleDateString()}
+                        </em>
+                        <div
+                          dangerouslySetInnerHTML={{ __html: singlews.about }}
+                        ></div>
+                      </div>
+                    </Accordion.Toggle>
+                  </Card.Header>
+                  <Accordion.Collapse eventKey={singlews.id}>
+                    <Card.Body
+                      dangerouslySetInnerHTML={{ __html: singlews.brochure }}
+                    ></Card.Body>
+                  </Accordion.Collapse>
+                </Card>
+              ))}
+            </Accordion>
+          </div>
+        </Container>
+      </Jumbotron> */}
     </>
   );
 }

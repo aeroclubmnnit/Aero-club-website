@@ -47,7 +47,7 @@ function SingleBlog() {
       <Loading time={2} />
 
       <div
-        className="pagesp"
+        className="pagesp d-flex"
         style={{
           background: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,.4))`,
         }}
@@ -75,6 +75,12 @@ function SingleBlog() {
             </p>
           </div>
         </div>
+        {
+          blog?.pic &&
+          <div className="image" style={{ width: '30rem' }}>
+            <img src={blog?.pic} alt="img" style={{ width: '100%', height: '100%' }} />
+          </div>
+        }
       </div>
       <Jumbotron
         fluid

@@ -27,9 +27,9 @@ function SingleProject() {
     <div>
       <Loading time={1.5} />
       <div
-        className=" pagesp"
+        className="pagesp d-flex"
         style={{
-          background: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,.4)), url(${project?.pic})`,
+          background: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,.4))`,
         }}
       >
         <div className="overlayp">
@@ -43,6 +43,12 @@ function SingleProject() {
             </span>
           </div>
         </div>
+        {
+          project?.pic &&
+          <div className="image" style={{ width: '30rem' }}>
+            <img src={project?.pic} alt="img" style={{ width: '100%', height: '100%' }} />
+          </div>
+        }
       </div>
 
       <Jumbotron

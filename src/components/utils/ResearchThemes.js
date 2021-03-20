@@ -93,7 +93,7 @@ const ResearchThemes = () => {
                   </h5>
                   {/* <div className="miniSep" style={{width:'auto',height:'2px', background: 'white' }} ></div> */}
                   <p className="card-text" style={{ color: "white" }}>
-                    <ul style={{ margin: "5px" }}>
+                    <ul className="lststyle" style={{ margin: "5px" }}>
                       <li>Perception using Sensors</li>
                       {/* <br /> */}
                       <li>GPS Based Navigation</li>
@@ -128,7 +128,7 @@ const ResearchThemes = () => {
                   </h5>
                   {/* <div className="miniSep" style={{width:'auto',height:'2px', background: 'white' }} ></div> */}
                   <p className="card-text" style={{ color: "white" }}>
-                    <ul style={{ margin: "5px" }}>
+                    <ul className="lststyle" style={{ margin: "5px" }}>
                       <li>Computer Aided Design</li>
                       {/* <br /> */}
                       <li>Structural Analysis</li>
@@ -163,7 +163,7 @@ const ResearchThemes = () => {
                   </h5>
                   {/* <div className="miniSep" style={{width:'auto',height:'2px', background: 'white' }} ></div> */}
                   <p className="card-text" style={{ color: "white" }}>
-                    <ul style={{ margin: "5px" }}>
+                    <ul className="lststyle" style={{ margin: "5px" }}>
                       <li>Swarm Intelligence</li>
                       {/* <br /> */}
                       <li>Control System Algorithms</li>
@@ -193,7 +193,7 @@ const ResearchThemes = () => {
                   </h5>
                   {/* <div className="miniSep" style={{width:'auto',height:'2px', background: 'white' }} ></div> */}
                   <p className="card-text" style={{ color: "white" }}>
-                    <ul style={{ margin: "5px" }}>
+                    <ul className="lststyle" style={{ margin: "5px" }}>
                       <li>CFD Simulations</li>
                       {/* <br /> */}
                       <li>Aerofoil Analysis</li>
@@ -224,7 +224,7 @@ const ResearchThemes = () => {
                   </h5>
                   {/* <div className="miniSep" style={{width:'auto',height:'2px', background: 'white' }} ></div> */}
                   <p className="card-text" style={{ color: "white" }}>
-                    <ul style={{ margin: "5px" }}>
+                    <ul className="lststyle" style={{ margin: "5px" }}>
                       <li> Battery Related Studies</li>
                       {/* <br /> */}
                       <li>Electronic Speed Controllers</li>
@@ -255,7 +255,7 @@ const ResearchThemes = () => {
                   </h5>
                   {/* <div className="miniSep" style={{width:'auto',height:'2px', background: 'white' }} ></div> */}
                   <p className="card-text" style={{ color: "white" }}>
-                    <ul style={{ margin: "5px" }}>
+                    <ul className="lststyle" style={{ margin: "5px" }}>
                       <li> Sensors and Microcontrollers</li>
                       {/* <br /> */}
                       {/* <li>Electronic Speed Controllers</li> */}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Button, Container, Jumbotron } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import Loading from "../../Animations/Loading";
-import "../../css/SingleBlog.css";
+import "../../css/featured-proj.css";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 function Blogs() {
@@ -40,73 +40,74 @@ function Blogs() {
   }
 
   return (
-    <div>
-      <div className=" pagesg">
-        <div className="overlayg">
-          <div className="pageTitleg titleBoldg">BLOGS</div>
+    <>
+      <Loading time={2} />
+      <div className="cont">
+        <div className=" pagesg">
+          <div className="overlayg">
+            <div className="pageTitleg titleBoldg">BLOGS</div>
+          </div>
         </div>
-      </div>
 
-      <div style={{ background: "white", overflow: "hidden", minHeight: '36vh' }} >
-        <Loading time={2} />
-        <div className='my-5'>
-          {blogs
-            .slice((page - 1) * blogs_per_page, page * blogs_per_page)
-            .map((blog, i) => (
-              <Jumbotron
-                className='shadow my-3 rounded'
-                fluid
-                style={{
-                  background: `${i % 2 === 0 ? 'rgb(137, 54 ,54)' : 'rgb(36 ,22 ,22)'}`,
-                  width: "80vw",
-                  margin: "auto",
-                  color: 'white',
-                  paddingBottom: "1rem",
-                }}
-                key={blog._id}
-                data-aos="fade-down"
-                data-aos-easing="linear"
-                data-aos-duration="1500"
-              >
-                <Container>
-                  <h2 className="blog-container-head">{blog.title}</h2>
-                  <p className="blog-container-para">
-                    <em>
-                      Posted by{" "}
-                      {blog.postedBy.linkedin_url !==
-                        "https://www.linkedin.com/in/username/" ? (
-                        <a href={blog.postedBy.linkedin_url} target="_blank">
-                          {blog.postedBy.name}
-                        </a>
-                      ) : (
-                        blog.postedBy.name
-                      )}{" "}
-                      {`( branch - ${branch[blog.postedBy.registration_no[4]]}, ${blog.postedBy.year == -1
-                        ? "year - NA"
-                        : year[blog.postedBy.year]
-                        } )`}{" "}
-                    on {new Date(blog.publishedAt).toLocaleDateString()}
-                    </em>
-                  </p>
-                  <Button href={`/blogs/${blog._id}`} variant="danger">
-                    See More
+        <div
+          className="main"
+          style={{ overflow: "hidden", minHeight: "31.7vh" }}
+        >
+          <ul className="cards">
+            {blogs
+              .slice((page - 1) * blogs_per_page, page * blogs_per_page)
+              .map(blog => (
+                <li className="cards_item" data-aos="fade-up" data-aos="flip-left" data-aos-easing="linear"
+                  data-aos-duration="1500">
+                  <div className="card cardproj">
+                    <div className="card_image">
+                      <img className="evfeatured" src={blog.pic || 'https://lh3.googleusercontent.com/PPRLO6cS9pz1oyVlPhoHBMH3u9LKlLJEBQ7kJMzziAav-C7GEp9vVpJwfky-hsrlR4h0xisARPSzF19VIPmRb31Wpf6xScPJKOggnz4rPDqSJG9FPr9m-BMyDr9zrABeZ8VsDcm9=w2400'} style={{ width: '100%', maxHeight: '18rem', minHeight: '18rem' }} />
+                    </div>
+                    <div className="card_content forphone forphone1" style={{ width: '100%' }}>
+                      <h2 className="card_title forphone forphone2" style={{ width: '100%', minHeight: '5rem' }}>{blog.title}</h2>
+                      <p className="card_text forphone forphone3" style={{ width: '100%' }}>
+                        <strong>POSTED BY : {" "} </strong>
+                        {blog.postedBy.linkedin_url !==
+                          "https://www.linkedin.com/in/username/" ? (
+                          <a href={blog.postedBy.linkedin_url} target="_blank">
+                            {blog.postedBy.name}
+                          </a>
+                        ) : (
+                          blog.postedBy.name
+                        )}{" "}
+                        {`( branch - ${branch[blog.postedBy.registration_no[4]]}, ${blog.postedBy.year == -1
+                          ? "year - NA"
+                          : year[blog.postedBy.year]
+                          } )`}{" "} <br /> <br />
+                        <strong>PUBLISHED ON : {" "} </strong> {new Date(blog.publishedAt).toLocaleDateString()}
+                      </p>
+                      <Button
+                        className="btns card_btns"
+                        variant="danger"
+                        href={`/blogs/${blog._id}`}
+                        style={{ marginTop: 10 }}
+                      >
+                        Read More
                   </Button>
-                </Container>
-              </Jumbotron>
-            ))}
+                    </div>
+                  </div>
+                </li>
+              )
+              )}
+          </ul>
           {!blogs.length && (
             <h3 className="text-center mt-5">No blogs available...!</h3>
           )}
-          <div className="float-right mr-5 my-5">
+          <div className="float-right mr-5 mb-3 mt-5">
             {page > 1 && (
               <Button
-                variant="danger"
                 className="mx-1"
+                variant="danger"
                 onClick={() => {
                   SetPage((page) => page - 1);
                 }}
               >
-                <i class="fa fa-angle-double-left"></i> Previous
+                <i className="fa fa-angle-double-left"></i> Previous
               </Button>
             )}
             {page < no_of_pages && (
@@ -123,7 +124,7 @@ function Blogs() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

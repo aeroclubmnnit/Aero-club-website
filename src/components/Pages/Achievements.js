@@ -3,7 +3,6 @@ import Loading from "../../Animations/Loading";
 import "../../css/news.css";
 import "../../css/Alumni.css";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
-// import "../../css/Alumni.css";
 
 export default function Achievements() {
   const [data, setData] = useState([]);
@@ -13,10 +12,7 @@ export default function Achievements() {
       method: "get",
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setData(data);
-      });
+      .then((data) => setData(data));
   }, []);
   return (
     <>
@@ -28,50 +24,41 @@ export default function Achievements() {
       </div>
 
       <div className="container alumni-container mb-5 col-9">
-        <div className="panel-group mb-5" id="accordion">
-          {data.map((datum, i) => (
+        <div className="panel-group mb-5" id="accordion" role="tablist" aria-multiselectable="true">
+          {data.map(datum => (
             <div className="panel panel-default" key={datum._id}>
-              <div className="panel-heading">
+              <div className="panel-heading" >
                 <h4 className="panel-title">
-                  <a
-                    className={`accordion-toggle ${i !== 0 ? "collapsed" : null
-                      }`}
-                    data-toggle="collapse"
-                    data-parent="#accordion"
-                    href={`#collapse${datum._id}`}
-                  >
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" href={`#collapse${datum._id}`} aria-expanded="true" aria-controls={`collapse${datum._id}`} >
                     {datum._id < 2017
                       ? "Before 2017"
                       : `${datum._id}-${datum._id - 1999}`}
                   </a>
                 </h4>
               </div>
-              <div
-                id={`collapse${datum._id}`}
-                className={`panel-collapse collapse ${i === 0 ? "show" : null}`}
-              >
+              <div id={`collapse${datum._id}`} className="panel-collapse collapse show in" role="tabpanel" aria-labelledby={`${datum._id}`}>
                 <div className="panel-body">
-                  <div className="container" style={{color:"white"}}>
+                  <div className="container" style={{ color: "white" }}>
                     {datum.achievements.map((achievement) => (
                       <div className="ml-2 ml-md-5" key={achievement._id}>
                         <ul style={{ listStyle: "initial" }}>
                           <li className="my-5 achievement">
                             <div
                               className="font-weight-bold"
-                              style={{ fontSize: "large" }}
+                              style={{ fontSize: "large", color: "white" }}
                               dangerouslySetInnerHTML={{
                                 __html: achievement.desc,
                               }}
                             ></div>
                             <div
                               className="mt-4"
-                              style={{ fontSize: "medium !important" }}
+                              style={{ color: 'black' }}
                             >
                               <p className="font-weight-bold d-inline">
-                                Team members :{" "}
+                                TEAM MEMBERS :{" "}
                               </p>
-                              {achievement.team.map((member) => (
-                                <p className="d-block"><ul><li>{member.name}</li></ul> </p>
+                              {achievement.team.map((member, i) => (
+                                <p className="d-block" style={{ fontWeight: '500' }} key={i}><ul><li>{member.name}</li></ul> </p>
                               ))}
                             </div>
                           </li>

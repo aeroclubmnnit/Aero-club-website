@@ -29,7 +29,7 @@ import {
   WorkshopList,
   WorkshopShow,
 } from "./Workshop";
-import { UserList, UserShow, UserEdit } from "./Users";
+import { UserList, UserShow, UserEdit, UserCreate } from "./Users";
 import { useSelector } from "react-redux";
 import { dataProvider } from "./dataProvider";
 import { history } from "../../ConfigureStore";
@@ -50,7 +50,7 @@ function AdminComp() {
         <Resource
           name="users"
           list={UserList}
-          show={UserShow}
+          create={UserCreate}
           edit={UserEdit}
           show={UserShow}
         />

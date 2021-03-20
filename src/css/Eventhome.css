@@ -87,7 +87,7 @@
 .pageTitle {
   text-transform: uppercase;
   font-weight: 300;
-  font-size: 45px;
+  font-size: 40px;
   text-align: center;
   /* padding-top: 50px; */
 }
@@ -180,6 +180,11 @@
 }
 
 @media (max-width: 520px) {
+  .pageTitle {
+    
+    font-size: xx-large;
+    
+  }
   .tickerv-wrap ul div li span {
     display: none;
   }

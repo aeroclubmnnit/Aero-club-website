@@ -33,7 +33,7 @@
     background-color: rgb(230, 230, 230);
 }
 
-ul {
-    list-style-type:circle;
+.lststyle {
+    list-style-type:circle !important;
     padding-inline-start: 10px;
   }

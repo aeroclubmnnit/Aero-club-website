@@ -11,12 +11,26 @@ import {
   number,
   NumberInput,
   required,
+  SelectInput,
   Show,
   SimpleForm,
   SimpleShowLayout,
   TextField,
   TextInput,
 } from "react-admin";
+
+const types_arr = [
+  "Transmitter And Receiver",
+  "Batteries",
+  "Mechanical Tools",
+  "Electronic Components and Sensors",
+  "Development Boards",
+  "Material For Drones and Planes",
+];
+const types = types_arr.map((type) => ({
+  id: type,
+  name: type
+}));
 
 export const ComponentList = (props) => {
   return (
@@ -40,16 +54,13 @@ export const ComponentCreate = (props) => {
     <Create {...props}>
       <SimpleForm redirect="/component">
         <TextInput source="name" label="Name" validate={[required()]} />
-        <TextInput source="type" label="Type" validate={[required()]} />
-        <FileInput
-          source="compImage"
-          label="Image"
-          accept="image/*"
-          multiple={false}
-          placeholder={<p>Drop your file here</p>}
-        >
-          <ImageField source="src" title="title" validate={[required()]} />
-        </FileInput>
+        <SelectInput
+          source="type"
+          choices={types}
+          validate={[required()]}
+          label="Type"
+        />
+        <TextInput source="image_url" label="Image" validate={[required()]} />
         <NumberInput source="available" validate={[required(), number()]} />
       </SimpleForm>
     </Create>
@@ -60,7 +71,15 @@ export const ComponentEdit = (props) => {
   return (
     <Edit title="Review Request" {...props}>
       <SimpleForm redirect="/component">
-        <TextInput disabled label="Id" source="id" />
+        <TextInput source="name" label="Name" validate={[required()]} />
+        <SelectInput
+          source="type"
+          choices={types}
+          validate={[required()]}
+          label="Type"
+        />
+        <TextInput source="image_url" label="Image" validate={[required()]} />
+        <NumberInput source="available" validate={[required(), number()]} />
       </SimpleForm>
     </Edit>
   );
@@ -73,7 +92,7 @@ export const ComponentShow = (props) => {
         <TextField source="id" />
         <TextField source="name" />
         <TextField source="type" label="Type" />
-        <ImageField source="image_url" label="Image" />
+        <TextInput source="image_url" label="Image" validate={[required()]} />
         <TextField source="available" />
         <TextField source="issued" />
       </SimpleShowLayout>

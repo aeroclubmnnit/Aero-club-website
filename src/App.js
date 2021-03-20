@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import AdminComp from "./components/admin/AdminComp.js";
 import Landing from "./Animations/Landing.js";
-import Gallery from "./components/Pages/Gallery.js";
 import Alumni from "./components/Pages/Alumni.js";
 import Featuredproject from "./components/utils/featured-proj";
 import Testimonials from "./components/utils/Testimonials";
@@ -111,9 +110,6 @@ function App() {
               <Sponsorhome />
               <ContactUs />
             </Route>
-            <Route path="/gallery" exact>
-              <Gallery />
-            </Route>
             <Route path="/spinoff" exact>
               <Spinoff />
             </Route>
@@ -168,7 +164,7 @@ function App() {
             <Route path="/workshop" exact>
               <Workshop />
             </Route>
-            <Route path="/sponsors" exact>
+            <Route path="/sponsor" exact>
               <Sponsors />
             </Route>
             <Route>

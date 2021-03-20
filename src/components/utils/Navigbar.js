@@ -173,7 +173,9 @@ export default function Navigbar() {
                 Web Team
               </NavDropdown.Item>
             </NavDropdown>
-
+            <Nav.Link eventKey="collaborate" href="/collaborate" className="nav-items">
+              Collaborate
+            </Nav.Link>
             <NavDropdown
               title="More"
               id="basic-nav-dropdown"
@@ -182,8 +184,8 @@ export default function Navigbar() {
               onTouchEnd={() => setShow2(!show2)}
               show={show2}
             >
-              <NavDropdown.Item eventKey="members" href="/gallery">
-                Gallery
+              <NavDropdown.Item eventKey="sponsors" href="/sponsors">
+                Sponsors
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item eventKey="spinoff" href="/spinoff">
@@ -194,12 +196,9 @@ export default function Navigbar() {
                 Updates
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link eventKey="sponsors" href="/sponsors" className="nav-items">
+            {/* <Nav.Link eventKey="sponsors" href="/sponsors" className="nav-items">
               Sponsors
-            </Nav.Link>
-            <Nav.Link eventKey="collaborate" href="/collaborate" className="nav-items">
-              Collaborate
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
           <Login />
         </Navbar.Collapse>

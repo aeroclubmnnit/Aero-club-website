@@ -39,7 +39,7 @@
   }
   
   .panel-default>.panel-heading a[aria-expanded="true"] {
-    background-color: #eee;
+    background-color: rgb(247, 247, 247);
   }
   
   .panel-default>.panel-heading a[aria-expanded="true"]:after {
@@ -61,9 +61,13 @@
     text-decoration: none;
 }
 
+.chcolor { 
+  background-color: #ab7979 !important;
+}
+
 .panel-default>.panel-heading a[aria-expanded="true"] {
-    color: rgb(29, 29, 29);
-    background-color: #dadada;
+    color: rgb(228, 225, 225);
+    background-color: #311111;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-top-right-radius: 15px;
@@ -72,7 +76,7 @@
 }
 
 .panel-collapse {
-    background: #222222;
+    background: #ab7979;
     opacity: 1;
     color: white;
     padding: 10px;

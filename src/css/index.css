@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat|Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 body {
   margin: 0;
   padding: 0;
@@ -7,21 +12,41 @@ body {
     rgb(255, 255, 255) 0%,
     rgb(255, 255, 255) 100%
   );
-  /* background:url(http://localhost:5000/images/utils/drone-1.jpg) center center no-repeat; */
+}
+.pagesg {
+  height: 40vh;
+  width: 100%;
+  margin: 0vh 0vw;
+  background-size: cover;
+  padding-bottom: 0px;
+
+  background-color: #eee;
+  background-position: center;
+  animation: image 3s ease-in-out infinite alternate;
 }
 
-.particles {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -5;
+.overlayg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  padding-bottom: 80px;
+  color: white;
+  background-color: rgba(0,0,0,0.7);
 }
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+
+.titleBoldg {
+  font-weight: 600;
+  font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+.pageTitleg {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 45px;
+  text-align: center;
+  padding-top: 1.7em;
+}
 body {
   -webkit-font-smoothing: antialiased;
 }

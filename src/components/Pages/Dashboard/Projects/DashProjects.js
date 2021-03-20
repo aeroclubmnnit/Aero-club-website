@@ -149,7 +149,7 @@ function MyVerticallyCenteredModal(props) {
         <Form
           onSubmit={(e) => {
             e.preventDefault();
-            fetch(`/api/projects/invite`, {
+            fetch(`${REACT_APP_SERVER}/api/projects/invite`, {
               method: "post",
               headers: {
                 "Content-Type": "application/json",
@@ -160,6 +160,7 @@ function MyVerticallyCenteredModal(props) {
                 projectId: projectId,
               }),
             }).then((res) => {
+              console.log(res);
               props.onHide();
               if (res.status == 200) {
                 toast.success("USER INVITED");

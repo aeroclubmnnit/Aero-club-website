@@ -10,12 +10,14 @@ import {
   DeleteButton,
   Edit,
   EditButton,
+  ImageField,
   List,
   ReferenceField,
   ReferenceInput,
   required,
   RichTextField,
   SelectInput,
+
   Show,
   ShowButton,
   SimpleForm,
@@ -54,7 +56,8 @@ export const BlogCreate = (props) => {
   return (
     <Create {...props}>
       <SimpleForm redirect="/blogs">
-        <TextInput source="title" label="Title" />
+        <TextInput source="title" label="Title" validate={required()} />
+        <TextInput source="pic" label="Image Link" />
         <RichTextInput
           source="body"
           label="Body"
@@ -102,6 +105,7 @@ export const BlogShow = (props) => {
     <Show {...props} title="Blog Show">
       <SimpleShowLayout>
         <TextField source="title" label="Title" />
+        <ImageField source="pic" label="Image" />
         <RichTextField source="body" label="Body" />
         <ReferenceField
           label="Posted By"
@@ -131,6 +135,7 @@ export const BlogEdit = (props) => {
       <SimpleForm redirect="/blogs">
         <TextInput disabled label="Id" source="id" />
         <TextInput source="title" validate={required()} label="Title" />
+        <TextInput source="pic" label="Image Link" />
         <RichTextInput
           label="Body"
           source="body"

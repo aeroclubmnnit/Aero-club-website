@@ -17,6 +17,7 @@ export default function CreateBlog() {
   const dispatch = useDispatch()
   const history = useHistory();
   const [title, setTitle] = useState("");
+  const [pic, setPic] = useState("");
   const [body, setBody] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -65,6 +66,7 @@ export default function CreateBlog() {
       body: JSON.stringify({
         title,
         body,
+        pic,
         postedBy: user.id,
         publishedAt: Date.now(),
       }),
@@ -105,6 +107,17 @@ export default function CreateBlog() {
                   aria-describedby="basic-addon1"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
+                />
+              </div>
+              <div className="input-group mb-3">
+                <input
+                  type="text"
+                  className="form-control"
+                  id="basic-url"
+                  aria-describedby="basic-addon3"
+                  placeholder="image link ( optional ) - to be used in card.."
+                  value={pic}
+                  onChange={(e) => setPic(e.target.value)}
                 />
               </div>
               <ReactQuill
