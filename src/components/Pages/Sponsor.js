@@ -55,7 +55,7 @@ export default function Ṣponsors() {
 
                 <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
                   Who are we?
-                                                     </button>
+                </button>
               </p>
 
               <div class="collapse collapsews" id="collapse11">
@@ -63,7 +63,7 @@ export default function Ṣponsors() {
                   <p className="just">AeroClub MNNIT, established in 2018, is a student body under the Student Activity Centre (SAC). Since then, it has been the epicenter of the surging ideas in various aerospace field domains, passing through the students, genuinely prepared to do impactful interdisciplinary work. Here, we work across all the aerospace sector domains ranging from RC planes to design, from aerodynamic analysis to autonomous drones, from biomimicking to astronomy, and various others (Link), catalyzed by abstract classes, open discussions, and projects.
                   Speaking of achievements, our club has won accolades in many national level competitions (Link) and completed a diverse range of projects (Link) and, most importantly, emphasized innovation with state-of-the-art projects like drone automation, RC planes, etc.
                   We are proud to say that our club is the birthplace of a fully functional startup, TSAW (Link). Also, our club's prosperity resulted in an offshoot, Astrowing(Link) itself, which focuses entirely upon the field of astronomy and theoretical sciences. The club, in these years, has achieved enormous growth, and in the future, we aim to surpass our past achievements.
-</p>
+                </p>
                   <p className="just">With an eye on that, we look forward to:<br></br><br></br>
                     <ul>
                       <li>Collaborate with industries and work on current challenges prevailing in all domains of the aerospace sector</li>
@@ -79,7 +79,7 @@ export default function Ṣponsors() {
 
                 <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
                   How can You Help Us?
-                                                     </button>
+                </button>
               </p>
 
               <div class="collapse collapsews" id="collapse12">
