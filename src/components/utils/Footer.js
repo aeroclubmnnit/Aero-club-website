@@ -2,7 +2,6 @@ import React from "react";
 import "../../css/footer.css";
 import { useLocation } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
-import { Link as Scroll } from "react-scroll";
 import m from "../../images/utils/aerologofix.png";
 
 export default function Footer() {
@@ -62,7 +61,7 @@ export default function Footer() {
                         <i className="fa fa-caret-right"></i> RoboClub
                       </a>
                     </li>
-                    
+
                   </ul>
                 </div>
                 <div className="col-lg-4 col-md-6 footer-logo float-right">
