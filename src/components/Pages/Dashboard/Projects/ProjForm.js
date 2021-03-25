@@ -6,6 +6,7 @@ import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../../../grobalVars";
 export default function ProjForm(props) {
   const [formData, setformData] = useState({
     title: "",
+    overview: "",
     description: "",
     objective: "",
   });
@@ -27,11 +28,13 @@ export default function ProjForm(props) {
             title: formData.title,
             description: formData.description,
             objective: formData.objective,
+            overview: formData.overview,
           }),
         })
           .then((res) => {
             setformData({
               title: "",
+              overview: "",
               description: "",
               objective: "",
             });
@@ -46,6 +49,7 @@ export default function ProjForm(props) {
               title: "",
               description: "",
               objective: "",
+              overview: "",
             });
           });
       }}
@@ -110,12 +114,48 @@ export default function ProjForm(props) {
             modules: ["Resize", "DisplaySize", "Toolbar"],
           },
         }}
+        value={formData.overview}
+        onChange={(e) => {
+          console.log(e);
+          setformData((prev) => ({
+            ...prev,
+            overview: e,
+          }));
+        }}
+      />
+      <ReactQuill
+        className="mb-3"
+        modules={{
+          toolbar: [
+            ["bold", "italic", "underline", "strike"],
+            [{ header: [1, 2, 3, 4, 5, 6, false] }],
+            [{ size: ["small", false, "large", "huge"] }],
+            [{ font: [] }],
+            [{ color: [] }, { background: [] }],
+            [{ list: "ordered" }, { list: "bullet" }],
+            [{ script: "sub" }, { script: "super" }],
+            ["blockquote", "code-block"],
+            [{ indent: "-1" }, { indent: "+1" }],
+            [{ direction: "rtl" }],
+            [{ align: [] }],
+            ["link", "image", "video"],
+            ["clean"],
+          ],
+          imageResize: {
+            displayStyles: {
+              backgroundColor: "black",
+              border: "none",
+              color: "white",
+            },
+            modules: ["Resize", "DisplaySize", "Toolbar"],
+          },
+        }}
         value={formData.description}
         onChange={(e) => {
           console.log(e);
           setformData((prev) => ({
             ...prev,
-            description: e
+            description: e,
           }));
         }}
       />

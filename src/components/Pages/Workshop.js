@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Accordion, Card } from "react-bootstrap";
 import { Container, Jumbotron } from "react-bootstrap";
 import "../../css/Event.css";
-import { Link } from 'react-bootstrap';
 import Loading from "../../Animations/Loading";
 import m from "../../images/utils/Jigyasa_logo.png";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
@@ -23,6 +21,7 @@ export default function Workshop() {
   }, []);
 
 
+
   return (
     <>
       <Loading time={2} />
@@ -31,9 +30,7 @@ export default function Workshop() {
           <div className="containere ">
             <h1 className="titlee">
               <div className="pageTitlee titleBolde">
-                {/* <div><img src={`${baseURL}/images/utils/Prosang.jpg`} alt="prosang" srcset="" style={{alignItems:'center', width: '12%'}} /></div> */}
                 Jigyasa
-                {/* </div> */}
               </div>
             </h1>
             <div className="content-wrapper">
@@ -78,42 +75,58 @@ export default function Workshop() {
           margin: "auto",
           paddingBottom: "1rem",
         }}>
-        <div className="container">
-          <h4 className='my-3' style={{ marginBottom: "0px", textAlign: "center" }}>Workshop Updates</h4>
-          <div
-            className="miniSep"
-            style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
-          ></div>
-          <Accordion className="shadow rounded">
-            {workshops.map(workshop => (
-              <Card className="rounded" key={workshop.id}>
-                <Card.Header style={{ cursor: "pointer" }}>
-                  <Accordion.Toggle
-                    as={Card.Header}
-                    eventKey={workshop.id}
-                    style={{ fontSize: "1rem" }}
-                  >
-                    <div>
-                      {workshop.name}
+        <Container id="workshop" activeKey={workshops}
+          onSelect={(e) => SetWorkshops(e)}>
+
+          <div class="d-flex justify-content-start my-3 mx-4">
+            <h3 class="">Present Workshops</h3>
+          </div>
+
+          {workshops.map((singleNews, i) => (
+            <div className="card mb-5 mx-4 workshop_card shadow" data-aos="zoom-in-up"
+              data-aos-duration="2000">
+              <div className="row">
+                {/* Assigning column for image */}
+                <div className="col-md-2 image text-center">
+
+                  <img className="img-fluid" src={singleNews.pic || 'https://lh3.googleusercontent.com/T9bjg12M_QXvpPvs4eYdw3VkmrgX0pGTWzFIyyzqQQ_XO_IUetQVyZBxNE80yTLYP0ft3it_S2_sMiY6p7IN7QZa156zFCVqg2qlhQR99MY0hdh83lfWCO3Ymy_nILhckIJj8LOm=w2400'} />
+                </div>
+                {/* Details of Workshop */}
+                <div className="col-md-10">
+                  <div className="card-body">
+                    {/* Workshop Title */}
+                    <h5 className="card-title">{singleNews.name}</h5>
+                    <br />
+                    {/* for date */}
+                    <span className="object">Target Audience : </span>
+                    <span className="value" dangerouslySetInnerHTML={{ __html: singleNews.target }}></span><br />
+                    <span className="object">Description :</span>
+                    <span className="value" dangerouslySetInnerHTML={{ __html: singleNews.description }}></span><br />
+                    <div className="value" dangerouslySetInnerHTML={{ __html: singleNews.about }}></div>
+                    <div className="object">
+                      <em
+                        style={{ fontSize: "small" }}
+                      >
+                        --  {new Date(
+                        singleNews.date
+                      ).toLocaleDateString()}
+                      </em>
+                    </div><br />
+                    {/* Link for discription of Workshop */}
+                    <a href={singleNews.brochure} download>
+                      <p className="card-text">Download Brochure</p>
+                    </a>
+                    {/* Date of posting */}
+                    <div className="row edits">
+                      <div className="ml-auto">
+                      </div>
                     </div>
-                  </Accordion.Toggle>
-                </Card.Header>
-                <Accordion.Collapse eventKey={workshop.id}>
-                  <Card.Body
-                    className="border m-4 rounded"
-                  >
-                    <div className="mb-5"> <em>Published on : {new Date(workshop.date).toLocaleDateString()}</em> </div>
-                    <div className="about" dangerouslySetInnerHTML={{ __html: workshop.about }}></div>
-                    <a href={workshop.brochure}>Brochure Link</a>
-                  </Card.Body>
-                </Accordion.Collapse>
-              </Card>
-            ))}
-            {workshops.length === 0 && (
-              <h3 className="text-center mt-5">No Workshop Updates...!</h3>
-            )}
-          </Accordion>
-        </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Container>
       </Jumbotron>
     </>
   );

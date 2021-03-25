@@ -7,14 +7,14 @@ import { REACT_APP_SERVER } from "../../grobalVars";
 export default function Featuredproject() {
   const [projects, SetProjects] = useState([]);
   useEffect(() => {
-    fetch(`${REACT_APP_SERVER}/api/projects/featured`, {
+    fetch(`${REACT_APP_SERVER}/api/projects/featured_home`, {
       method: "get",
     })
       .then((res) => res.json())
       .then((data) => SetProjects(data));
   }, []);
   return (
-    <div className="cont featured-proj">
+    <div className="cont featured-proj my-3">
       <div className="container-fluid">
         <div
           className="pageTitle titleBold headingc white-headingc"
@@ -24,11 +24,11 @@ export default function Featuredproject() {
           Featured Projects
         </div>
         <div className="miniSep" style={{ marginBottom: "20px" }}></div>
-        <div className="container col-11">
+        <div className="container col-11 my-5">
           <ul className="cards">
             {
-              projects.length && (
-                <OwlCarousel className='owl-theme' autoplay autoplaySpeed={2000} autoplay HoverPauseloop responsive={{
+              projects.length ? (
+                <OwlCarousel className='owl-theme' autoplay autoplaySpeed={2000} autoplay autoplayHoverPause responsive={{
                   0: {
                     items: 1
                   },
@@ -64,7 +64,9 @@ export default function Featuredproject() {
                     </div>
                   ))}
                 </OwlCarousel>
-              )}
+              ) :
+                <p className='text-center'> Loading ...!</p>
+            }
           </ul>
         </div>
       </div>

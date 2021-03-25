@@ -69,6 +69,7 @@ function Login() {
               >
                 Account login
               </h5>
+              <p className='text-center'>( Only for MNNIT Students )</p>
               <form className="form-signin">
                 <div className="form-label-group">
                   <input

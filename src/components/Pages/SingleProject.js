@@ -3,18 +3,24 @@ import { useHistory, useParams } from "react-router-dom";
 import "../../css/SingleProject.css";
 import Loading from "../../Animations/Loading";
 import { Container, Jumbotron } from "react-bootstrap";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
 
 function SingleProject() {
   const { projectId } = useParams();
   const [project, setProject] = useState(undefined);
+  const [isSignedIn, setisSignedIn] = useState(false);
   const history = useHistory();
-
+  const [more, setmore] = useState(false);
 
   useEffect(() => {
     document.title = `Project-${projectId} | ${REACT_APP_BASE_TITLE}`;
+
     fetch(`${REACT_APP_SERVER}/api/projects/${projectId}`, {
       method: "get",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
+      },
     })
       .then((res) => res.json())
       .then((data) => {
@@ -24,66 +30,102 @@ function SingleProject() {
   }, []);
 
   return (
-    <div>
-      <Loading time={1.5} />
-      <div
-        className="pagesp d-flex"
-        style={{
-          background: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,.4))`,
-        }}
-      >
-        <div className="overlayp">
-          <div className="pageTitlep titleBoldp">
-            {project?.title}
-            <h5 style={{ fontSize: "1rem" }}></h5>
-            <span className="meta">
-              <em style={{ fontSize: "0.8rem" }}>
-                Issued on {new Date(project?.issuedon).toLocaleDateString()}
-              </em>
-            </span>
+    <>
+      <Loading time={2} />
+      <div className="my-5">
+        <div className="mb-4">
+          <h4 className='my-3' style={{ marginBottom: "0px", textAlign: "center" }}>{project?.title}</h4>
+          <div
+            className="miniSep"
+            style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
+          ></div>
+        </div>
+        <div className="container">
+          <div>
+            <h3 className='my-3 subheaders'>Aim</h3>
+            <p className="px-5">{project?.objective}</p>
+          </div>
+          <div>
+            <h3 className='my-3 subheaders'>Components and Technologies Used</h3>
+            <div className="d-flex px-5 flex-wrap">
+              {project?.compTech?.map((x) => (
+                <div
+                  className="d-inline px-3 py-2 m-1"
+                  style={{
+                    border: "2px solid #dec3c3",
+                    borderRadius: "100px",
+                    background: "#fff7f7",
+                  }}
+                >
+                  {x}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className='my-5'>
+            <h3 className='mb-4 subheaders'>Overview</h3>
+            <p
+              className="px-5"
+              dangerouslySetInnerHTML={{ __html: project?.overview }}
+            ></p>
+          </div>
+          <div>
+            <div>
+              <h3 className='my-3 subheaders'>Project By: </h3>
+              <ul className="px-5">
+                {project?.members?.map((member) =>
+                  member.accepted ? (
+                    <li>
+                      {member.user.linkedin_url ? (
+                        <a href={member.user.linkedin_url}>{member.user.name}</a>
+                      ) : (
+                        <span>{member.user.name}</span>
+                      )}
+                    </li>
+                  ) : (
+                    <></>
+                  )
+                )}
+              </ul>
+            </div>
+          </div>
+          {project?.ytID ? (
+            <div className='d-block iframe-container'>
+              <iframe
+                width="889px"
+                height="500"
+                src={`https://www.youtube.com/embed/${project?.ytID}`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className='mx-auto d-block responsive-iframe'
+              />
+            </div>
+          ) : (
+            <></>
+          )}
+
+          <div>
+            <div style={{ display: more ? "block" : "none" }}>
+              <h3 className='my-3 subheaders'>Description</h3>
+              <p
+                className="px-3"
+                dangerouslySetInnerHTML={{ __html: project?.description }}
+              ></p>
+            </div>
+            <div className="d-flex justify-content-center mt-5">
+              {project?.description ? (
+                <a className="btn btn-primary" onClick={(e) => setmore(!more)}>
+                  Read {!more ? "More" : "Less"}
+                </a>
+              ) : (
+                <></>
+              )}
+            </div>
           </div>
         </div>
-        {
-          project?.pic &&
-          <div className="image" style={{ width: '30rem' }}>
-            <img src={project?.pic} alt="img" style={{ width: '100%', height: '100%' }} />
-          </div>
-        }
       </div>
-
-      <Jumbotron
-        fluid
-        style={{
-          background: "white",
-          width: "100%",
-          margin: "auto",
-          paddingBottom: "1rem",
-          paddingLeft: "2rem",
-        }}
-      >
-        <Container>
-          <h4>Description:</h4>
-          <p dangerouslySetInnerHTML={{ __html: project?.description }}></p>
-          <h4>Objective:</h4>
-          <p dangerouslySetInnerHTML={{ __html: project?.objective }}></p>
-          <p>
-            <img style={{ width: "60vw" }} src={project?.pic} />
-          </p>
-          <h4>Project Status:</h4>
-          <p dangerouslySetInnerHTML={{ __html: project?.status }}></p>
-
-          <h4>Members:</h4>
-          <p>
-            {" "}
-            {project?.members.map(function (d, idx) {
-              console.log(d);
-              return <li key={idx}>{d.user.name}</li>;
-            })}
-          </p>
-        </Container>
-        <hr />
-      </Jumbotron>
-    </div>
+    </>
   );
 }
 

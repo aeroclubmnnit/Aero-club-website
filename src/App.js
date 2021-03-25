@@ -41,6 +41,7 @@ import Achievements from "./components/Pages/Achievements.js";
 import Collaboration from "./components/Pages/Collaboration.js";
 import Spinoff from "./components/Pages/Spinoff.js";
 import WebTeam from "./components/Pages/WebTeam.js";
+import FeaturedProjects from "./components/Pages/FeaturedProjects.js";
 
 function App() {
 
@@ -143,6 +144,9 @@ function App() {
             <Route path="/projects" exact>
               <Projects />
             </Route>
+            <Route path="/projects/featured" exact>
+              <FeaturedProjects />
+            </Route>
             <Route path="/projects/:projectId" exact>
               <SingleProject />
             </Route>
@@ -164,7 +168,7 @@ function App() {
             <Route path="/workshop" exact>
               <Workshop />
             </Route>
-            <Route path="/sponsor" exact>
+            <Route path="/sponsors" exact>
               <Sponsors />
             </Route>
             <Route>

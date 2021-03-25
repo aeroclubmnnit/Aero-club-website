@@ -88,8 +88,6 @@
 }
 
 img {
-  /* display: block; */
-  /* height: 35vh; */
   max-height: 100%;
   max-width: 100%;
   vertical-align: middle;
@@ -169,7 +167,6 @@ img {
 
 .cards {
   display: flex;
-  /* justify-content: center; */
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
@@ -179,7 +176,6 @@ img {
 .cards_item {
   display: flex;
   padding: 1rem;
-  margin: 0 auto;
 }
 
 @media (min-width: 40rem) {
@@ -191,15 +187,6 @@ img {
   }
 }
 @media (max-width: 40rem) {
-  /* .forphone1{
-    height: auto ;
-  }
-  .forphone2{
-    height: auto;
-  }
-  .forphone3{
-    height: auto;
-  } */
   .card_content{
     height: auto;
   }
@@ -234,11 +221,8 @@ img {
 }
 
 .card_content {
-  /* height: 20vh; */
   padding: 1rem;
   background: transparent;
-  /* background: linear-gradient(to left, rgb(51, 60, 97), #d1d1d1 100%); */
-  /* background-color:  rgb(204, 67, 67); */
   border: 2px solid rgb(204, 67, 67);
   border-radius: 0px 0px 0.5rem 0.5rem;
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "react-bootstrap";
+import { Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 import Loading from "../../Animations/Loading";
 import "../../css/featured-proj.css";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
@@ -13,7 +13,12 @@ function Blogs() {
       method: "get",
     })
       .then((res) => res.json())
-      .then((data) => SetBlogs(data));
+      .then((data) => {
+
+        console.log(data)
+        SetBlogs(data)
+      }
+      );
   }, []);
 
   const [page, SetPage] = useState(1);
@@ -23,7 +28,7 @@ function Blogs() {
     1: "1st year",
     2: "2nd year",
     3: "3rd year",
-    4: "final year",
+    4: "Final year",
   };
 
   const branch = {
@@ -64,22 +69,34 @@ function Blogs() {
                       <img className="evfeatured" src={blog.pic || 'https://lh3.googleusercontent.com/PPRLO6cS9pz1oyVlPhoHBMH3u9LKlLJEBQ7kJMzziAav-C7GEp9vVpJwfky-hsrlR4h0xisARPSzF19VIPmRb31Wpf6xScPJKOggnz4rPDqSJG9FPr9m-BMyDr9zrABeZ8VsDcm9=w2400'} style={{ width: '100%', maxHeight: '18rem', minHeight: '18rem' }} />
                     </div>
                     <div className="card_content forphone forphone1" style={{ width: '100%' }}>
-                      <h2 className="card_title forphone forphone2" style={{ width: '100%', minHeight: '5rem' }}>{blog.title}</h2>
-                      <p className="card_text forphone forphone3" style={{ width: '100%' }}>
-                        <strong>POSTED BY : {" "} </strong>
-                        {blog.postedBy.linkedin_url !==
-                          "https://www.linkedin.com/in/username/" ? (
-                          <a href={blog.postedBy.linkedin_url} target="_blank">
-                            {blog.postedBy.name}
-                          </a>
-                        ) : (
-                          blog.postedBy.name
-                        )}{" "}
-                        {`( branch - ${branch[blog.postedBy.registration_no[4]]}, ${blog.postedBy.year == -1
-                          ? "year - NA"
-                          : year[blog.postedBy.year]
-                          } )`}{" "} <br /> <br />
-                        <strong>PUBLISHED ON : {" "} </strong> {new Date(blog.publishedAt).toLocaleDateString()}
+                      <h2 className="card_title forphone forphone2" style={{ width: '100%', minHeight: '4rem' }}>{blog.title}</h2>
+                      <p className="card_text forphone" style={{ width: '100%', height: '5rem' }}>
+                        <i className="fa fa-user mr-3 ml-1"></i> by{" "}
+                        {
+                          branch[blog.postedBy.registration_no[4]] === 'NA' || blog.postedBy.year === -1 || blog.postedBy.linkedin_url ===
+                            "https://www.linkedin.com/in/username/" ?
+                            <>
+                              {blog.postedBy.name}
+                            </>
+                            :
+                            <OverlayTrigger
+                              placement="right"
+                              delay={{ show: 250, hide: 400 }}
+                              overlay={
+                                <Tooltip id={`tooltip-${blog._id}`}>
+                                  Branch - {branch[blog.postedBy.registration_no[4]]} <br />
+                                  {year[blog.postedBy.year]}
+                                </Tooltip>}
+                            >
+                              <div className='d-inline'>
+                                <a href={blog.postedBy.linkedin_url} target="_blank" style={{ textDecoration: 'none' }}>
+                                  {blog.postedBy.name}
+                                </a>
+                              </div>
+                            </OverlayTrigger>
+                        }
+                        <br />
+                        <i className="fa fa-calendar mr-3 ml-1"></i> {new Date(blog.publishedAt).toLocaleDateString()}
                       </p>
                       <Button
                         className="btns card_btns"

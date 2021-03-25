@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import "../../css/SingleBlog.css";
 import Loading from "../../Animations/Loading";
-import { Container, Jumbotron } from "react-bootstrap";
+import { Container, Jumbotron, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 function SingleBlog() {
@@ -45,42 +45,50 @@ function SingleBlog() {
   return (
     <div>
       <Loading time={2} />
-
       <div
-        className="pagesp d-flex"
+        className="pagesp"
         style={{
           background: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,.4))`,
         }}
       >
         <div className="overlayp">
-          <div className="pageTitlep titleBoldp">
-            {blog?.title}
+          <div className="pageTitlep titleBoldp container col-11 pl-0">
+            <div className='blog-title'>
+              {blog?.title}
+            </div>
             <p className="meta">
-              <em style={{ fontSize: "1rem" }}>
-                Posted by{" "}
-                {blog?.postedBy.linkedin_url !==
-                  "https://www.linkedin.com/in/username/" ? (
-                  <a href={blog?.postedBy.linkedin_url} target="_blank">
-                    {blog?.postedBy.name}
-                  </a>
-                ) : (
-                  blog?.postedBy.name
-                )}{" "}
-                {`( branch - ${branch[blog?.postedBy.registration_no[4]]} , ${blog?.postedBy.year == -1
-                  ? "year - NA"
-                  : year[blog?.postedBy.year]
-                  } )`}{" "}
-                on {new Date(blog?.publishedAt).toLocaleDateString()}
-              </em>
+              <div className='mt-5 postedBy-info'>
+                <i className="fa fa-user mr-3 ml-1"></i> by{" "}
+                {
+                  branch[blog?.postedBy.registration_no[4]] === 'NA' || blog?.postedBy.year === -1 || blog?.postedBy.linkedin_url ===
+                    "https://www.linkedin.com/in/username/" ?
+                    <>
+                      {blog?.postedBy.name}
+                    </>
+                    :
+                    <OverlayTrigger
+                      placement="right"
+                      delay={{ show: 250, hide: 400 }}
+                      overlay={
+                        <Tooltip id={`tooltip-${blog?._id}`}>
+                          Branch - {branch[blog?.postedBy.registration_no[4]]} <br />
+                          {year[blog?.postedBy.year]}
+                        </Tooltip>}
+                    >
+                      <div className='d-inline'>
+                        <a href={blog?.postedBy.linkedin_url} target="_blank" style={{ textDecoration: 'none' }}>
+                          {blog?.postedBy.name}
+                        </a>
+                      </div>
+                    </OverlayTrigger>
+                }
+                <br />
+                <i className="fa fa-calendar mr-3 ml-1"></i>
+                {new Date(blog?.publishedAt).toLocaleDateString()}
+              </div>
             </p>
           </div>
         </div>
-        {
-          blog?.pic &&
-          <div className="image" style={{ width: '30rem' }}>
-            <img src={blog?.pic} alt="img" style={{ width: '100%', height: '100%' }} />
-          </div>
-        }
       </div>
       <Jumbotron
         fluid
@@ -91,7 +99,18 @@ function SingleBlog() {
         className="my-4"
       >
         <Container className="col-10 col-md-10 col-lg-11 singleblog-contents">
-          <p dangerouslySetInnerHTML={{ __html: blog?.body }}></p>
+          {
+            blog?.pic &&
+            <>
+              <hr />
+              <div className="image mx-auto" style={{ maxWidth: '30rem' }}>
+                <img src={blog?.pic} alt="img" style={{ width: '100%', height: '100%' }} className='my-3' />
+              </div>
+              <hr />
+            </>
+          }
+
+          <div dangerouslySetInnerHTML={{ __html: blog?.body }} className='my-5'></div>
         </Container>
         <hr />
       </Jumbotron>

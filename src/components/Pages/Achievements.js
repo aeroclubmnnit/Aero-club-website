@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from "react";
 import Loading from "../../Animations/Loading";
 import "../../css/news.css";
-import "../../css/Alumni.css";
+import '../../css/Achievements.css'
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
+import 'react-vertical-timeline-component/style.min.css';
+import { EmojiEvents } from '@material-ui/icons'
 
 export default function Achievements() {
-  const [data, setData] = useState([]);
+  const [achievements, setAchievements] = useState([]);
   document.title = `Achievements | ${REACT_APP_BASE_TITLE}`;
   useEffect(() => {
-    fetch(`${REACT_APP_SERVER}/api/achievement/year`, {
+    fetch(`${REACT_APP_SERVER}/api/achievement`, {
       method: "get",
     })
       .then((res) => res.json())
-      .then((data) => setData(data));
+      .then((data) => {
+        console.log(data)
+        setAchievements(data)
+      });
   }, []);
   return (
     <>
@@ -22,56 +28,46 @@ export default function Achievements() {
           <div className="pageTitlea titleBolda">Our Achievements</div>
         </div>
       </div>
-
-      <div className="container alumni-container mb-5 col-9">
-        <div className="panel-group mb-5" id="accordion" role="tablist" aria-multiselectable="true">
-          {data.map(datum => (
-            <div className="panel panel-default" key={datum._id}>
-              <div className="panel-heading" >
-                <h4 className="panel-title">
-                  <a role="button" data-toggle="collapse" data-parent="#accordion" href={`#collapse${datum._id}`} aria-expanded="true" aria-controls={`collapse${datum._id}`} >
-                    {datum._id < 2017
-                      ? "Before 2017"
-                      : `${datum._id}-${datum._id - 1999}`}
-                  </a>
-                </h4>
-              </div>
-              <div id={`collapse${datum._id}`} className="panel-collapse collapse show in" role="tabpanel" aria-labelledby={`${datum._id}`}>
-                <div className="panel-body">
-                  <div className="container" style={{ color: "white" }}>
-                    {datum.achievements.map((achievement) => (
-                      <div className="ml-2 ml-md-5" key={achievement._id}>
-                        <ul style={{ listStyle: "initial" }}>
-                          <li className="my-5 achievement">
-                            <div
-                              className="font-weight-bold"
-                              style={{ fontSize: "large", color: "white" }}
-                              dangerouslySetInnerHTML={{
-                                __html: achievement.desc,
-                              }}
-                            ></div>
-                            <div
-                              className="mt-4"
-                              style={{ color: 'black' }}
-                            >
-                              <p className="font-weight-bold d-inline">
-                                TEAM MEMBERS :{" "}
-                              </p>
-                              {achievement.team.map((member, i) => (
-                                <p className="d-block" style={{ fontWeight: '500' }} key={i}><ul><li>{member.name}</li></ul> </p>
-                              ))}
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    ))}
+      <div className="container my-5 col-11 col-md-12">
+        <VerticalTimeline>
+          {
+            achievements.map(achievement => (
+              <VerticalTimelineElement
+                key={achievement.id}
+                className="vertical-timeline-element--work"
+                contentStyle={{ boxShadow: 'rgb(167, 166, 166) 0px 0px 20px -3px', color: 'black', }}
+                date={`${new Date(achievement.date).toLocaleString('default', { month: 'long' })}, ${new Date(achievement.date).getFullYear()}`}
+                iconStyle={{ background: 'red', color: '#fff' }}
+                icon={<EmojiEvents />}
+              >
+                <div className='my-4'>
+                  <div className="vertical-timeline-element-title achievement-title text-center" dangerouslySetInnerHTML={{
+                    __html: achievement.desc,
+                  }}></div>
+                  <div className='text-center achievement-member'>
+                    <p>Team Members : </p>
+                    {
+                      achievement.team.map((member, i) => (
+                        <p className="d-inline team" key={i}>
+                          {
+                            <>{
+                              member.lurl ?
+                                <a href={member.lurl} target="_blank">{member.name} </a>
+                                : member.name
+                            }
+                              {i !== achievement.team.length - 1 ? ', ' : null}
+                            </>
+                          }
+                        </p>
+                      ))}
                   </div>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              </VerticalTimelineElement>
+            ))
+          }
+        </VerticalTimeline>
       </div>
+
     </>
   );
 }

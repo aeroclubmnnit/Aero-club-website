@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { REACT_APP_SERVER } from "../../../../grobalVars"
@@ -156,11 +157,9 @@ export default function DashProfile() {
         </button>
         </>
       )}
-      <a className="btn btn-success mr-1 my-1" href='https://docs.google.com/document/d/1jrgm6h7DVs173Cjfc2kjc32yuPFj0R4TFRNsdN6E150/edit?usp=sharing' target='_blank'>Resources</a>
+      <Button href='https://docs.google.com/document/d/1jrgm6h7DVs173Cjfc2kjc32yuPFj0R4TFRNsdN6E150/edit?usp=sharing' target="_blank" variant='success' className='mr-1 my-1' disabled={!disabled}>Resources</Button>
       {user?.role !== "User" && (
-        <a className="btn btn-danger mx-1" href="/1208e2fe-b5f6-439b-94e0-aef5dde3b777/admin" target='_blank'>
-          Go to Admin Panel
-        </a>
+        <Button href='/1208e2fe-b5f6-439b-94e0-aef5dde3b777/admin' target="_blank" variant='danger' className='mx-1' disabled={!disabled}>Go to Admin Panel</Button>
       )}
     </div>
   );

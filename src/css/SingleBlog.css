@@ -29,6 +29,10 @@ article {
   font-weight: 500;
 }
 
+.postedBy-info{
+  font-size: medium;
+}
+
 @media only screen and (max-width: 800px) {
   #header {
     height: 55vh;
@@ -44,7 +48,6 @@ article {
   }
   .body {
     font-size: medium;
-    /* width: 80vw; */
   }
   .blog-container-head {
     font-size: large;
@@ -52,7 +55,14 @@ article {
   .blog-container-para {
     font-size: small;
   }
+  .blog-title{
+    font-size: 2rem;
+  }
+  .postedBy-info{
+    font-size: small;
+  }
 }
+
 @media only screen and (max-width: 450px) {
   #header {
     height: 40vh;
@@ -87,5 +97,11 @@ article {
   }
   .singleblog-contents p {
     font-size: 0.9em;
+  }
+  .blog-title{
+    font-size: medium;
+  }
+  .postedBy-info{
+    font-size:xx-small;
   }
 }

@@ -68,6 +68,66 @@
   );
 } */
 
+.workshop_card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+/* #workshop .card .row object {
+  background-color: #f8f9fa;
+  width: auto;
+  min-height: 100%;
+  object-fit: contain;
+  overflow: hidden;
+  opacity: 0.2;
+} */
+
+#workshop .card .row img {
+  background-color: #f8f9fa;
+  width: auto;
+  min-height: 100%;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+#workshop .d-flex h3 {
+  text-align: center;
+  color: #16324f;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Raleway", sans-serif;
+  word-spacing: 0.4em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#workshop .card .row .card-body .object {
+  color: #e65658;
+  font-weight: 600;
+  margin-top: -4px;
+  line-height: 1.2em;
+  font-size: 17px;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+#workshop .card .row .card-body .value {
+  text-align: justify;
+}
+
 ul {
   list-style-type: none;
   padding-inline-start: 0;
@@ -271,6 +331,12 @@ h1.heading {
       /* background: #fff; */
       margin: 0 auto;
     }  
+
+    #workshop .card .row .card-body .card-title {
+      font-family: 'Righteous';
+      font-weight: lighter;
+      text-align: center;
+    }
 }
 
 @media screen and (min-width:1000px) 

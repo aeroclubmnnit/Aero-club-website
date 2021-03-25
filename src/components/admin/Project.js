@@ -29,7 +29,7 @@ import {
 } from "react-admin";
 
 import RichTextInput from "ra-input-rich-text";
-import ImageResize from 'quill-image-resize'
+import ImageResize from "quill-image-resize";
 
 export const ProjectList = (props) => {
   return (
@@ -54,13 +54,13 @@ export const ProjectCreate = (props) => {
     <Create {...props}>
       <SimpleForm redirect="/projects">
         <TextInput source="title" label="Project Name" />
-
+        <TextInput label="Objective" validate={required()} source="objective" />
         <RichTextInput
-          source="description"
-          label="Description"
+          source="overview"
+          label="Overview"
           options={{
             modules: {
-              "imageResize": ImageResize,
+              imageResize: ImageResize,
               toolbar: [
                 ["bold", "italic", "underline", "strike"],
                 [{ header: [1, 2, 3, 4, 5, 6, false] }],
@@ -75,11 +75,34 @@ export const ProjectCreate = (props) => {
                 [{ align: [] }],
                 ["link", "image", "video"],
                 ["clean"],
-              ]
+              ],
             },
           }}
         />
-        <TextInput label="Objective" validate={required()} source="objective" />
+        <RichTextInput
+          source="description"
+          label="Description"
+          options={{
+            modules: {
+              imageResize: ImageResize,
+              toolbar: [
+                ["bold", "italic", "underline", "strike"],
+                [{ header: [1, 2, 3, 4, 5, 6, false] }],
+                [{ size: ["small", false, "large", "huge"] }],
+                [{ font: [] }],
+                [{ color: [] }, { background: [] }],
+                [{ list: "ordered" }, { list: "bullet" }],
+                [{ script: "sub" }, { script: "super" }],
+                ["blockquote", "code-block"],
+                [{ indent: "-1" }, { indent: "+1" }],
+                [{ direction: "rtl" }],
+                [{ align: [] }],
+                ["link", "image", "video"],
+                ["clean"],
+              ],
+            },
+          }}
+        />
 
         <TextInput source="pic" label="Image Link" />
         <SelectInput
@@ -89,6 +112,11 @@ export const ProjectCreate = (props) => {
             { id: "Completed", name: "Completed" },
           ]}
         />
+        <ArrayInput source="compTech" label="Components and technologies used">
+          <SimpleFormIterator>
+            <TextInput label="" />
+          </SimpleFormIterator>
+        </ArrayInput>
         <ArrayInput source="members">
           <SimpleFormIterator>
             <ReferenceInput label="User" source="user" reference="users">
@@ -103,8 +131,9 @@ export const ProjectCreate = (props) => {
           label="Issued On"
           defaultValue={new Date()}
         />
+        <TextInput source="ytID" label="Youtube Embed ID"/>
         <BooleanInput source="featured" label="Featured" />
-        <BooleanInput source="open" />
+        <BooleanInput source="home" />
         <BooleanInput source="approved" />
       </SimpleForm>
     </Create>
@@ -116,8 +145,9 @@ export const ProjectShow = (props) => {
     <Show {...props} title="Project Show">
       <SimpleShowLayout>
         <TextField source="title" label="Project Name" />
-        <RichTextField source="description" label="Description" />
         <TextField source="objective" label="Objective" />
+        <RichTextField source="overview" label="Overview" />
+        <RichTextField source="description" label="Description" />
         <ImageField source="pic" label="Image" />
         <TextField source="status" label="Status" />
         <ArrayField source="members">
@@ -136,7 +166,7 @@ export const ProjectShow = (props) => {
         </ArrayField>
         <DateField source="issuedon" label="Issued On" />
         <BooleanField source="featured" label="Featured" />
-        <BooleanField source="open" />
+        <BooleanField source="home" />
         <BooleanField source="approved" />
       </SimpleShowLayout>
     </Show>
@@ -149,18 +179,13 @@ export const ProjectEdit = (props) => {
       <SimpleForm redirect="/projects">
         <TextInput disabled label="Id" source="id" />
         <TextInput source="title" validate={required()} label="Project Name" />
+        <TextInput label="Objective" validate={required()} source="objective" />
         <RichTextInput
-          source="description"
-          validate={required()}
-          label="Description"
-          modules={{
-            imageResize: {
-              displaySize: true,
-            },
-          }}
+          source="overview"
+          label="Overview"
           options={{
             modules: {
-              "imageResize": ImageResize,
+              imageResize: ImageResize,
               toolbar: [
                 ["bold", "italic", "underline", "strike"],
                 [{ header: [1, 2, 3, 4, 5, 6, false] }],
@@ -175,11 +200,40 @@ export const ProjectEdit = (props) => {
                 [{ align: [] }],
                 ["link", "image", "video"],
                 ["clean"],
-              ]
+              ],
             },
           }}
         />
-        <TextInput label="Objective" validate={required()} source="objective" />
+        <RichTextInput
+          source="description"
+          validate={required()}
+          label="Description"
+          modules={{
+            imageResize: {
+              displaySize: true,
+            },
+          }}
+          options={{
+            modules: {
+              imageResize: ImageResize,
+              toolbar: [
+                ["bold", "italic", "underline", "strike"],
+                [{ header: [1, 2, 3, 4, 5, 6, false] }],
+                [{ size: ["small", false, "large", "huge"] }],
+                [{ font: [] }],
+                [{ color: [] }, { background: [] }],
+                [{ list: "ordered" }, { list: "bullet" }],
+                [{ script: "sub" }, { script: "super" }],
+                ["blockquote", "code-block"],
+                [{ indent: "-1" }, { indent: "+1" }],
+                [{ direction: "rtl" }],
+                [{ align: [] }],
+                ["link", "image", "video"],
+                ["clean"],
+              ],
+            },
+          }}
+        />
         <TextInput source="pic" label="Image Link" />
         <ArrayInput source="members">
           <SimpleFormIterator>
@@ -191,8 +245,9 @@ export const ProjectEdit = (props) => {
           </SimpleFormIterator>
         </ArrayInput>
         <DateInput source="issuedon" label="Issued On" validate={required()} />
+        <TextInput source="ytID" label="Youtube Embed ID"/>
         <BooleanInput source="featured" label="Featured" />
-        <BooleanInput source="open" />
+        <BooleanInput source="home" />
         <BooleanInput source="approved" />
         <SelectInput
           source="status"

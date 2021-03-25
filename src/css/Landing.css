@@ -10,7 +10,7 @@
   height: 91vh;
   width: 100%;
   margin: 0vh 0vw;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0,0,0,0.4)), url("../images/utils/drone-1.jpg") center center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0,0,0,0.4)), url("../images/utils/drone4.png") center center no-repeat;
   background-size: cover;
   padding-bottom: 0px;
   background-attachment: fixed;
@@ -22,7 +22,6 @@
 
 .logoback{
   background-color: rgba(255,255,255, 0.4);
-  /* padding: 1rem 5rem 1rem 5rem; */
   border-radius: 10px;
 }
 
@@ -56,13 +55,6 @@
   }
 }
 @media (max-width: 1000px) {
-  .landing {
-    height: 70vh;
-    justify-content: center !important;
-    align-items: flex-start !important;
-    margin: 0 !important;
-    margin-top: 4rem !important;
-  }
   .landing-logo {
     height: 6rem;
     width: auto;
@@ -70,5 +62,27 @@
   }
   .landing-about h1 {
     font-size: 1.5rem;
+  }
+}
+@media (max-width: 700px) {
+  .pagesl{
+    background: none;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0,0,0,0.4)), url("../images/utils/drone4.jpg") top center no-repeat;
+  }
+  .landing {
+    height: 70vh;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    margin: 0 !important;
+    margin-top: 4rem !important;
+  }
+}
+@media (max-width: 530px) {
+  .pagesl{
+    background-size:cover;
+    height: 80vh;
+  }
+  .landing{
+    margin-top: 2rem !important;
   }
 }

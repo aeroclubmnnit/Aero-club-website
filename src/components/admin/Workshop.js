@@ -17,9 +17,13 @@ import {
     TextField,
     TextInput,
     UrlField,
+    ImageField,
+
+
 } from "react-admin";
 
 import RichTextInput from "ra-input-rich-text";
+import ImageResize from 'quill-image-resize'
 
 export const WorkshopList = (props) => {
     return (
@@ -41,6 +45,33 @@ export const WorkshopCreate = (props) => {
         <Create {...props}>
             <SimpleForm redirect="/workshop">
                 <TextInput source="name" label="Name" />
+                <TextInput source="target" label="Target Audience" />
+
+                <RichTextInput
+                    source="description"
+                    label="Description"
+                    options={{
+                        modules: {
+                            "imageResize": ImageResize,
+                            toolbar: [
+                                ["bold", "italic", "underline", "strike"],
+                                [{ header: [1, 2, 3, 4, 5, 6, false] }],
+                                [{ size: ["small", false, "large", "huge"] }],
+                                [{ font: [] }],
+                                [{ color: [] }, { background: [] }],
+                                [{ list: "ordered" }, { list: "bullet" }],
+                                [{ script: "sub" }, { script: "super" }],
+                                ["blockquote", "code-block"],
+                                [{ indent: "-1" }, { indent: "+1" }],
+                                [{ direction: "rtl" }],
+                                [{ align: [] }],
+                                ["link", "image", "video"],
+                                ["clean"],
+                            ]
+                        },
+                    }}
+                />
+                <TextInput source="pic" label="Image Link ( Optional )" />
                 <TextInput source="brochure" label="Brochure Link" />
                 <RichTextInput source="about" label="About"
                     toolbar={[['bold', 'italic', 'underline', 'strike'],
@@ -71,7 +102,10 @@ export const WorkshopShow = (props) => {
         <Show {...props} title="Workshop Show">
             <SimpleShowLayout>
                 <TextField source="name" label="Name" />
-                <UrlField source="brochure" label="Brochure Link" />
+                <TextField source="target" label="Target Audience" />
+                <RichTextField source="description" label="Description" />
+                <ImageField source="pic" label="Image" />
+                <UrlField source="brochure" label="Brochure Link" target="_blank" />
                 <RichTextField source="about" label="About" />
                 <DateField source="date" label="date" />
             </SimpleShowLayout>
@@ -85,6 +119,38 @@ export const WorkshopEdit = (props) => {
             <SimpleForm redirect="/workshop">
                 <TextInput disabled label="Id" source="id" />
                 <TextInput source="name" validate={required()} label="Name" />
+                <TextInput source="target" validate={required()} label="Target Audience" />
+                <RichTextInput
+                    source="description"
+                    validate={required()}
+                    label="Description"
+                    modules={{
+                        imageResize: {
+                            displaySize: true,
+                        },
+                    }}
+                    options={{
+                        modules: {
+                            "imageResize": ImageResize,
+                            toolbar: [
+                                ["bold", "italic", "underline", "strike"],
+                                [{ header: [1, 2, 3, 4, 5, 6, false] }],
+                                [{ size: ["small", false, "large", "huge"] }],
+                                [{ font: [] }],
+                                [{ color: [] }, { background: [] }],
+                                [{ list: "ordered" }, { list: "bullet" }],
+                                [{ script: "sub" }, { script: "super" }],
+                                ["blockquote", "code-block"],
+                                [{ indent: "-1" }, { indent: "+1" }],
+                                [{ direction: "rtl" }],
+                                [{ align: [] }],
+                                ["link", "image", "video"],
+                                ["clean"],
+                            ]
+                        },
+                    }}
+                />
+                <TextInput source="pic" label="Image Link ( Optional ) " />
                 <TextInput source="brochure" validate={required()} label="brochure link" />
                 <RichTextInput source="about" label="About" validate={required()}
                     toolbar={[['bold', 'italic', 'underline', 'strike'],

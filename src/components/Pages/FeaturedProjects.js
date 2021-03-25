@@ -2,14 +2,16 @@ import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import Loading from "../../Animations/Loading";
 import "../../css/featured-proj.css";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
-function Projects() {
+function FeaturedProjects() {
+
   const [projects, SetProjects] = useState([]);
-  const [signedin, setsignedin] = useState(false);
+  const [signedin, setsignedin] = useState(false)
   document.title = `Projects | ${REACT_APP_BASE_TITLE}`;
 
   useEffect(() => {
+
     fetch(`${REACT_APP_SERVER}/api/isSignedIn`, {
       method: "post",
       headers: {
@@ -25,7 +27,7 @@ function Projects() {
         setsignedin(true);
       });
 
-    fetch(`${REACT_APP_SERVER}/api/projects/approved`, {
+    fetch(`${REACT_APP_SERVER}/api/projects/featured`, {
       method: "get",
     })
       .then((res) => res.json())
@@ -55,56 +57,35 @@ function Projects() {
           <ul className="cards">
             {projects
               .slice((page - 1) * projects_per_page, page * projects_per_page)
-              .map((project) => (
-                <li
-                  className="cards_item"
-                  data-aos="fade-up"
-                  data-aos="flip-left"
-                  data-aos-easing="linear"
-                  data-aos-duration="1500"
-                >
-                  <div className="card cardproj">
-                    <div className="card_image">
-                      <img
-                        className="evfeatured"
-                        src={project.pic}
-                        style={{
-                          width: "100%",
-                          maxHeight: "18rem",
-                          minHeight: "18rem",
-                        }}
-                      />
+              .map((project) =>
+                project.open || signedin ? (
+                  <li className="cards_item" data-aos="fade-up" data-aos="flip-left" data-aos-easing="linear"
+                    data-aos-duration="1500">
+                    <div className="card cardproj">
+                      <div className="card_image">
+                        <img className="evfeatured" src={project.pic} style={{ width: '100%', maxHeight: '18rem', minHeight: '18rem' }} />
+                      </div>
+                      <div className="card_content forphone forphone1" style={{ width: '100%' }}>
+                        <h2 className="card_title forphone forphone2" style={{ width: '100%' }}>{project.title}</h2>
+                        <p className="card_text forphone forphone3 mb-5" style={{ width: '100%' }}>
+                          <strong>OBJECTIVE</strong> : {project.objective} <br /> <br />
+                          <strong>STATUS</strong> : {project.status}
+                        </p>
+                        <Button
+                          className="btns card_btns"
+                          variant="danger"
+                          href={`${window.location.origin}/projects/${project._id}`}
+                          style={{ marginTop: 10 }}
+                        >
+                          Read More
+                  </Button>
+                      </div>
                     </div>
-                    <div
-                      className="card_content forphone forphone1"
-                      style={{ width: "100%" }}
-                    >
-                      <h2
-                        className="card_title forphone forphone2"
-                        style={{ width: "100%" }}
-                      >
-                        {project.title}
-                      </h2>
-                      <p
-                        className="card_text forphone forphone3 mb-5"
-                        style={{ width: "100%" }}
-                      >
-                        <strong>OBJECTIVE</strong> : {project.objective} <br />{" "}
-                        <br />
-                        <strong>STATUS</strong> : {project.status}
-                      </p>
-                      <Button
-                        className="btns card_btns"
-                        variant="danger"
-                        href={`projects/${project._id}`}
-                        style={{ marginTop: 10 }}
-                      >
-                        Read More
-                      </Button>
-                    </div>
-                  </div>
-                </li>
-              ))}
+                  </li>
+                ) : (
+                  <div></div>
+                )
+              )}
           </ul>
           {!projects.length && (
             <h3 className="text-center mt-5">No projects available...!</h3>
@@ -139,4 +120,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default FeaturedProjects;

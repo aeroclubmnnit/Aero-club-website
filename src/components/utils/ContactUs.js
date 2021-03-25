@@ -138,7 +138,7 @@ const ContactUs = () => {
               data-aos-offset="300"
               data-aos-easing="ease-in-sine"
             >
-              <i className="fa fa-phone"></i>
+              <i className="fa fa-phone fa-flip-horizontal"></i>
               <div className="after-logo">
                 <h4> Contact : </h4>
                 <br />
@@ -220,7 +220,7 @@ const ContactUs = () => {
                 <div className="text-center">
                   <button type="submit" className="btn btn-danger px-3 py-2">
                     {loading ? (
-                        <span >Loading...</span>
+                      <span >Loading...</span>
                     ) : (
                       <span>Send Message</span>
                     )}

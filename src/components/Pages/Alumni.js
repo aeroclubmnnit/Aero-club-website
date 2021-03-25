@@ -159,8 +159,8 @@ export default function Alumni() {
           <div className="pageTitlea titleBolda">Our Alumni</div>
         </div>
       </div>
-      <div class="container alumni-container mb-5">
-        <div class="panel-group" id="accordion">
+      <div class="container alumni-container my-5 col-11">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4 class="panel-title">
@@ -168,24 +168,22 @@ export default function Alumni() {
                   class="accordion-toggle"
                   data-toggle="collapse"
                   data-parent="#accordion"
-                  href="#collapseOne"
+                  href="#collapse2020"
+                  aria-expanded="true" aria-controls='collapse2020'
                 >
                   Batch 2020
                 </a>
               </h4>
             </div>
-            <div id="collapseOne" class="panel-collapse collapse show">
+            <div id="collapse2020" class="panel-collapse collapse show">
               <div class="panel-body">
-                <div
-                  className="container"
-
-                >
+                <div className="container">
                   <div className="d-flex flex-wrap m-auto justify-content-center align-items-center">
                     {members.map(
                       (member, i) =>
                         member.yearOfGraduation === 2020 && (
                           <div
-                            class="card card-item shadow"
+                            class="card card-item shadow item-alumni"
                             style={{ width: "17rem", minHeight: "25rem" }}
                           >
                             <img
@@ -227,16 +225,17 @@ export default function Alumni() {
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a
-                  class="accordion-toggle collapsed"
+                  class="accordion-toggle"
                   data-toggle="collapse"
                   data-parent="#accordion"
-                  href="#collapseTwo"
+                  href="#collapse2019"
+                  aria-expanded="false" aria-controls='collapse2019'
                 >
                   Batch 2019
                 </a>
               </h4>
             </div>
-            <div id="collapseTwo" class="panel-collapse collapse">
+            <div id="collapse2019" class="panel-collapse collapse">
               <div class="panel-body">
                 <div
                   className="container"
@@ -266,8 +265,11 @@ export default function Alumni() {
                                 class="card-text text-center"
                                 style={{ minHeight: "2rem" }}
                               >
-                                {member.presentOrganisation}
+                                {member.presentOrganisation
+                                  ? member.presentOrganisation
+                                  : "Graduated Mechanical Engineer, MNNIT Allahabad"}
                               </p>
+
                               <div className="d-flex justify-content-center mt-4">
                                 <a href={member.yourLinkedinId} target="_blank">
                                   <i class="fab fa-linkedin fa-3x mx-2"></i>
@@ -282,31 +284,32 @@ export default function Alumni() {
               </div>
             </div>
           </div>
+
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a
-                  class="accordion-toggle collapsed"
+                  class="accordion-toggle"
                   data-toggle="collapse"
                   data-parent="#accordion"
-                  href="#collapseThree"
+                  href="#collapse2018"
+                  aria-expanded="false" aria-controls='collapse2018'
                 >
-                  2018 & Previous Batches
+                  Batch 2018
                 </a>
               </h4>
             </div>
-            <div id="collapseThree" class="panel-collapse collapse">
+            <div id="collapse2018" class="panel-collapse collapse">
               <div class="panel-body">
                 <div
                   className="container"
-
                 >
                   <div className="d-flex flex-wrap m-auto justify-content-center align-items-center">
                     {members.map(
                       (member, i) =>
                         member.yearOfGraduation === 2018 && (
                           <div
-                            class="card card-item shadow rounded"
+                            class="card card-item shadow"
                             style={{ width: "17rem", minHeight: "25rem" }}
                           >
                             <img
@@ -325,8 +328,11 @@ export default function Alumni() {
                                 class="card-text text-center"
                                 style={{ minHeight: "2rem" }}
                               >
-                                {member.presentOrganisation}
+                                {member.presentOrganisation
+                                  ? member.presentOrganisation
+                                  : "Graduated Mechanical Engineer, MNNIT Allahabad"}
                               </p>
+
                               <div className="d-flex justify-content-center mt-4">
                                 <a href={member.yourLinkedinId} target="_blank">
                                   <i class="fab fa-linkedin fa-3x mx-2"></i>
@@ -341,10 +347,14 @@ export default function Alumni() {
               </div>
             </div>
           </div>
+
+
+
         </div>
-        <br />
-        <br />
       </div>
+      <br />
+      <br />
+
     </>
   );
 }

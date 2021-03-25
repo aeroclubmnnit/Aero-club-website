@@ -70,6 +70,7 @@ export default function Navigbar() {
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);
+  const [show4, setShow4] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -115,13 +116,18 @@ export default function Navigbar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link
-              eventKey="projects"
-              href="/projects"
-              className="nav-items"
+            <NavDropdown
+              title="Projects"
+              id="basic-nav-dropdown"
+              onMouseEnter={() => setShow4(true)}
+              onMouseLeave={() => setShow4(false)}
+              onTouchEnd={() => setShow4(!show3)}
+              show={show4}
             >
-              Projects
-            </Nav.Link>
+              <NavDropdown.Item href="/projects">All Projects</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/projects/featured">Featured Projects</NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link eventKey="blogs" hresname="nav-items" href="/blogs">
               Blogs
             </Nav.Link>
@@ -176,6 +182,9 @@ export default function Navigbar() {
             <Nav.Link eventKey="collaborate" href="/collaborate" className="nav-items">
               Collaborate
             </Nav.Link>
+            <Nav.Link eventKey="sponsors" href="/sponsors" className="nav-items">
+              Sponsors
+            </Nav.Link>
             <NavDropdown
               title="More"
               id="basic-nav-dropdown"
@@ -184,10 +193,6 @@ export default function Navigbar() {
               onTouchEnd={() => setShow2(!show2)}
               show={show2}
             >
-              <NavDropdown.Item eventKey="sponsors" href="/sponsors">
-                Sponsors
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
               <NavDropdown.Item eventKey="spinoff" href="/spinoff">
                 Spinoff
               </NavDropdown.Item>
@@ -196,9 +201,6 @@ export default function Navigbar() {
                 Updates
               </NavDropdown.Item>
             </NavDropdown>
-            {/* <Nav.Link eventKey="sponsors" href="/sponsors" className="nav-items">
-              Sponsors
-            </Nav.Link> */}
           </Nav>
           <Login />
         </Navbar.Collapse>
