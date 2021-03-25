@@ -45,8 +45,7 @@ function ForgetPassword() {
           <div className="card card-signin my-5">
             <div className="card-body">
               <h5
-                className="card-title text-center font-weight-bold"
-                id="heading"
+                className="card-title text-center l2 font-weight-bold"
               >
                 Forget Password
                 </h5>
@@ -65,7 +64,7 @@ function ForgetPassword() {
                 </div>
 
                 <button
-                  className="btn btn-lg btn-primary btn-block text-uppercase btn-dark l1 my-1"
+                  className="btn btn-lg btn-block text-uppercase btn-danger l1 my-1"
                   type="submit"
                   onClick={handleSubmit}
                 >
@@ -73,7 +72,7 @@ function ForgetPassword() {
                   </button>
                 <button
                   type="button"
-                  className="btn btn-dark text-uppercase l1 my-1"
+                  className="btn btn-danger text-uppercase l1 my-1"
                   style={{ width: "100%" }}
                 >
                   <Link

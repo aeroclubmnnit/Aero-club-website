@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Navigbar from "./components/utils/Navigbar.js";
 import Footer from "./components/utils/Footer.js";
 import {
@@ -44,7 +44,6 @@ import WebTeam from "./components/Pages/WebTeam.js";
 import FeaturedProjects from "./components/Pages/FeaturedProjects.js";
 
 function App() {
-
   return (
 
     <div className="App">

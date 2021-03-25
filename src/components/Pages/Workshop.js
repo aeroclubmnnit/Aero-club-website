@@ -64,6 +64,7 @@ export default function Workshop() {
             </div>
           </div>
         </div>
+        
       </section>
 
       <Jumbotron
@@ -75,6 +76,34 @@ export default function Workshop() {
           margin: "auto",
           paddingBottom: "1rem",
         }}>
+        <div class="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24">
+                        <div class="sm:w-2/3 sm:mr-10">
+                            <div class="text">
+                                {/* <span class="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
+                                <h2 class="font-bold text-3xl my-4 sm:text-4xl">
+                                    <span class="text-indigo-600 font-bold cent">About the Event</span>
+                                </h2>
+                                <div className="bgBox phonev"
+                                    style={{
+                                        border: "3px solid rgb(204, 67, 67)",
+                                        padding: "2px",
+                                        borderRadius: "8px",
+                                        margin: "2em",
+                                        fontSize: "14px"
+
+                                    }}
+                                >
+                                    <div style={{ padding: "10px" }}>
+                                        <p class="text-gray-700 texte" style={{ fontSize: "16px" }}><i>
+                                            Avishkar is MNNIT's annual techno-management festival and is held either in September or October. Equipped with many technical and managerial events, Avishkar is an excellent platform for students to hone their skills, create outstanding projects, expand their networks, and build a superb CV.</i>
+                                        </p>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         <Container id="workshop" activeKey={workshops}
           onSelect={(e) => SetWorkshops(e)}>
 
@@ -100,10 +129,10 @@ export default function Workshop() {
                     {/* for date */}
                     <span className="object">Target Audience : </span>
                     <span className="value" dangerouslySetInnerHTML={{ __html: singleNews.target }}></span><br />
-                    <span className="object">Description :</span>
-                    <span className="value" dangerouslySetInnerHTML={{ __html: singleNews.description }}></span><br />
+                    {/* <span className="object">Description :</span> */}
+                    <span className="value" dangerouslySetInnerHTML={{ __html: singleNews.description }}></span>
                     <div className="value" dangerouslySetInnerHTML={{ __html: singleNews.about }}></div>
-                    <div className="object">
+                    {/* <div className="object">
                       <em
                         style={{ fontSize: "small" }}
                       >
@@ -111,16 +140,16 @@ export default function Workshop() {
                         singleNews.date
                       ).toLocaleDateString()}
                       </em>
-                    </div><br />
+                    </div><br /> */}
                     {/* Link for discription of Workshop */}
                     <a href={singleNews.brochure} download>
                       <p className="card-text">Download Brochure</p>
                     </a>
                     {/* Date of posting */}
-                    <div className="row edits">
+                    {/* <div className="row edits">
                       <div className="ml-auto">
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

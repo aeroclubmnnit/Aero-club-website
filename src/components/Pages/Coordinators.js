@@ -180,11 +180,13 @@ export default function Coordinators() {
   return (
     <>
       <Loading time={2} />
-      <div className=" pagesa">
-        <div className="overlaya">
-          <div className="pageTitlea titleBolda">Coordinators</div>
-        </div>
-      </div>
+      <h3 className="my-3 titleBold d-flex justify-content-center topic">
+              <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>COORDINATORS</p>
+            </h3>
+            <div
+              className="miniSep"
+              style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
+            ></div>
 
       <div className="pageTitle my-5 titleBold header white-heading padtop">
         Core Coordinators

@@ -117,11 +117,11 @@ img {
 }
 
 .evavishkar:hover {
-  transform:scale(1.5);
-  -ms-transform:scale(1.5); /* IE 9 */
-  -moz-transform:scale(1.5); /* Firefox */
-  -webkit-transform:scale(1.5); /* Safari and Chrome */
-  -o-transform:scale(1.5); /* Opera */
+  transform:scale(1.2);
+  -ms-transform:scale(1.2); /* IE 9 */
+  -moz-transform:scale(1.2); /* Firefox */
+  -webkit-transform:scale(1.2); /* Safari and Chrome */
+  -o-transform:scale(1.2); /* Opera */
 }
 
 .evfeatured{
@@ -129,11 +129,11 @@ img {
 }
 
 .evfeatured:hover {
-  transform:scale(1.5);
-  -ms-transform:scale(1.5); /* IE 9 */
-  -moz-transform:scale(1.5); /* Firefox */
-  -webkit-transform:scale(1.5); /* Safari and Chrome */
-  -o-transform:scale(1.5); /* Opera */
+  transform:scale(1.2);
+  -ms-transform:scale(1.2); /* IE 9 */
+  -moz-transform:scale(1.2); /* Firefox */
+  -webkit-transform:scale(1.2); /* Safari and Chrome */
+  -o-transform:scale(1.2); /* Opera */
 }
 
 .card_image {

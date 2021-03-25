@@ -2,6 +2,7 @@ import React from "react";
 import "../../css/footer.css";
 import { useLocation } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
+import { Link as Scroll } from "react-scroll";
 import m from "../../images/utils/aerologofix.png";
 
 export default function Footer() {
@@ -68,7 +69,6 @@ export default function Footer() {
                   <img src={m} alt="mnnit" className='float-right' />
                 </div>
               </div>
-              <br />
               <hr />
             </div>
           )}

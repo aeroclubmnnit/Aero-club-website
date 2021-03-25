@@ -48,11 +48,13 @@ function Blogs() {
     <>
       <Loading time={2} />
       <div className="cont">
-        <div className=" pagesg">
-          <div className="overlayg">
-            <div className="pageTitleg titleBoldg">BLOGS</div>
-          </div>
-        </div>
+        <h3 className="my-3 titleBold d-flex justify-content-center topic">
+              <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>BLOGS</p>
+            </h3>
+            <div
+              className="miniSep"
+              style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
+            ></div>
 
         <div
           className="main"

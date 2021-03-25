@@ -4,6 +4,7 @@ import "../../css/Login.css";
 import { toast } from "react-toastify";
 import m from "../../images/utils/logo-aero2.png";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 function Signup() {
 
@@ -86,8 +87,7 @@ function Signup() {
           <div className="card card-signin">
             <div className="card-body">
               <h5
-                className="card-title text-center font-weight-bold"
-                id="heading"
+                className="card-title text-center l2 font-weight-bold"
               >
                 Account Signup
               </h5>
@@ -117,23 +117,33 @@ function Signup() {
                   />
                   <label htmlFor="inputEmail">Gsuite Email Address</label>
                 </div>
-                <div className="form-label-group">
-                  <input
-                    type="password"
-                    id="inputPassword"
-                    className="form-control"
-                    placeholder="Password"
-                    required
-                    maxLength={25}
-                    ref={password}
-                  />
-                  <label htmlFor="inputPassword" >Password</label><i className="fa fa-eye-slash float-right" id='eye' onClick={passwordToggle}></i>
-                  <em style={{ fontSize: "x-small" }}>
-                    * password must between 8-25 characters containing at least
-                    one lowercase and one uppercase letter, one numeric digit,
-                    and one special character
-                  </em>
-                </div>
+                <OverlayTrigger
+                  placement="bottom-end"
+                  delay={{ show: 250, hide: 400 }}
+                  overlay={
+                    <Tooltip>
+                      * password must between 8-25 characters containing at least
+                      one lowercase and one uppercase letter, one numeric digit,
+                      and one special character
+                    </Tooltip>}
+                >
+                  <div className="form-label-group">
+                    <input
+                      type="password"
+                      id="inputPassword"
+                      className="form-control"
+                      placeholder="Password"
+                      required
+                      maxLength={25}
+                      ref={password}
+                    />
+                    <label htmlFor="inputPassword" >Password</label>
+                    <span>
+                      <i className="fa fa-eye-slash" id='eye' onClick={passwordToggle}></i>
+                    </span>
+                  </div>
+                </OverlayTrigger>
+
                 <div className="form-label-group">
                   <input
                     type="password"
@@ -144,29 +154,32 @@ function Signup() {
                     maxLength={25}
                     ref={confirmPassword}
                   />
-                  <label htmlFor="inputretypePassword">Retype Password</label><i className="fa fa-eye-slash float-right" id='eye1' onClick={passwordToggle1}></i>
+                  <label htmlFor="inputretypePassword">Retype Password</label>
+                  <span>
+                    <i className="fa fa-eye-slash" id='eye1' onClick={passwordToggle1}></i>
+                  </span>
                 </div>
                 <button
-                  className="btn btn-primary btn-block text-uppercase btn-dark l1 mb-3"
+                  className="btn btn-danger btn-block text-uppercase l1 mb-3"
                   type="submit"
                   onClick={handleSubmit}
                 >
                   Sign up
                 </button>
                 <div className="para">
-                  <p style={{ color: "white" }}>
+                  <p style={{ color: "black" }}>
                     Already have an account?{" "}
                     <Link
                       to="/user/login"
                       style={{ textDecoration: "none" }}
-                      className="l1"
+                      className="l2"
                     >
                       Signin
                     </Link>
                   </p>
                   <button
                     type="button"
-                    className="btn btn-dark text-uppercase l1"
+                    className="btn btn-danger text-uppercase l1"
                     style={{ width: "100%" }}
                   >
                     <Link
@@ -182,7 +195,7 @@ function Signup() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 

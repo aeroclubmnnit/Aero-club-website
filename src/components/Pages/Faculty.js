@@ -13,11 +13,13 @@ export default function Faculty() {
   return (
     <>
       <Loading time={2} />
-      <div className=" pagesa">
-        <div className="overlaya">
-          <div className="pageTitlea titleBolda">Faculty Incharge</div>
-        </div>
-      </div>
+      <h3 className="my-3 titleBold d-flex justify-content-center topic">
+              <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>FACULTY INCHARGE</p>
+            </h3>
+            <div
+              className="miniSep"
+              style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
+            ></div>
       <div className="faculty-container container col-10">
         <div
           className="container rounded border d-flex flex-column flex-md-row justify-content-center my-5 shadow"

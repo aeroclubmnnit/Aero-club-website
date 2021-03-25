@@ -5,34 +5,47 @@
 
 .login {
   height: 100vh;
-  background: url("../images/utils/wave.svg") rgb(59, 179, 249);
   background-size: cover;
   background-position: center;
   color: grey;
   overflow: auto;
 }
 
+.form-label-group span {
+  float: right;
+  margin-top: -49px;
+  position: relative;
+  z-index: 1;
+  cursor:pointer;
+}
+
 .login i{
-    cursor: pointer;
-    position: relative;
-    left: 0px;
-    bottom:50px;
-    font-size: 20px;
-    background:#495057 !important;
-    color:rgb(142, 249, 243);
-    padding: 15.5px 14px;
-    border-radius: 1rem;
-    transition: all 0.3s ease-in-out;
-    border-top-left-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
+  position: absolute;
+  right: 1px;
+  font-size: 18px;
+  background: #dc3545;
+  color: white;
+  padding: 15.5px 14px;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }
 
 .l1 {
-  color: rgb(142, 249, 243);
+  color:white;
 }
 
 .l1:hover {
-  color: rgb(169, 210, 213);
+  color: rgb(134, 25, 11);
+}
+.l2 {
+  font-weight: 700;
+  color:#dc3545;
+}
+
+.l2:hover {
+  color: rgb(134, 25, 11);
 }
 
 .card-signin {
@@ -40,7 +53,8 @@
   position: relative;
   border: 0;
   border-radius: 1rem;
-  background-color: rgb(32, 30, 30) !important;
+  background-color: rgb(248, 248, 248) !important;
+  box-shadow: 0 25px 45px rgba(0,0,0,0.50), 0 10px 10px rgba(204, 132, 132, 0.5) !important;
   background: transparent;
 }
 
@@ -48,6 +62,10 @@
   margin-bottom: 2rem;
   font-weight: 300;
   font-size: 1.5rem;
+}
+
+.logpara {
+  color: #495057;
 }
 
 .card-signin .card-body {
@@ -151,18 +169,9 @@
   text-align: center;
 }
 
-#heading {
-  color: white;
-  text-shadow: 2px 2px 2px black;
-}
-
 @media only screen and (max-width: 400px) {
   .card-signin h5 {
-    font-size: medium !important;
-  }
-  .login {
-    background: none !important;
-    height: 100%;
+    font-size: large !important;
   }
 }
 

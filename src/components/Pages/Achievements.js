@@ -26,6 +26,15 @@ export default function Achievements() {
       <div className="pagesa">
         <div className="overlaya">
           <div className="pageTitlea titleBolda">Our Achievements</div>
+          <div className="py-2">
+            <p
+              className="font-italic text-center my-5 quote"
+              style={{ fontSize: "1.5rem" }}
+            >
+              "Only those who attempt the absurd can achieve the impossible" ~ Albert Einstein
+              
+          </p>
+          </div>
         </div>
       </div>
       <div className="container my-5 col-11 col-md-12">

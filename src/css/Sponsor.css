@@ -7,7 +7,7 @@
 }
 .c1 {
   width: 22rem;
-  height: 35rem;
+  height: 27rem;
 }
 .sponimg {
   width: auto;
@@ -23,6 +23,60 @@
 }
 /* .card-body:hover{
   transition: transform 400ms ease-out;
+} */
+
+.card-text{
+  padding: 10px;
+}
+
+.scroller
+{
+  text-align: justify ;
+	margin-left: 15px;
+	float: left;
+	height: 130px;
+	/* width: 65px; */
+	/* background: #F5F5F5; */
+	overflow-y: scroll;
+	margin-bottom: 25px;
+}
+
+.force-overflow
+{
+	min-height: 100px;
+}
+
+#style-2::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: rgb(204, 67, 67);
+}
+
+/* .scroller::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+.scroller::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+.scroller::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 } */
 
 .details{

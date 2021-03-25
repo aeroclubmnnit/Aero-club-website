@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { useHistory, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -95,30 +96,39 @@ function PasswordReset() {
           <div className="card card-signin my-5">
             <div className="card-body">
               <h5
-                className="card-title text-center font-weight-bold"
+                className="card-title text-center l2 font-weight-bold"
                 id="heading"
               >
                 Reset Password
                 </h5>
               <form className="form-signin">
-                <div className="form-label-group">
-                  <input
-                    type="password"
-                    id="inputPassword"
-                    className="form-control"
-                    placeholder="Password"
-                    required
-                    maxLength={25}
-                    ref={password}
-                  />
-                  <label htmlFor="inputPassword" >Password</label><i className="fa fa-eye-slash float-right" id='eye' onClick={passwordToggle}></i>
-                  <em style={{ fontSize: "x-small" }}>
-                    * password must between 8-25 characters containing at least
-                    one lowercase and one uppercase letter, one numeric digit,
-                    and one special character
-                  </em>
+                <OverlayTrigger
+                  placement="bottom-end"
+                  delay={{ show: 250, hide: 400 }}
+                  overlay={
+                    <Tooltip>
+                      * password must between 8-25 characters containing at least
+                      one lowercase and one uppercase letter, one numeric digit,
+                      and one special character
+                    </Tooltip>}
+                >
 
-                </div>
+                  <div className="form-label-group">
+                    <input
+                      type="password"
+                      id="inputPassword"
+                      className="form-control"
+                      placeholder="Password"
+                      required
+                      maxLength={25}
+                      ref={password}
+                    />
+                    <label htmlFor="inputPassword" >Password</label>
+                    <span>
+                      <i className="fa fa-eye-slash float-right" id='eye' onClick={passwordToggle}></i>
+                    </span>
+                  </div>
+                </OverlayTrigger>
                 <div className="form-label-group">
                   <input
                     type="password"
@@ -129,10 +139,13 @@ function PasswordReset() {
                     maxLength={25}
                     ref={confirmPassword}
                   />
-                  <label htmlFor="inputretypePassword">Retype Password</label><i className="fa fa-eye-slash float-right" id='eye1' onClick={passwordToggle1}></i>
+                  <label htmlFor="inputretypePassword">Retype Password</label>
+                  <span>
+                    <i className="fa fa-eye-slash float-right" id='eye1' onClick={passwordToggle1}></i>
+                  </span>
                 </div>
                 <button
-                  className="btn btn-primary btn-block text-uppercase btn-dark l1 mb-3"
+                  className="btn btn-block text-uppercase btn-danger l1 mb-3"
                   type="submit"
                   onClick={handleSubmit}
                 >

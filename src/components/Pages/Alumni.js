@@ -154,11 +154,13 @@ export default function Alumni() {
   return (
     <>
       <Loading time={2} />
-      <div className="pagesa">
-        <div className="overlaya">
-          <div className="pageTitlea titleBolda">Our Alumni</div>
-        </div>
-      </div>
+      <h3 className="my-3 titleBold d-flex justify-content-center topic">
+              <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>OUR ALUMNI</p>
+            </h3>
+            <div
+              className="miniSep"
+              style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
+            ></div>
       <div class="container alumni-container my-5 col-11">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           <div class="panel panel-default">
