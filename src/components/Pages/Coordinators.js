@@ -19,7 +19,7 @@ import f15 from "../../images/coordinators&Nontech/Ayan Santania.jpg";
 import f16 from "../../images/coordinators&Nontech/ABHISHEK GAUTAM.jpg";
 import f17 from "../../images/coordinators&Nontech/Karimulla Mohammad.bmp";
 import f18 from "../../images/coordinators&Nontech/Ankur Singh.jpg";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE } from "../../grobalVars"
 
 export default function Coordinators() {
   useEffect(() => {
@@ -181,12 +181,12 @@ export default function Coordinators() {
     <>
       <Loading time={2} />
       <h3 className="my-3 titleBold d-flex justify-content-center topic">
-              <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>COORDINATORS</p>
-            </h3>
-            <div
-              className="miniSep"
-              style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
-            ></div>
+        <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>COORDINATORS</p>
+      </h3>
+      <div
+        className="miniSep"
+        style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
+      ></div>
 
       <div className="pageTitle my-5 titleBold header white-heading padtop">
         Core Coordinators
@@ -196,26 +196,27 @@ export default function Coordinators() {
           {members.map(
             (member, i) =>
               member.year === "Final" && (
-                <div class="card card-item shadow" style={{ width: "17rem" }}>
+                <div className="card card-item shadow" style={{ width: "17rem", minHeight: '35rem', maxHeight: '35rem' }} key={i}>
                   <img
-                    class="card-img-top card-alumni"
+                    className="card-img-top card-alumni"
                     src={`${member.photo}`}
                     alt="Card image cap"
                   />
-                  <div class="card-body d-flex flex-column transition: transform 400ms ease-out;">
-                    <h5 class="card-title text-center text-uppercase">
+                  <div className="card-body d-flex flex-column transition: transform 400ms ease-out;">
+                    <h5 className="card-title text-center text-uppercase" style={{ minHeight: "3rem" }}
+                    >
                       {member.name}
                     </h5>
                     <p
-                      class="card-text text-center"
-                      style={{ minHeight: "4rem" }}
+                      className="card-text text-center"
+                      style={{ minHeight: "5rem" }}
                     >
                       <strong>Area of Interest</strong> :{" "}
                       {member.areaOfInterests}
                     </p>
-                    <div className="d-flex justify-content-center mt-4">
+                    <div className="d-flex justify-content-center">
                       <a href={member.linkedinId} target="_blank">
-                        <i class="fab fa-linkedin fa-3x mx-2"></i>
+                        <i className="fab fa-linkedin fa-3x mx-2"></i>
                       </a>
                     </div>
                   </div>
@@ -224,7 +225,6 @@ export default function Coordinators() {
           )}
         </div>
       </div>
-
       {/* <div className="pageTitle my-5 titleBold header white-heading padtop">
         Senior Coordinators
       </div>
@@ -233,23 +233,27 @@ export default function Coordinators() {
           {members.map(
             (member, i) =>
               member.year === "3rd" && (
-                <div class="card card-item shadow" style={{ width: "15rem" }}>
+                <div class="card card-item shadow" style={{ width: "17rem", minHeight: '35rem', maxHeight: '35rem' }} key={i}>
                   <img
-                    class="card-img-top card-alumni"
+                    className="card-img-top card-alumni"
                     src={`${member.photo}`}
                     alt="Card image cap"
                   />
-                  <div class="card-body d-flex flex-column transition: transform 400ms ease-out;">
-                    <h5 class="card-title text-center">{member.name}</h5>
-                    <p
-                      class="card-text text-center"
-                      style={{ minHeight: "4rem" }}
+                  <div className="card-body d-flex flex-column transition: transform 400ms ease-out;">
+                    <h5 className="card-title text-center text-uppercase" style={{ minHeight: "3rem" }}
                     >
-                      {member.year} year <br />
+                      {member.name}
+                    </h5>
+                    <p
+                      className="card-text text-center"
+                      style={{ minHeight: "5rem" }}
+                    >
+                      <strong>Area of Interest</strong> :{" "}
+                      {member.areaOfInterests}
                     </p>
-                    <div className="d-flex justify-content-center mt-4">
+                    <div className="d-flex justify-content-center">
                       <a href={member.linkedinId} target="_blank">
-                        <i class="fab fa-linkedin fa-3x mx-2"></i>
+                        <i className="fab fa-linkedin fa-3x mx-2"></i>
                       </a>
                     </div>
                   </div>
@@ -258,7 +262,6 @@ export default function Coordinators() {
           )}
         </div>
       </div> */}
-
       <div className="pageTitle my-5 titleBold header white-heading padtop">
         Junior Coordinators
       </div>
@@ -267,24 +270,27 @@ export default function Coordinators() {
           {members.map(
             (member, i) =>
               member.year === "2nd" && (
-                <div class="card card-item shadow" style={{ width: "17rem" }}>
+                <div className="card card-item shadow" style={{ width: "17rem", minHeight: '35rem', maxHeight: '35rem' }} key={i}>
                   <img
-                    class="card-img-top card-alumni"
+                    className="card-img-top card-alumni"
                     src={`${member.photo}`}
                     alt="Card image cap"
                   />
-                  <div class="card-body d-flex flex-column transition: transform 400ms ease-out;">
-                    <h5 class="card-title text-center">{member.name}</h5>
+                  <div className="card-body d-flex flex-column transition: transform 400ms ease-out;">
+                    <h5 className="card-title text-center text-uppercase" style={{ minHeight: "3rem" }}
+                    >
+                      {member.name}
+                    </h5>
                     <p
-                      class="card-text text-center"
-                      style={{ minHeight: "4rem" }}
+                      className="card-text text-center"
+                      style={{ minHeight: "5rem" }}
                     >
                       <strong>Area of Interest</strong> :{" "}
                       {member.areaOfInterests}
                     </p>
-                    <div className="d-flex justify-content-center mt-4">
+                    <div className="d-flex justify-content-center">
                       <a href={member.linkedinId} target="_blank">
-                        <i class="fab fa-linkedin fa-3x mx-2"></i>
+                        <i className="fab fa-linkedin fa-3x mx-2"></i>
                       </a>
                     </div>
                   </div>

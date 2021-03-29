@@ -67,7 +67,7 @@
 @media (max-width: 700px) {
   .pagesl{
     background: none;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0,0,0,0.4)), url("../images/utils/drone4.jpg") top center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0,0,0,0.4)), url("../images/utils/drone5.jpg") top center no-repeat;
   }
   .landing {
     height: 70vh;
@@ -79,8 +79,9 @@
 }
 @media (max-width: 530px) {
   .pagesl{
+    background-attachment: fixed;
     background-size:cover;
-    height: 80vh;
+    height: 91vh;
   }
   .landing{
     margin-top: 2rem !important;

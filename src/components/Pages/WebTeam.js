@@ -40,11 +40,11 @@ export default function WebTeam() {
         <>
             <Loading time={2} />
             <h3 className="my-3 titleBold d-flex justify-content-center topic">
-              <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>WEB TEAM</p>
+                <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>WEB TEAM</p>
             </h3>
             <div
-              className="miniSep"
-              style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
+                className="miniSep"
+                style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
             ></div>
 
             <div className="container alumni-container">
@@ -52,27 +52,27 @@ export default function WebTeam() {
                     {members.map(
                         (member, i) =>
                             <div
-                                class="card card-item shadow"
+                                className="card card-item shadow"
                                 style={{ width: "17rem", minHeight: "29rem", height: "35rem" }}
                                 key={i}
                             >
                                 <img
-                                    class="card-img-top card-alumni"
+                                    className="card-img-top card-alumni"
                                     src={`${member.photo}`}
                                     alt="Card image cap"
                                 />
-                                <div class="card-body d-flex flex-column transition: transform 400ms ease-out;">
-                                    <h5 class="card-title text-center text-uppercase">
+                                <div className="card-body d-flex flex-column transition: transform 400ms ease-out;">
+                                    <h5 className="card-title text-center text-uppercase">
                                         {member.name}
                                     </h5>
-                                    <p class="text-center">
+                                    <p className="text-center">
                                         {member.branch}
 
                                     </p>
-                                    <p class="card-text text-center">{member.year} year</p>
+                                    <p className="card-text text-center">{member.year} year</p>
                                     <div className="d-flex justify-content-center mt-4">
                                         <a href={member.linkedinId} target="_blank">
-                                            <i class="fab fa-linkedin fa-3x mx-2"></i>
+                                            <i className="fab fa-linkedin fa-3x mx-2"></i>
                                         </a>
                                     </div>
                                 </div>

@@ -1,77 +1,18 @@
-import { Button, Navbar, Nav, NavDropdown, Dropdown } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import "../../css/navbar.css";
-import { useHistory } from "react-router-dom";
-import { toast } from "react-toastify";
 import im1 from "../..//images/utils/logo-aero2.png";
-import { useDispatch } from "react-redux";
-import { REACT_APP_SERVER } from "../../grobalVars";
+import { ExitToApp, PermIdentity } from '@material-ui/icons'
 
-const Login = () => {
-  const history = useHistory();
-  const [loggedIn, setLoggedIn] = useState(
-    localStorage.getItem("jwtToken") ? true : false
-  );
-  const [show, setShow] = useState(false);
-  const dispatch = useDispatch()
-
-  const handleLogout = () => {
-    fetch(`${REACT_APP_SERVER}/api/signout`, {
-      method: "post",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        localStorage.removeItem("jwtToken");
-        localStorage.removeItem("role");
-        dispatch({ type: "CLEAR" });
-        setLoggedIn(false);
-        history.push("/");
-        window.location.reload();
-        toast.success(data.message);
-      });
-  };
-
-  return (
-    <>
-      {loggedIn ? (
-        <Dropdown
-          className="pad right-btn"
-          show={show}
-          onMouseEnter={() => setShow(true)}
-          onMouseLeave={() => setShow(false)}
-        >
-          <Dropdown.Toggle
-            id="dropdown-basic"
-            className="mr-sm-2 my-2"
-            size="lg"
-            variant="danger"
-          >
-            Profile
-          </Dropdown.Toggle>
-
-          <Dropdown.Menu>
-            <Dropdown.Item href="/user/dashboard">Dashboard</Dropdown.Item>
-            <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-      ) : (
-        <Button
-          className="mr-sm-2 my-2 right-btn btn-danger"
-          href="/user/login"
-          size="lg"
-        >
-          Login
-        </Button>
-      )}
-    </>
-  );
-};
 
 export default function Navigbar() {
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);
   const [show4, setShow4] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(
+    localStorage.getItem("jwtToken") ? true : false
+  );
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -125,9 +66,9 @@ export default function Navigbar() {
               onTouchEnd={() => setShow4(!show3)}
               show={show4}
             >
-              <NavDropdown.Item href="/projects">All Projects</NavDropdown.Item>
+              <NavDropdown.Item href="/projects/featured">Flagship Projects</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/projects/featured">Featured Projects</NavDropdown.Item>
+              <NavDropdown.Item href="/projects">Other Projects</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link eventKey="blogs" hresname="nav-items" href="/blogs">
               Blogs
@@ -183,6 +124,9 @@ export default function Navigbar() {
             <Nav.Link eventKey="collaborate" href="/collaborate" className="nav-items">
               Collaborate
             </Nav.Link>
+            <Nav.Link eventKey="spinoff" href="/spinoff" className="nav-items">
+              Spinoff
+            </Nav.Link>
             <Nav.Link eventKey="sponsors" href="/sponsors" className="nav-items">
               Sponsors
             </Nav.Link>
@@ -194,16 +138,23 @@ export default function Navigbar() {
               onTouchEnd={() => setShow2(!show2)}
               show={show2}
             >
-              <NavDropdown.Item eventKey="spinoff" href="/spinoff">
-                Spinoff
-              </NavDropdown.Item>
+              {
+                loggedIn ?
+                  <NavDropdown.Item href="/user/dashboard" eventKey="dasboard">
+                    <PermIdentity className='mr-1' /> Dashboard
+                  </NavDropdown.Item>
+                  :
+                  <NavDropdown.Item href="/user/login" eventKey="login">
+                    Login <ExitToApp className='ml-3' />
+                  </NavDropdown.Item>
+              }
               <NavDropdown.Divider />
               <NavDropdown.Item href="/news" eventKey="news">
                 Updates
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Login />
+          <Button className='mr-sm-2 my-2 right-btn btn-danger' href='#'>Astrowing Club</Button>
         </Navbar.Collapse>
       </Navbar>
     </>

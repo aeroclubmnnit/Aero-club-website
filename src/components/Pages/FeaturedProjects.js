@@ -46,7 +46,7 @@ function FeaturedProjects() {
       <Loading time={2} />
       <div className="cont">
       <h3 className="my-3 titleBold d-flex justify-content-center topic">
-              <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>PROJECTS</p>
+              <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>FLAGSHIP PROJECTS</p>
             </h3>
             <div
               className="miniSep"

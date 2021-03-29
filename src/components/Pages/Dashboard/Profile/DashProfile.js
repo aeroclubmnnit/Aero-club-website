@@ -1,6 +1,8 @@
+import { ExitToApp } from "@material-ui/icons";
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import { REACT_APP_SERVER } from "../../../../grobalVars"
 
@@ -13,6 +15,7 @@ export default function DashProfile() {
   const [linkedin, setLinkedin] = useState("");
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch()
+  const history = useHistory();
 
   useEffect(() => {
     if (user) {
@@ -22,6 +25,21 @@ export default function DashProfile() {
       setLinkedin(user.linkedin_url);
     }
   }, [user]);
+
+  const handleLogout = () => {
+    fetch(`${REACT_APP_SERVER}/api/signout`, {
+      method: "post",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        localStorage.removeItem("jwtToken");
+        localStorage.removeItem("role");
+        dispatch({ type: "CLEAR" });
+        history.push("/");
+        window.location.reload();
+        toast.success(data.message);
+      });
+  };
 
   const handleSaveChange = () => {
 
@@ -161,6 +179,7 @@ export default function DashProfile() {
       {user?.role !== "User" && (
         <Button href='/1208e2fe-b5f6-439b-94e0-aef5dde3b777/admin' target="_blank" variant='danger' className='mx-1' disabled={!disabled}>Go to Admin Panel</Button>
       )}
+      <button disabled={!disabled} onClick={handleLogout} className='btn btn-warning mx-1'>Logout <ExitToApp /></button>
     </div>
   );
 }

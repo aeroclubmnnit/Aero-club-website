@@ -15,7 +15,7 @@ import f11 from "../../images/coordinators&Nontech/Prasanna Sneha.jpg";
 import f12 from "../../images/coordinators&Nontech/Devansh Sethi.jpg";
 import f13 from "../../images/coordinators&Nontech/Hamza Siddiqui.jpg";
 import f14 from "../../images/coordinators&Nontech/Harsh Kumar Singh.jpg";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE } from "../../grobalVars"
 
 export default function Nontech() {
   useEffect(() => {
@@ -175,12 +175,12 @@ export default function Nontech() {
     <>
       <Loading time={2} />
       <h3 className="my-3 titleBold d-flex justify-content-center topic">
-              <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>NON-TECH MENBERS</p>
-            </h3>
-            <div
-              className="miniSep"
-              style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
-            ></div>
+        <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>NON-TECH MENBERS</p>
+      </h3>
+      <div
+        className="miniSep"
+        style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
+      ></div>
 
       <div className="pageTitle my-5 titleBold header white-heading padtop">
         Content Team
@@ -191,23 +191,23 @@ export default function Nontech() {
             (member, i) =>
               member.team === "Content" && (
                 <div
-                  class="card card-item shadow"
-                  style={{ width: "17rem", minHeight: "29rem" }}
+                  className="card card-item shadow"
+                  style={{ width: "17rem", minHeight: '35rem', maxHeight: '35rem' }}
                   key={i}
                 >
                   <img
-                    class="card-img-top card-alumni"
+                    className="card-img-top card-alumni"
                     src={`${member.profilePicture}`}
                     alt="Card image cap"
                   />
-                  <div class="card-body d-flex flex-column transition: transform 400ms ease-out;">
-                    <h5 class="card-title text-center text-uppercase">
+                  <div className="card-body d-flex flex-column transition: transform 400ms ease-out;">
+                    <h5 className="card-title text-center text-uppercase" style={{ minHeight: "3rem" }}>
                       {member.name}
                     </h5>
-                    <p class="card-text text-center">{member.year} year <br /> {member.branch}</p>
+                    <p className="card-text text-center" style={{ minHeight: "3rem" }}>{member.year} year <br /> {member.branch}</p>
                     <div className="d-flex justify-content-center mt-4">
                       <a href={member.linkedinId} target="_blank">
-                        <i class="fab fa-linkedin fa-3x mx-2"></i>
+                        <i className="fab fa-linkedin fa-3x mx-2"></i>
                       </a>
                     </div>
                   </div>
@@ -226,23 +226,23 @@ export default function Nontech() {
             (member, i) =>
               member.team === "Design" && (
                 <div
-                  class="card card-item shadow"
-                  style={{ width: "17rem", minHeight: "29rem" }}
+                  className="card card-item shadow"
+                  style={{ width: "17rem", minHeight: '35rem', maxHeight: '35rem' }}
                   key={i}
                 >
                   <img
-                    class="card-img-top card-alumni"
+                    className="card-img-top card-alumni"
                     src={`${member.profilePicture}`}
                     alt="Card image cap"
                   />
-                  <div class="card-body d-flex flex-column transition: transform 400ms ease-out;">
-                    <h5 class="card-title text-center text-uppercase">
+                  <div className="card-body d-flex flex-column transition: transform 400ms ease-out;">
+                    <h5 className="card-title text-center text-uppercase" style={{ minHeight: "3rem" }}>
                       {member.name}
                     </h5>
-                    <p class="card-text text-center">{member.year} year <br /> {member.branch}</p>
+                    <p className="card-text text-center" style={{ minHeight: "3rem" }}>{member.year} year <br /> {member.branch}</p>
                     <div className="d-flex justify-content-center mt-4">
                       <a href={member.linkedinId} target="_blank">
-                        <i class="fab fa-linkedin fa-3x mx-2"></i>
+                        <i className="fab fa-linkedin fa-3x mx-2"></i>
                       </a>
                     </div>
                   </div>
@@ -261,23 +261,23 @@ export default function Nontech() {
             (member, i) =>
               member.team === "Outreach" && (
                 <div
-                  class="card card-item shadow"
-                  style={{ width: "17rem", minHeight: "29rem" }}
+                  className="card card-item shadow"
+                  style={{ width: "17rem", minHeight: '35rem', maxHeight: '35rem' }}
                   key={i}
                 >
                   <img
-                    class="card-img-top card-alumni"
+                    className="card-img-top card-alumni"
                     src={`${member.profilePicture}`}
                     alt="Card image cap"
                   />
-                  <div class="card-body d-flex flex-column transition: transform 400ms ease-out;">
-                    <h5 class="card-title text-center text-uppercase">
+                  <div className="card-body d-flex flex-column transition: transform 400ms ease-out;">
+                    <h5 className="card-title text-center text-uppercase" style={{ minHeight: "3rem" }}>
                       {member.name}
                     </h5>
-                    <p class="card-text text-center">{member.year} year <br /> {member.branch}</p>
+                    <p className="card-text text-center" style={{ minHeight: "3rem" }}>{member.year} year <br /> {member.branch}</p>
                     <div className="d-flex justify-content-center mt-4">
                       <a href={member.linkedinId} target="_blank">
-                        <i class="fab fa-linkedin fa-3x mx-2"></i>
+                        <i className="fab fa-linkedin fa-3x mx-2"></i>
                       </a>
                     </div>
                   </div>

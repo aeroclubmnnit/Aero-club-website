@@ -15,10 +15,7 @@ export default function Achievements() {
       method: "get",
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data)
-        setAchievements(data)
-      });
+      .then((data) => setAchievements(data));
   }, []);
   return (
     <>

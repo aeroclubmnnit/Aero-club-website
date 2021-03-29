@@ -40,7 +40,7 @@ function Dashboard() {
   }, []);
 
   return (
-    <div className="container col-10 dashboard" style={{ minHeight: "76vh" }}>
+    <div className="container col-10 dashboard mt-5" style={{ minHeight: "80vh" }}>
       <nav>
         <div className="nav nav-tabs" id="nav-tab" role="tablist">
           <a

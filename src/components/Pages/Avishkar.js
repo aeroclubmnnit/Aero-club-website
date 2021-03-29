@@ -5,7 +5,7 @@ import m from "../../images/utils/avishkar.png";
 import Phantom from "../../images/Events/Phantom.PNG";
 import guardian from "../../images/Events/guardian2.PNG";
 import lostinspace from "../../images/Events/lostinspace.PNG";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE } from "../../grobalVars"
 
 export default function Avishkar() {
     useEffect(() => {
@@ -31,7 +31,7 @@ export default function Avishkar() {
                                     <img
                                         src={m}
                                         alt="avishkar"
-                                        srcset=""
+                                        srcSet=""
                                         style={{ alignItems: "center" }}
                                     />
                                 </div>
@@ -68,12 +68,12 @@ export default function Avishkar() {
                         AVISHKAR
                     </div> */}
                     {/* <div className="miniSep"></div> */}
-                    <div class="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24">
-                        <div class="sm:w-2/3 sm:mr-10">
-                            <div class="text">
-                                {/* <span class="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
-                                <h2 class="font-bold text-3xl my-4 sm:text-4xl">
-                                    <span class="text-indigo-600 font-bold cent">About the Event</span>
+                    <div className="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24">
+                        <div className="sm:w-2/3 sm:mr-10">
+                            <div className="text">
+                                {/* <span className="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
+                                <h2 className="font-bold text-3xl my-4 sm:text-4xl">
+                                    <span className="text-indigo-600 font-bold cent">About the Event</span>
                                 </h2>
                                 <div className="bgBox phonev"
                                     style={{
@@ -86,7 +86,7 @@ export default function Avishkar() {
                                     }}
                                 >
                                     <div style={{ padding: "10px" }}>
-                                        <p class="text-gray-700 texte" style={{ fontSize: "16px" }}><i>
+                                        <p className="text-gray-700 texte" style={{ fontSize: "16px" }}><i>
                                             Avishkar is MNNIT's annual techno-management festival and is held either in September or October. Equipped with many technical and managerial events, Avishkar is an excellent platform for students to hone their skills, create outstanding projects, expand their networks, and build a superb CV.</i>
                                         </p>
 
@@ -110,13 +110,13 @@ export default function Avishkar() {
                         <div style={{ padding: "10px" }} className="texte">
 
 
-                            <p class="text-gray-700" style={{ fontSize: "16px" }}><i>
+                            <p className="text-gray-700" style={{ fontSize: "16px" }}><i>
                                 All the college departments and technical clubs of MNNIT conduct multiple exciting competitions during Avishkar, which are open to students of MNNIT and students all across the nation. These competitions witness cut-throat competitors every year and truly bring alive the "Ideate, Innovate and Create" spirit amongst budding technocrats. </i>
                             </p>
-                            <p class="text-gray-700" style={{ fontSize: "16px" }}><i>
+                            <p className="text-gray-700" style={{ fontSize: "16px" }}><i>
                                 Apart from these competitions, many inspiring talks by eminent people in the industry and academia and other activities also happen during Avishkar, enlightening and preparing its participants for many challenges that lie ahead.</i>
                             </p>
-                            <p className="text-gray-700" style={{ textAlign: "justify" }}>
+                            <p classNameName="text-gray-700" style={{ textAlign: "justify" }}>
                                 <i style={{ fontSize: "medium" }}>As a technical club, Aeroclub MNNIT organizes four events competitions during Avishkar under the name Aerodynamix:</i><br></br><br></br><ul className="ulprosang">
                                     <li><b>Phantom: </b>
 This competition involves aircraft design and simulation using various software like Solidworks, Fusion 360, Ansys, OpenVSP, etc. It also requires building, flying, and executing multiple maneuvers with remote controlled aircraft. Many rounds in this event will grill you and test your knowledge of design.</li><br></br>
@@ -191,7 +191,7 @@ Aeroclub organises an RC Airshow where professional aeromodellers amuse the audi
                     <div>
                         <p className="cent">
                             <a
-                                class="btn btn-outline-dark btn-lg"
+                                className="btn btn-outline-dark btn-lg"
                                 data-toggle="collapse"
                                 href="#collapseExample1"
                                 role="button"
@@ -204,13 +204,13 @@ Aeroclub organises an RC Airshow where professional aeromodellers amuse the audi
                         {/* <div className="colarea"> */}
                         <div className="collapse colarea" id="collapseExample1">
                             <div className="content yearevent">
-                                <div class="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24">
-                                    <div class="sm:w-2/3 sm:mr-10">
-                                        <div class="text">
-                                            {/* <span class="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
+                                <div className="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24">
+                                    <div className="sm:w-2/3 sm:mr-10">
+                                        <div className="text">
+                                            {/* <span className="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
 
-                                            <h5 class="font-bold text-3xl my-4 sm:text-4xl">
-                                                <span class="text-indigo-300 font-bold">Avishkar 2020 was organised from 31st October - 3rd November 2020
+                                            <h5 className="font-bold text-3xl my-4 sm:text-4xl">
+                                                <span className="text-indigo-300 font-bold">Avishkar 2020 was organised from 31st October - 3rd November 2020
 </span>
                                             </h5>
                                             <div
@@ -227,8 +227,8 @@ Aeroclub organises an RC Airshow where professional aeromodellers amuse the audi
 
 
                                 <div className="text">
-                                    <h3 class="font-bold text-3xl my-4 sm:text-4xl">
-                                        <span class="text-indigo-300 font-bold">Competitions</span>
+                                    <h3 className="font-bold text-3xl my-4 sm:text-4xl">
+                                        <span className="text-indigo-300 font-bold">Competitions</span>
                                     </h3>
                                     <div
                                         className="miniSep"
@@ -340,7 +340,7 @@ Aeroclub organises an RC Airshow where professional aeromodellers amuse the audi
                     <div>
                         <p className="cent">
                             <a
-                                class="btn btn-outline-dark btn-lg"
+                                className="btn btn-outline-dark btn-lg"
                                 data-toggle="collapse"
                                 href="#collapseExample2"
                                 role="button"
@@ -353,13 +353,13 @@ Aeroclub organises an RC Airshow where professional aeromodellers amuse the audi
                         {/* <div className="colarea"> */}
                         <div className="collapse colarea" id="collapseExample2">
                             <div className="content yearevent">
-                                <div class="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24">
-                                    <div class="sm:w-2/3 sm:mr-10">
-                                        <div class="text">
-                                            {/* <span class="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
+                                <div className="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24">
+                                    <div className="sm:w-2/3 sm:mr-10">
+                                        <div className="text">
+                                            {/* <span className="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
 
-                                            <h5 class="font-bold text-3xl my-4 sm:text-4xl">
-                                                <span class="text-indigo-300 font-bold">Avishkar 2019 was organised from 18th - 21st September 2019
+                                            <h5 className="font-bold text-3xl my-4 sm:text-4xl">
+                                                <span className="text-indigo-300 font-bold">Avishkar 2019 was organised from 18th - 21st September 2019
 </span>
                                             </h5>
                                             <div
@@ -376,8 +376,8 @@ Aeroclub organises an RC Airshow where professional aeromodellers amuse the audi
 
 
                                 <div className="text">
-                                    <h3 class="font-bold text-3xl my-4 sm:text-4xl">
-                                        <span class="text-indigo-300 font-bold">Competitions</span>
+                                    <h3 className="font-bold text-3xl my-4 sm:text-4xl">
+                                        <span className="text-indigo-300 font-bold">Competitions</span>
                                     </h3>
                                     <div
                                         className="miniSep"
@@ -490,7 +490,7 @@ Aeroclub organises an RC Airshow where professional aeromodellers amuse the audi
                     <div>
                         <p className="cent">
                             <a
-                                class="btn btn-outline-dark btn-lg"
+                                className="btn btn-outline-dark btn-lg"
                                 data-toggle="collapse"
                                 href="#collapseExample3"
                                 role="button"
@@ -503,13 +503,13 @@ Aeroclub organises an RC Airshow where professional aeromodellers amuse the audi
                         {/* <div className="colarea"> */}
                         <div className="collapse colarea" id="collapseExample3">
                             <div className="content yearevent">
-                                <div class="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24">
-                                    <div class="sm:w-2/3 sm:mr-10">
-                                        <div class="text">
-                                            {/* <span class="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
+                                <div className="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24">
+                                    <div className="sm:w-2/3 sm:mr-10">
+                                        <div className="text">
+                                            {/* <span className="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
 
-                                            <h5 class="font-bold text-3xl my-4 sm:text-4xl">
-                                                <span class="text-indigo-300 font-bold">Avishkar 2018 was organised from 26th - 29th September 2018
+                                            <h5 className="font-bold text-3xl my-4 sm:text-4xl">
+                                                <span className="text-indigo-300 font-bold">Avishkar 2018 was organised from 26th - 29th September 2018
 
 </span>
                                             </h5>
@@ -527,8 +527,8 @@ Aeroclub organises an RC Airshow where professional aeromodellers amuse the audi
 
 
                                 <div className="text">
-                                    <h3 class="font-bold text-3xl my-4 sm:text-4xl">
-                                        <span class="text-indigo-300 font-bold">Competitions</span>
+                                    <h3 className="font-bold text-3xl my-4 sm:text-4xl">
+                                        <span className="text-indigo-300 font-bold">Competitions</span>
                                     </h3>
                                     <div
                                         className="miniSep"

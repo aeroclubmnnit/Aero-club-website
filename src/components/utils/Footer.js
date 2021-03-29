@@ -17,7 +17,7 @@ export default function Footer() {
               <div className="row d-flex">
                 <div className="col-sm-12 col-md-12 col-lg-4">
                   <div className="information">
-                    <h2 style={{ fontFamily: "Audiowide" }}>AERO CLUB MNNIT</h2>
+                    <h2 style={{ fontFamily: "Monospace" }}>AERO CLUB MNNIT</h2>
                     <p>
                       Near Boys SAC,
                       <br />

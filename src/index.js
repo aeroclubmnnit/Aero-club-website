@@ -7,8 +7,7 @@ import ConfigureStore, { history } from "./ConfigureStore";
 import { PersistGate } from 'redux-persist/integration/react'
 import { ConnectedRouter } from "connected-react-router";
 import { Provider } from "react-redux";
-import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
-import NotFound from "./components/Pages/NotFound";
+import { BrowserRouter } from "react-router-dom";
 
 const store = ConfigureStore().store
 const persistor = ConfigureStore().persistor

@@ -72,7 +72,7 @@
 }
 
 .testimonial {
-    min-height: 375px;
+    height: 604px;
     position: relative;
     background: url();
     /* padding-top: 50px; */
@@ -200,6 +200,7 @@
 }
 
 .testimonial4_slide{
+  height: 436px;
   top: 0;
   left: 0;
   right: 0;
@@ -282,6 +283,9 @@
     font-size: medium;
   
 }
+.testimonial4_slide{
+  height: auto;
+}
 .scrollert
 {
   /* text-align: justify ; */
@@ -317,6 +321,10 @@
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color: rgb(204, 67, 67);
+}
+
+.testimonial{
+  height: auto;
 }
 }
 @media (max-width:400px)

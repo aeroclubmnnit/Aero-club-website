@@ -52,13 +52,13 @@ export default function Spinoff() {
                         className="card-title text-center sponimg"
                         href="https://tsaw.tech/index.php"
                         target="_blank"
-                        
+
                     >
                         <img
                             className="card-img-top mx-auto sponimg spinimg"
                             src={tsaw}
                             alt="tsaw"
-                            srcset=""
+                            srcSet=""
                         />
                     </a>
                     <p className='my-3'>The establishment of TSAW truly reflects our vision and what we aspire to do, and we hope to be the force for establishment of many such ventures.

@@ -14,17 +14,17 @@ export default function Faculty() {
     <>
       <Loading time={2} />
       <h3 className="my-3 titleBold d-flex justify-content-center topic">
-              <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>FACULTY INCHARGE</p>
-            </h3>
-            <div
-              className="miniSep"
-              style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
-            ></div>
-      <div className="faculty-container container col-10">
+        <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>FACULTY CORNER</p>
+      </h3>
+      <div
+        className="miniSep"
+        style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
+      ></div>
+      <div className="faculty-container container col-11">
         <div
           className="container rounded border d-flex flex-column flex-md-row justify-content-center my-5 shadow"
         >
-          <img src={f1} className="ml-5 mt-md-5 mx-auto rounded" alt="..." />
+          <img src={f1} className="ml-5 mt-4 mt-md-5 mx-auto rounded" alt="..." />
           <div className="content col-11 col-md-6 col-lg-7 mx-auto mt-5 mb-md-5">
             <em>
               "When it comes to aero club, it makes me feel that I am flying with
@@ -44,7 +44,7 @@ export default function Faculty() {
             </em>
             <br />
             <br />
-            <div className="side-content float-left">
+            <div className="side-content float-left mb-4 mb-md-0">
               <h5>Prof. Rajesh Gupta</h5>
               <p>
                 President, Student Activity Centre(SAC) <br />
@@ -57,7 +57,7 @@ export default function Faculty() {
         <div
           className="container rounded border d-flex flex-column flex-md-row justify-content-center my-5 shadow"
         >
-          <img src={f2} className="ml-5 mt-md-5 mx-auto rounded" alt="..." />
+          <img src={f2} className="ml-5 mt-4 mt-md-5 mx-auto rounded" alt="..." />
           <div className="content col-11 col-md-6 col-lg-7 mx-auto mt-5 mb-md-5">
             <em>
               "If you’re not making some notable mistakes along the way, you’re
@@ -76,7 +76,7 @@ export default function Faculty() {
             </em>
             <br />
             <br />
-            <div className="side-content float-left">
+            <div className="side-content float-left mb-4 mb-md-0">
               <h5>Dr. Venkateswara Rao Komma</h5>
               <p>
                 Faculty Incharge Technical Activities, SAC <br />
@@ -89,7 +89,7 @@ Associate Professor, Department of Mechanical Engineering
         <div
           className="container rounded border d-flex flex-column flex-md-row justify-content-center my-5 shadow"
         >
-          <img src={f3} className="ml-5 mt-md-5 mx-auto rounded" alt="..." />
+          <img src={f3} className="ml-5 mt-4 mt-md-5 mx-auto rounded" alt="..." />
           <div className="content col-11 col-md-6 col-lg-7 mx-auto mt-5 mb-md-5">
             <em>
               "When praising one another, people often use the statement “Sky's the
@@ -110,7 +110,7 @@ Associate Professor, Department of Mechanical Engineering
             </em>
             <br />
             <br />
-            <div className="side-content float-left">
+            <div className="side-content float-left mb-4 mb-md-0">
               <h5>Dr. D.K. Shukla</h5>
               <p>
                 Associate Professor MED, Faculty In-charge

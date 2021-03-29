@@ -7,6 +7,7 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import mnnit from "../../images/utils/collegelogo.png";
 import cisco from "../../images/Sponsors/cisco.png";
 import teqip from "../../images/Sponsors/teqip3.png";
+import alumni from "../../images/Sponsors/alumni2.PNG";
 import cosmo3d from "../../images/Sponsors/cosmo3d.png";
 import knowhow from "../../images/Sponsors/knowhow.png";
 import pcb from "../../images/Sponsors/pcb.png";
@@ -151,6 +152,23 @@ export default function Sponsorhome() {
 
                                     className="card-img-top mx-auto imgphone"
                                     src={pcb}
+                                    alt="knowhow"
+                                    srcSet=""
+                                />
+                            </a>
+                        </div>
+                    </div>
+                    <div className='item'>
+                        <div className="card" style={{ width: '12rem' }}>
+                            <a
+                                className="card-title text-center"
+                                href=""
+                                target="_blank"
+                            >
+                                <img
+
+                                    className="card-img-top mx-auto imgphone"
+                                    src={alumni}
                                     alt="knowhow"
                                     srcSet=""
                                 />

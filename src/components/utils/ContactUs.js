@@ -25,6 +25,12 @@ const ContactUs = () => {
   const handleContactSubmit = (e) => {
     setLoading(true);
     e.preventDefault();
+
+    if (!name || !email || !subject || !body) {
+      toast.warn('Please specify all the details...!')
+      return
+    }
+
     fetch(`${REACT_APP_SERVER}/api/contact`, {
       method: "post",
       headers: {

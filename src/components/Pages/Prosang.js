@@ -35,7 +35,7 @@ export default function Prosang() {
                                     <img
                                         src={pro}
                                         alt="prosang"
-                                        srcset=""
+                                        srcSet=""
                                         style={{ alignItems: "center" }}
                                     />
                                 </div>
@@ -80,12 +80,12 @@ export default function Prosang() {
                         AVISHKAR
                     </div> */}
                     {/* <div className="miniSep"></div> */}
-                    <div class="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24 phonev">
-                        <div class="sm:w-2/3 sm:mr-10">
-                            <div class="text">
-                                {/* <span class="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
-                                <h2 class="font-bold text-3xl my-4 sm:text-4xl">
-                                    <span class="text-indigo-600 font-bold">About the Event</span>
+                    <div className="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24 phonev">
+                        <div className="sm:w-2/3 sm:mr-10">
+                            <div className="text">
+                                {/* <span className="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
+                                <h2 className="font-bold text-3xl my-4 sm:text-4xl">
+                                    <span className="text-indigo-600 font-bold">About the Event</span>
                                 </h2>
                                 <div className="bgBox"
                                     style={{
@@ -98,7 +98,7 @@ export default function Prosang() {
                                     }}
                                 >
                                     <div style={{ padding: "10px" }}>
-                                        <p class="text-gray-700 texte" style={{ fontSize: "16px" }}><i>
+                                        <p className="text-gray-700 texte" style={{ fontSize: "16px" }}><i>
                                             Prodyogiki Sangam, better known as Prosang is the annual
                                             Techfest of Robotics and Aeroclub of MNNIT. It is an
                                             initiative to bring together a talented and technically
@@ -106,7 +106,7 @@ export default function Prosang() {
                                             prowess in the form of actual projects as well as ideas in
                                             fun and challenging tech-based events.</i>
                                         </p>
-                                        <p class="text-gray-700 texte" style={{ fontSize: "16px" }}><i>
+                                        <p className="text-gray-700 texte" style={{ fontSize: "16px" }}><i>
                                             It began with the efforts of the batch of 2019 with the
                                             basic need for helping students score the gap between
                                             industrial skill set requirements and our academics, and
@@ -134,12 +134,12 @@ Students of our clubs and outside display projects built throughout the year to 
                         </div>
                     </div>
 
-                    <div class="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24 text-desktop">
-                        <div class="sm:w-2/3 sm:mr-10">
-                            <div class="text">
-                                {/* <span class="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
-                                <h2 class="font-bold text-3xl my-4 sm:text-4xl">
-                                    <span class="text-indigo-600 font-bold">About the Event</span>
+                    <div className="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24 text-desktop">
+                        <div className="sm:w-2/3 sm:mr-10">
+                            <div className="text">
+                                {/* <span className="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
+                                <h2 className="font-bold text-3xl my-4 sm:text-4xl">
+                                    <span className="text-indigo-600 font-bold">About the Event</span>
                                 </h2>
                                 <div className="bgBox"
                                     style={{
@@ -177,7 +177,7 @@ Students of our clubs and outside display projects built throughout the year to 
                     <div>
                         <p className="cent">
                             <a
-                                class="btn btn-outline-dark btn-lg"
+                                className="btn btn-outline-dark btn-lg"
                                 data-toggle="collapse"
                                 href="#collapseExample1"
                                 role="button"
@@ -190,20 +190,20 @@ Students of our clubs and outside display projects built throughout the year to 
                         {/* <div className="colarea"> */}
                         <div className="collapse colarea" id="collapseExample1">
                             <div className="content yearevent">
-                                <div class="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24">
-                                    <div class="sm:w-2/3 sm:mr-10">
-                                        <div class="text">
-                                            {/* <span class="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
+                                <div className="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24">
+                                    <div className="sm:w-2/3 sm:mr-10">
+                                        <div className="text">
+                                            {/* <span className="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
 
-                                            <h3 class="font-bold text-3xl my-4 sm:text-4xl">
-                                                <span class="text-indigo-300 font-bold">Theme</span>
+                                            <h3 className="font-bold text-3xl my-4 sm:text-4xl">
+                                                <span className="text-indigo-300 font-bold">Theme</span>
                                             </h3>
                                             <div
                                                 className="miniSep"
                                                 style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
                                             ></div>
-                                            <h5 class="font-bold text-3xl my-4 sm:text-4xl">
-                                                <span class="text-indigo-300 font-bold">Smart City</span>
+                                            <h5 className="font-bold text-3xl my-4 sm:text-4xl">
+                                                <span className="text-indigo-300 font-bold">Smart City</span>
                                             </h5>
                                             <div
                                                 style={{
@@ -213,32 +213,32 @@ Students of our clubs and outside display projects built throughout the year to 
                                                 }}
                                             >
                                                 <div style={{ padding: "2px" }}>
-                                                    <p class="text-gray-700">
-                                                        <h5 class="font-bold text-3xl my-4 sm:text-4xl">
-                                                            <span class="text-indigo-300 font-bold">Speakers</span>
+                                                    <p className="text-gray-700">
+                                                        <h5 className="font-bold text-3xl my-4 sm:text-4xl">
+                                                            <span className="text-indigo-300 font-bold">Speakers</span>
                                                         </h5>
                                                         <div
                                                             className="miniSep"
                                                             style={{ marginBottom: "40px", background: "rgb(204, 67, 67)", width: "100%" }}
                                                         ></div>
                                                         <ul>
-                                                            <li> <b>Mr. Sanjeev Sharma (CEO and Founder, Swaayatt Robots) </b><a href="https://www.linkedin.com/in/sanjeevsharmaiitr/"><i class="fab fa-linkedin fa-lg"></i></a></li>
+                                                            <li> <b>Mr. Sanjeev Sharma (CEO and Founder, Swaayatt Robots) </b><a href="https://www.linkedin.com/in/sanjeevsharmaiitr/"><i className="fab fa-linkedin fa-lg"></i></a></li>
 
                                                             <br></br>
                                                         Autonomous Vehicles in Indian Scenarios
                                                         <hr></hr>
-                                                            <li><b>Dr. Vijay Kapoor (Founder, Delhi Astronomy Club, Bangalore Astronomy Club) </b><a href="https://www.linkedin.com/in/sanjeevsharmaiitr/"><i class="fab fa-linkedin fa-lg"></i></a></li><br></br>
+                                                            <li><b>Dr. Vijay Kapoor (Founder, Delhi Astronomy Club, Bangalore Astronomy Club) </b><a href="https://www.linkedin.com/in/sanjeevsharmaiitr/"><i className="fab fa-linkedin fa-lg"></i></a></li><br></br>
                                                         Amateur Astronomy and Beyond
                                                         <hr></hr>
-                                                            <li><b>Mr. Mani Tripathi (Head, Allahabad Smart City Project) </b><a href="https://www.linkedin.com/in/sanjeevsharmaiitr/"><i class="fab fa-linkedin fa-lg"></i></a><br></br><br></br>
+                                                            <li><b>Mr. Mani Tripathi (Head, Allahabad Smart City Project) </b><a href="https://www.linkedin.com/in/sanjeevsharmaiitr/"><i className="fab fa-linkedin fa-lg"></i></a><br></br><br></br>
                                                         What Does it Take to Build a Smart City</li>
                                                         </ul>
                                                     </p>
 
                                                 </div>
                                             </div>
-                                            <h3 class="font-bold text-3xl my-4 sm:text-4xl">
-                                                <span class="text-indigo-300 font-bold">Other Events</span>
+                                            <h3 className="font-bold text-3xl my-4 sm:text-4xl">
+                                                <span className="text-indigo-300 font-bold">Other Events</span>
                                             </h3>
                                             <div
                                                 className="miniSep"
@@ -247,13 +247,13 @@ Students of our clubs and outside display projects built throughout the year to 
                                             <div>
                                                 <p>
 
-                                                    <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                                    <button className="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                                         Workshops
                                                      </button>
                                                 </p>
 
-                                                <div class="collapse collapsews" id="collapseExample">
-                                                    <div class="card card-body dropworkshop text-center" >
+                                                <div className="collapse collapsews" id="collapseExample">
+                                                    <div className="card card-body dropworkshop text-center" >
                                                         <p>IoT</p>
                                                         <p>Drone Automation</p>
                                                         <p>A Day in the world of Robotics</p>
@@ -268,8 +268,8 @@ Students of our clubs and outside display projects built throughout the year to 
                                                 </span><br></br>
                                                 <span><h6>Airshow by Vortex RC</h6>
                                                 </span><br></br>
-                                                <h6><span class="text-indigo-200">Stargazing workshop by Mr. Vijay Kapoor<b> </b>
-                                                    <a href="https://www.linkedin.com/in/vjkapoor/?originalSubdomain=in"><i class="fab fa-linkedin fa-lg"></i></a>
+                                                <h6><span className="text-indigo-200">Stargazing workshop by Mr. Vijay Kapoor<b> </b>
+                                                    <a href="https://www.linkedin.com/in/vjkapoor/?originalSubdomain=in"><i className="fab fa-linkedin fa-lg"></i></a>
                                                 </span></h6>
                                             </div>
                                         </div>
@@ -285,9 +285,9 @@ Students of our clubs and outside display projects built throughout the year to 
                                     }}
                                 >
                                     <div style={{ padding: "2px" }}>
-                                        <p class="text-gray-700">
-                                            <h5 class="font-bold text-3xl my-4 sm:text-4xl">
-                                                <span class="text-indigo-300 font-bold">Details</span>
+                                        <p className="text-gray-700">
+                                            <h5 className="font-bold text-3xl my-4 sm:text-4xl">
+                                                <span className="text-indigo-300 font-bold">Details</span>
                                             </h5>
                                             <div
                                                 className="miniSep"
@@ -306,8 +306,8 @@ Students of our clubs and outside display projects built throughout the year to 
                                 </div>
 
                                 <div className="container">
-                                    <h3 class="font-bold text-3xl my-4 sm:text-4xl">
-                                        <span class="text-indigo-300 font-bold">Competitions</span>
+                                    <h3 className="font-bold text-3xl my-4 sm:text-4xl">
+                                        <span className="text-indigo-300 font-bold">Competitions</span>
                                     </h3>
                                     <div
                                         className="miniSep"
@@ -547,20 +547,20 @@ Students of our clubs and outside display projects built throughout the year to 
                         {/* <div className="colarea"> */}
                         <div className="collapse colarea" id="collapseExample2">
                             <div className="content yearevent">
-                                <div class="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24">
-                                    <div class="sm:w-2/3 sm:mr-10">
-                                        <div class="text">
-                                            {/* <span class="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
+                                <div className="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24">
+                                    <div className="sm:w-2/3 sm:mr-10">
+                                        <div className="text">
+                                            {/* <span className="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
 
-                                            <h3 class="font-bold text-3xl my-4 sm:text-4xl">
-                                                <span class="text-indigo-300 font-bold">Theme</span>
+                                            <h3 className="font-bold text-3xl my-4 sm:text-4xl">
+                                                <span className="text-indigo-300 font-bold">Theme</span>
                                             </h3>
                                             <div
                                                 className="miniSep"
                                                 style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
                                             ></div>
-                                            <h5 class="font-bold text-3xl my-4 sm:text-4xl">
-                                                <span class="text-indigo-300 font-bold">Making Humanity Interplanetary
+                                            <h5 className="font-bold text-3xl my-4 sm:text-4xl">
+                                                <span className="text-indigo-300 font-bold">Making Humanity Interplanetary
 </span>
                                             </h5>
                                             <div
@@ -571,9 +571,9 @@ Students of our clubs and outside display projects built throughout the year to 
                                                 }}
                                             >
                                                 <div style={{ padding: "2px" }}>
-                                                    <p class="text-gray-700">
-                                                        <h5 class="font-bold text-3xl my-4 sm:text-4xl">
-                                                            <span class="text-indigo-300 font-bold">Speakers</span>
+                                                    <p className="text-gray-700">
+                                                        <h5 className="font-bold text-3xl my-4 sm:text-4xl">
+                                                            <span className="text-indigo-300 font-bold">Speakers</span>
                                                         </h5>
                                                         <div
                                                             className="miniSep"
@@ -582,20 +582,20 @@ Students of our clubs and outside display projects built throughout the year to 
                                                         <ul>
                                                             <li> <b>Mr. Ravi Prakash
                                                             -Winner, Amazon Robotics Challenge-Japan 2017
-(Ph.D. Scholar, IIT Kanpur) </b><a href="https://www.linkedin.com/in/ravi-prakash-a93ab9a8/?originalSubdomain=in"><i class="fab fa-linkedin fa-lg"></i></a></li>
+(Ph.D. Scholar, IIT Kanpur) </b><a href="https://www.linkedin.com/in/ravi-prakash-a93ab9a8/?originalSubdomain=in"><i className="fab fa-linkedin fa-lg"></i></a></li>
 
                                                             <br></br>
                                                             Autonomous Robots for Mars Civilizations
                                                         <hr></hr>
                                                             <li><b>Mr. Ganesh Shankar
-(Co-Founder and CEO, FluxGen Engineering) </b><a href="https://www.linkedin.com/in/ganesh-shankar/?originalSubdomain=in"><i class="fab fa-linkedin fa-lg"></i></a></li><br></br>
+(Co-Founder and CEO, FluxGen Engineering) </b><a href="https://www.linkedin.com/in/ganesh-shankar/?originalSubdomain=in"><i className="fab fa-linkedin fa-lg"></i></a></li><br></br>
                                                         Internet of Things
                                                         <hr></hr>
                                                             <li><b>Prof. Sanjay Mittal
-(Ex HOD and Coordinator Wind Tunnel, IIT Kanpur) </b><a href="https://www.iitk.ac.in/new/sanjay-mittal"><i class="fab fa-linkedin fa-lg"></i></a><br></br><br></br>
+(Ex HOD and Coordinator Wind Tunnel, IIT Kanpur) </b><a href="https://www.iitk.ac.in/new/sanjay-mittal"><i className="fab fa-linkedin fa-lg"></i></a><br></br><br></br>
                                                         The Science of Flight<hr></hr></li>
                                                             <li><b>Dr. GR Sinha
-(Distinguished ACM Speaker) </b><a href="https://www.linkedin.com/in/dr-g-r-sinha-65713b18/"><i class="fab fa-linkedin fa-lg"></i></a></li><br></br>
+(Distinguished ACM Speaker) </b><a href="https://www.linkedin.com/in/dr-g-r-sinha-65713b18/"><i className="fab fa-linkedin fa-lg"></i></a></li><br></br>
                                                          Applications of Image Processing for Space Explorations
                                                         <hr></hr>
 
@@ -604,8 +604,8 @@ Students of our clubs and outside display projects built throughout the year to 
 
                                                 </div>
                                             </div>
-                                            <h3 class="font-bold text-3xl my-4 sm:text-4xl">
-                                                <span class="text-indigo-300 font-bold">Other Events</span>
+                                            <h3 className="font-bold text-3xl my-4 sm:text-4xl">
+                                                <span className="text-indigo-300 font-bold">Other Events</span>
                                             </h3>
                                             <div
                                                 className="miniSep"
@@ -618,14 +618,14 @@ Students of our clubs and outside display projects built throughout the year to 
 </h6>
                                                 </span><br></br>
                                                 <h6><span>Project exhibition-witnessed by professor Sanjay Mittal -IIT Kanpur </span>
-                                                    <a href="https://www.iitk.ac.in/new/sanjay-mittal"><i class="fas fa-user fa-lg"></i></a></h6>
+                                                    <a href="https://www.iitk.ac.in/new/sanjay-mittal"><i className="fas fa-user fa-lg"></i></a></h6>
 
                                                 <br></br>
-                                                <h6><span class="text-indigo-200">Airshow by Vortex RC<b> </b>
-                                                    <a href="https://youtu.be/MFRvO8K-4iU"><i style={{ color: "red" }} class="fab fa-youtube fa-lg"></i></a>
+                                                <h6><span className="text-indigo-200">Airshow by Vortex RC<b> </b>
+                                                    <a href="https://youtu.be/MFRvO8K-4iU"><i style={{ color: "red" }} className="fab fa-youtube fa-lg"></i></a>
                                                 </span></h6><br></br>
-                                                <h6><span class="text-indigo-200">Launch of TSAW (a drone startup, emerged from Robotics and Aeroclub MNNIT)<b> </b>
-                                                    <a href="https://tsaw.tech/"><i class="fas fa-link fa-lg"></i></a>
+                                                <h6><span className="text-indigo-200">Launch of TSAW (a drone startup, emerged from Robotics and Aeroclub MNNIT)<b> </b>
+                                                    <a href="https://tsaw.tech/"><i className="fas fa-link fa-lg"></i></a>
                                                 </span></h6>
                                             </div>
                                         </div>
@@ -635,8 +635,8 @@ Students of our clubs and outside display projects built throughout the year to 
 
 
                                 <div className="container">
-                                    <h3 class="font-bold text-3xl my-4 sm:text-4xl">
-                                        <span class="text-indigo-300 font-bold">Competitions</span>
+                                    <h3 className="font-bold text-3xl my-4 sm:text-4xl">
+                                        <span className="text-indigo-300 font-bold">Competitions</span>
                                     </h3>
                                     <div
                                         className="miniSep"

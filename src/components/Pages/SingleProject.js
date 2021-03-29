@@ -2,18 +2,27 @@ import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import "../../css/SingleProject.css";
 import Loading from "../../Animations/Loading";
-import { Container, Jumbotron } from "react-bootstrap";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
+import $ from 'jquery'
 
 function SingleProject() {
   const { projectId } = useParams();
   const [project, setProject] = useState(undefined);
-  const [isSignedIn, setisSignedIn] = useState(false);
   const history = useHistory();
-  const [more, setmore] = useState(false);
 
   useEffect(() => {
     document.title = `Project-${projectId} | ${REACT_APP_BASE_TITLE}`;
+
+    $(document).ready(function () {
+      $('#collapsebtn').on('click', function () {
+        var text = $('#collapsebtn').text();
+        if (text === "Read More") {
+          $(this).html('Read less');
+        } else {
+          $(this).text('Read More');
+        }
+      });
+    });
 
     fetch(`${REACT_APP_SERVER}/api/projects/${projectId}`, {
       method: "get",
@@ -106,21 +115,23 @@ function SingleProject() {
           )}
 
           <div>
-            <div style={{ display: more ? "block" : "none" }}>
-              <h3 className='my-3 subheaders'>Description</h3>
-              <p
-                className="px-3"
-                dangerouslySetInnerHTML={{ __html: project?.description }}
-              ></p>
-            </div>
             <div className="d-flex justify-content-center mt-5">
               {project?.description ? (
-                <a className="btn btn-primary" onClick={(e) => setmore(!more)}>
-                  Read {!more ? "More" : "Less"}
-                </a>
+                <button className="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse11" aria-expanded="false" aria-controls="collapse11" id='collapsebtn'>
+                  Read More
+                </button>
               ) : (
                 <></>
               )}
+            </div>
+            <div class="collapse collapsews" id="collapse11">
+              <div >
+                <h3 className='my-3 subheaders'>Description</h3>
+                <p
+                  className="px-3"
+                  dangerouslySetInnerHTML={{ __html: project?.description }}
+                ></p>
+              </div>
             </div>
           </div>
         </div>

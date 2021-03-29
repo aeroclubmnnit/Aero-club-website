@@ -42,6 +42,7 @@ import Collaboration from "./components/Pages/Collaboration.js";
 import Spinoff from "./components/Pages/Spinoff.js";
 import WebTeam from "./components/Pages/WebTeam.js";
 import FeaturedProjects from "./components/Pages/FeaturedProjects.js";
+import Loading from "./Animations/Loading.js";
 
 function App() {
   return (
@@ -102,6 +103,7 @@ function App() {
           <Navigbar />
           <Switch>
             <Route path="/" exact>
+              <Loading time={1} />
               <Landing />
               <About />
               <Featuredproject />

@@ -21,7 +21,7 @@ export default function Featuredproject() {
           data-aos="fade-down"
           style={{ marginBottom: "5px" }}
         >
-          Featured Projects
+          Flagship Projects
         </div>
         <div className="miniSep" style={{ marginBottom: "20px" }}></div>
         <div className="container col-11 my-5">

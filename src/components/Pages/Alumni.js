@@ -14,7 +14,7 @@ import f10 from "../../images/alumni/sarita chaudhary1.jpeg";
 import f11 from "../../images/alumni/unnamed.jpg";
 import f12 from "../../images/alumni/Kishan Tiwari.jfif";
 import f13 from "../../images/alumni/Aniket Kumar.jpg";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE } from "../../grobalVars"
 
 export default function Alumni() {
   useEffect(() => {
@@ -155,19 +155,19 @@ export default function Alumni() {
     <>
       <Loading time={2} />
       <h3 className="my-3 titleBold d-flex justify-content-center topic">
-              <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>OUR ALUMNI</p>
-            </h3>
-            <div
-              className="miniSep"
-              style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
-            ></div>
-      <div class="container alumni-container my-5 col-11">
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
+        <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>OUR ALUMNI</p>
+      </h3>
+      <div
+        className="miniSep"
+        style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
+      ></div>
+      <div className="container alumni-container my-5 col-11" style={{ minHeight: '24rem' }}>
+        <div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div className="panel panel-default">
+            <div className="panel-heading">
+              <h4 className="panel-title">
                 <a
-                  class="accordion-toggle"
+                  className="accordion-toggle"
                   data-toggle="collapse"
                   data-parent="#accordion"
                   href="#collapse2020"
@@ -177,31 +177,32 @@ export default function Alumni() {
                 </a>
               </h4>
             </div>
-            <div id="collapse2020" class="panel-collapse collapse show">
-              <div class="panel-body">
+            <div id="collapse2020" className="panel-collapse collapse show">
+              <div className="panel-body">
                 <div className="container">
                   <div className="d-flex flex-wrap m-auto justify-content-center align-items-center">
                     {members.map(
                       (member, i) =>
                         member.yearOfGraduation === 2020 && (
                           <div
-                            class="card card-item shadow item-alumni"
-                            style={{ width: "17rem", minHeight: "25rem" }}
+                            className="card card-item shadow item-alumni"
+                            style={{ width: "17rem", minHeight: '33rem', maxHeight: '33rem' }}
+                            key={i}
                           >
                             <img
-                              class="card-img-top card-alumni"
+                              className="card-img-top card-alumni"
                               src={`${member.aPhotoForWebsiteOfYourself}`}
                               alt="Card image cap"
                             />
-                            <div class="card-body d-flex flex-column transition: transform 400ms ease-out;">
+                            <div className="card-body d-flex flex-column transition: transform 400ms ease-out;">
                               <h5
-                                class="card-title text-center text-uppercase"
-                                style={{ minHeight: "4rem" }}
+                                className="card-title text-center text-uppercase"
+                                style={{ minHeight: "3rem" }}
                               >
                                 {member.name}
                               </h5>
                               <p
-                                class="card-text text-center"
+                                className="card-text text-center"
                                 style={{ minHeight: "2rem" }}
                               >
                                 {member.presentOrganisation
@@ -211,7 +212,7 @@ export default function Alumni() {
 
                               <div className="d-flex justify-content-center mt-4">
                                 <a href={member.yourLinkedinId} target="_blank">
-                                  <i class="fab fa-linkedin fa-3x mx-2"></i>
+                                  <i className="fab fa-linkedin fa-3x mx-2"></i>
                                 </a>
                               </div>
                             </div>
@@ -223,11 +224,11 @@ export default function Alumni() {
               </div>
             </div>
           </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
+          <div className="panel panel-default">
+            <div className="panel-heading">
+              <h4 className="panel-title">
                 <a
-                  class="accordion-toggle"
+                  className="accordion-toggle"
                   data-toggle="collapse"
                   data-parent="#accordion"
                   href="#collapse2019"
@@ -237,8 +238,8 @@ export default function Alumni() {
                 </a>
               </h4>
             </div>
-            <div id="collapse2019" class="panel-collapse collapse">
-              <div class="panel-body">
+            <div id="collapse2019" className="panel-collapse collapse">
+              <div className="panel-body">
                 <div
                   className="container"
 
@@ -248,23 +249,24 @@ export default function Alumni() {
                       (member, i) =>
                         member.yearOfGraduation === 2019 && (
                           <div
-                            class="card card-item shadow"
-                            style={{ width: "17rem", minHeight: "25rem" }}
+                            className="card card-item shadow item-alumni"
+                            style={{ width: "17rem", minHeight: '33rem', maxHeight: '33rem' }}
+                            key={i}
                           >
                             <img
-                              class="card-img-top card-alumni"
+                              className="card-img-top card-alumni"
                               src={`${member.aPhotoForWebsiteOfYourself}`}
                               alt="Card image cap"
                             />
-                            <div class="card-body d-flex flex-column transition: transform 400ms ease-out;">
+                            <div className="card-body d-flex flex-column transition: transform 400ms ease-out;">
                               <h5
-                                class="card-title text-center text-uppercase"
-                                style={{ minHeight: "4rem" }}
+                                className="card-title text-center text-uppercase"
+                                style={{ minHeight: "3rem" }}
                               >
                                 {member.name}
                               </h5>
                               <p
-                                class="card-text text-center"
+                                className="card-text text-center"
                                 style={{ minHeight: "2rem" }}
                               >
                                 {member.presentOrganisation
@@ -274,7 +276,7 @@ export default function Alumni() {
 
                               <div className="d-flex justify-content-center mt-4">
                                 <a href={member.yourLinkedinId} target="_blank">
-                                  <i class="fab fa-linkedin fa-3x mx-2"></i>
+                                  <i className="fab fa-linkedin fa-3x mx-2"></i>
                                 </a>
                               </div>
                             </div>
@@ -287,11 +289,11 @@ export default function Alumni() {
             </div>
           </div>
 
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
+          <div className="panel panel-default">
+            <div className="panel-heading">
+              <h4 className="panel-title">
                 <a
-                  class="accordion-toggle"
+                  className="accordion-toggle"
                   data-toggle="collapse"
                   data-parent="#accordion"
                   href="#collapse2018"
@@ -301,8 +303,8 @@ export default function Alumni() {
                 </a>
               </h4>
             </div>
-            <div id="collapse2018" class="panel-collapse collapse">
-              <div class="panel-body">
+            <div id="collapse2018" className="panel-collapse collapse">
+              <div className="panel-body">
                 <div
                   className="container"
                 >
@@ -311,23 +313,24 @@ export default function Alumni() {
                       (member, i) =>
                         member.yearOfGraduation === 2018 && (
                           <div
-                            class="card card-item shadow"
-                            style={{ width: "17rem", minHeight: "25rem" }}
+                            className="card card-item shadow item-alumni"
+                            style={{ width: "17rem", minHeight: '33rem', maxHeight: '33rem' }}
+                            key={i}
                           >
                             <img
-                              class="card-img-top card-alumni"
+                              className="card-img-top card-alumni"
                               src={`${member.aPhotoForWebsiteOfYourself}`}
                               alt="Card image cap"
                             />
-                            <div class="card-body d-flex flex-column transition: transform 400ms ease-out;">
+                            <div className="card-body d-flex flex-column transition: transform 400ms ease-out;">
                               <h5
-                                class="card-title text-center text-uppercase"
-                                style={{ minHeight: "4rem" }}
+                                className="card-title text-center text-uppercase"
+                                style={{ minHeight: "3rem" }}
                               >
                                 {member.name}
                               </h5>
                               <p
-                                class="card-text text-center"
+                                className="card-text text-center"
                                 style={{ minHeight: "2rem" }}
                               >
                                 {member.presentOrganisation
@@ -337,7 +340,7 @@ export default function Alumni() {
 
                               <div className="d-flex justify-content-center mt-4">
                                 <a href={member.yourLinkedinId} target="_blank">
-                                  <i class="fab fa-linkedin fa-3x mx-2"></i>
+                                  <i className="fab fa-linkedin fa-3x mx-2"></i>
                                 </a>
                               </div>
                             </div>

@@ -34,11 +34,12 @@ export default function News() {
             width: "100%",
             margin: "auto",
             paddingBottom: "1rem",
+            minHeight: '25rem'
           }}>
-          <Container>
-            <div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true"
+          <Container className='col-11 my-5'>
+            <div className="panel-group news-container" id="accordion" role="tablist" aria-multiselectable="true"
               style={{ margin: "1.5rem" }}>
-              {news.map(singleNews => (
+              {news.map((singleNews, i) => (
                 <div className="panel panel-default" key={singleNews.id}
                   style={{ padding: "0.15rem" }}
                   data-aos="fade-up"
@@ -46,17 +47,17 @@ export default function News() {
                   <div className="panel-heading" role="tab" id={singleNews.id}
                     style={{ fontSize: "1.3rem" }}>
                     <h4 className="panel-title">
-                      <a role="button" data-toggle="collapse" data-parent="#accordion" href={`#collapse${singleNews.id}`} aria-expanded="false" aria-controls={`collapse${singleNews.id}`} >
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href={`#collapse${singleNews.id}`} aria-expanded={i == 0 ? 'true' : 'false'} aria-controls={`collapse${singleNews.id}`} >
                         {singleNews.title}
                       </a>
                     </h4>
                   </div>
-                  <div id={`collapse${singleNews.id}`} className="panel-collapse collapse in" role="tabpanel" aria-labelledby={singleNews.id}>
+                  <div id={`collapse${singleNews.id}`} className={`panel-collapse collapse in ${i == 0 ? 'show' : null}`} role="tabpanel" aria-labelledby={singleNews.id}>
                     <div className="panel-body my-3 mx-4">
                       <em
                         style={{ fontSize: "small" }}
                       >
-                        Published on ~ {new Date(
+                        Published on {new Date(
                         singleNews.publishedAt
                       ).toLocaleDateString()}
                       </em>

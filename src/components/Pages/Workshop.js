@@ -64,7 +64,7 @@ export default function Workshop() {
             </div>
           </div>
         </div>
-        
+
       </section>
 
       <Jumbotron
@@ -76,52 +76,51 @@ export default function Workshop() {
           margin: "auto",
           paddingBottom: "1rem",
         }}>
-        <div class="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24">
-                        <div class="sm:w-2/3 sm:mr-10">
-                            <div class="text">
-                                {/* <span class="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
-                                <h2 class="font-bold text-3xl my-4 sm:text-4xl">
-                                    <span class="text-indigo-600 font-bold cent">About the Event</span>
-                                </h2>
-                                <div className="bgBox phonev"
-                                    style={{
-                                        border: "3px solid rgb(204, 67, 67)",
-                                        padding: "2px",
-                                        borderRadius: "8px",
-                                        margin: "2em",
-                                        fontSize: "14px"
+        <div className="sm:flex items-center max-w-screen-xl p-10 sm:p-16 md:p-24">
+          <div className="sm:w-2/3 sm:mr-10">
+            <div className="text">
+              {/* <span className="text-gray-500 border-b-2 border-indigo-600 uppercase">about us</span> */}
+              <h2 className="font-bold text-3xl my-4 sm:text-4xl">
+                <span className="text-indigo-600 font-bold cent">About the Event</span>
+              </h2>
+              <div className="bgBox phonev"
+                style={{
+                  border: "3px solid rgb(204, 67, 67)",
+                  padding: "2px",
+                  borderRadius: "8px",
+                  margin: "2em",
+                  fontSize: "14px"
 
-                                    }}
-                                >
-                                    <div style={{ padding: "10px" }}>
-                                        <p class="text-gray-700 texte" style={{ fontSize: "16px" }}><i>
-                                            Avishkar is MNNIT's annual techno-management festival and is held either in September or October. Equipped with many technical and managerial events, Avishkar is an excellent platform for students to hone their skills, create outstanding projects, expand their networks, and build a superb CV.</i>
-                                        </p>
+                }}
+              >
+                <div style={{ padding: "10px" }}>
+                  <p className="text-gray-700 texte" style={{ fontSize: "16px" }}><i>
+                    Avishkar is MNNIT's annual techno-management festival and is held either in September or October. Equipped with many technical and managerial events, Avishkar is an excellent platform for students to hone their skills, create outstanding projects, expand their networks, and build a superb CV.</i>
+                  </p>
 
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        <Container id="workshop" activeKey={workshops}
-          onSelect={(e) => SetWorkshops(e)}>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <Container id="workshop" onSelect={(e) => SetWorkshops(e)}>
 
-          <div class="d-flex justify-content-start my-3 mx-4">
-            <h3 class="">Present Workshops</h3>
+          <div className="d-flex justify-content-start my-3 mx-4">
+            <h3 className="">Present Workshops</h3>
           </div>
 
-          {workshops.map((singleNews, i) => (
+          {workshops.map(singleNews => (
             <div className="card mb-5 mx-4 workshop_card shadow" data-aos="zoom-in-up"
-              data-aos-duration="2000">
+              data-aos-duration="2000" key={singleNews.id}>
               <div className="row">
                 {/* Assigning column for image */}
-                <div className="col-md-2 image text-center">
+                <div className="col-md-4 image text-center">
 
                   <img className="img-fluid" src={singleNews.pic || 'https://lh3.googleusercontent.com/T9bjg12M_QXvpPvs4eYdw3VkmrgX0pGTWzFIyyzqQQ_XO_IUetQVyZBxNE80yTLYP0ft3it_S2_sMiY6p7IN7QZa156zFCVqg2qlhQR99MY0hdh83lfWCO3Ymy_nILhckIJj8LOm=w2400'} />
                 </div>
                 {/* Details of Workshop */}
-                <div className="col-md-10">
+                <div className="col-md-8">
                   <div className="card-body">
                     {/* Workshop Title */}
                     <h5 className="card-title">{singleNews.name}</h5>

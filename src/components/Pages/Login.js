@@ -18,7 +18,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`${REACT_APP_SERVER}/api/signin`, {
+    fetch(`${REACT_APP_SERVER}/api/signin/`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
