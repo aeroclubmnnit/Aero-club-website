@@ -17,11 +17,10 @@ export default function Ṣponsors() {
     document.title = `Sponsors | ${REACT_APP_BASE_TITLE}`;
   }, [])
 
-
   return (
     <>
       <Loading time={2} />
-      <div className=" pagesg">
+      <div className="pagesg">
         <div className="overlayg">
           <div className="pageTitleg titleBoldg">Sponsors</div>
           <div className="py-2">
@@ -78,7 +77,7 @@ export default function Ṣponsors() {
                                                      </button>
               </p>
 
-              <div class="collapse collapsews"  id="collapse12">
+              <div class="collapse collapsews" id="collapse12">
                 <div class="card card-body details">
 
                   <p className="just">We ask for support suitable to your capability. This support can be in the form of:<br></br><br></br>

@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Accordion, Card, Button, Modal, Form } from "react-bootstrap";
 import { toast } from "react-toastify";
 import ProjForm from "./ProjForm";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../../../grobalVars"
+import { REACT_APP_SERVER } from "../../../../grobalVars"
 
-export default function Dashprojects(props) {
+export default function Dashprojects() {
   const [modalShow, setModalShow] = React.useState(false);
   const user = useSelector(state => state.user);
   const history = useHistory();
@@ -160,12 +160,10 @@ function MyVerticallyCenteredModal(props) {
                 projectId: projectId,
               }),
             }).then((res) => {
-              console.log(res);
               props.onHide();
               if (res.status == 200) {
                 toast.success("USER INVITED");
                 res.json().then((data) => {
-                  console.log(data.updatedProject);
                   dispatch({ type: "INVITE_USER", payload: data.updatedProject })
                 });
               } else {

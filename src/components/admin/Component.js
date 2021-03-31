@@ -4,9 +4,7 @@ import {
   DeleteButton,
   Edit,
   EditButton,
-  FileInput,
   ImageField,
-  ImageInput,
   List,
   number,
   NumberInput,
@@ -26,6 +24,7 @@ const types_arr = [
   "Electronic Components and Sensors",
   "Development Boards",
   "Material For Drones and Planes",
+  "Others"
 ];
 const types = types_arr.map((type) => ({
   id: type,

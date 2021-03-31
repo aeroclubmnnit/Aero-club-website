@@ -62,7 +62,6 @@ function App() {
           )
           }
         </Route>
-
         <Route path="/user/login" exact>
           {!localStorage.getItem("jwtToken") ? (
             <Login />

@@ -16,10 +16,7 @@ export default function Dashprojects(props) {
       },
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setProjects(data);
-      });
+      .then(data => setProjects(data));
   }, []);
 
   return (
