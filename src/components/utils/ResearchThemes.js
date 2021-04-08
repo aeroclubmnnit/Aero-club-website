@@ -1,5 +1,6 @@
 import React from "react";
 import "../../css/ResearchThemes.css";
+import { ASTROWING } from "../../grobalVars";
 
 const ResearchThemes = () => {
   return (
@@ -11,7 +12,10 @@ const ResearchThemes = () => {
       >
         Research Themes
       </div>
-      <div className="jumbotron" style={{ marginBottom: "0", background: "rgba(0, 0, 0, 0)" }}>
+      <div
+        className="jumbotron"
+        style={{ marginBottom: "0", background: "rgba(0, 0, 0, 0)" }}
+      >
         <div
           className="miniSep"
           style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
@@ -44,7 +48,7 @@ const ResearchThemes = () => {
                   <p>Fixed Wing Aircraft </p>
                   <p>Multirotors</p>
                   <p>Space Vehicles </p>
-                  <a href="#" className="btn btn-dark">
+                  <a href={ASTROWING} className="btn btn-dark">
                     Astronomy
                   </a>
                 </p>
@@ -55,7 +59,7 @@ const ResearchThemes = () => {
             </div>
           </div>
         </div>
-        <div className="i-am-centered">
+        <div className="i-am-centered" id="technologies">
           <div className="row justify-content-center">
             <div className="col-sm-10" data-aos="fade-up">
               <div
@@ -81,14 +85,24 @@ const ResearchThemes = () => {
               data-aos="zoom-in-down"
               data-aos-duration="1500"
             >
-              <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
+              <div
+                className="card cardhgt phoneheight"
+                style={{ marginBottom: "1rem", borderRadius: "10px" }}
+              >
                 <div
                   className="card-body cardbd"
-                  style={{ background: "rgb(113, 48, 48)", borderRadius: "10px", margin: "2px" }}
+                  style={{
+                    background: "rgb(113, 48, 48)",
+                    borderRadius: "10px",
+                    margin: "2px",
+                  }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
-                    <i className="far fa-eye" style={{ paddingRight: "20px" }}></i>
-                       Perception
+                    <i
+                      className="far fa-eye"
+                      style={{ paddingRight: "20px" }}
+                    ></i>
+                    Perception
                     <hr style={{ background: "white" }}></hr>
                   </h5>
                   {/* <div className="miniSep" style={{width:'auto',height:'2px', background: 'white' }} ></div> */}
@@ -116,13 +130,23 @@ const ResearchThemes = () => {
               data-aos="zoom-in-down"
               data-aos-duration="1500"
             >
-              <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
+              <div
+                className="card cardhgt phoneheight"
+                style={{ marginBottom: "1rem", borderRadius: "10px" }}
+              >
                 <div
                   className="card-body cardbd"
-                  style={{ background: "rgb(113, 48, 48)", borderRadius: "10px", margin: "2px" }}
+                  style={{
+                    background: "rgb(113, 48, 48)",
+                    borderRadius: "10px",
+                    margin: "2px",
+                  }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
-                    <i className="fas fa-laptop-code" style={{ paddingRight: "20px" }}></i>
+                    <i
+                      className="fas fa-laptop-code"
+                      style={{ paddingRight: "20px" }}
+                    ></i>
                     Design
                     <hr style={{ background: "white" }}></hr>
                   </h5>
@@ -133,7 +157,9 @@ const ResearchThemes = () => {
                       {/* <br /> */}
                       <li>Structural Analysis</li>
                       {/* <br /> */}
-                      <li>Design and Manufacture of RC Aircrafts and Multirotors</li>
+                      <li>
+                        Design and Manufacture of RC Aircrafts and Multirotors
+                      </li>
                       {/* <br /> */}
                       <li>3D Printing</li>
                       {/* <br /> */}
@@ -151,13 +177,23 @@ const ResearchThemes = () => {
               data-aos="zoom-in-down"
               data-aos-duration="1500"
             >
-              <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
+              <div
+                className="card cardhgt phoneheight"
+                style={{ marginBottom: "1rem", borderRadius: "10px" }}
+              >
                 <div
                   className="card-body cardbd"
-                  style={{ background: "rgb(113, 48, 48)", borderRadius: "10px", margin: "2px" }}
+                  style={{
+                    background: "rgb(113, 48, 48)",
+                    borderRadius: "10px",
+                    margin: "2px",
+                  }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
-                    <i className="fa fa-tools" style={{ paddingRight: "20px" }}></i>
+                    <i
+                      className="fa fa-tools"
+                      style={{ paddingRight: "20px" }}
+                    ></i>
                     Planning & Control
                     <hr style={{ background: "white" }}></hr>
                   </h5>
@@ -181,14 +217,24 @@ const ResearchThemes = () => {
               data-aos="zoom-in-down"
               data-aos-duration="1500"
             >
-              <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
+              <div
+                className="card cardhgt phoneheight"
+                style={{ marginBottom: "1rem", borderRadius: "10px" }}
+              >
                 <div
                   className="card-body cardbd"
-                  style={{ background: "rgb(113, 48, 48)", borderRadius: "10px", margin: "2px" }}
+                  style={{
+                    background: "rgb(113, 48, 48)",
+                    borderRadius: "10px",
+                    margin: "2px",
+                  }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
-                    <i className="fas fa-fighter-jet" style={{ paddingRight: "20px" }}></i>
-                  Aerodynamics
+                    <i
+                      className="fas fa-fighter-jet"
+                      style={{ paddingRight: "20px" }}
+                    ></i>
+                    Aerodynamics
                     <hr style={{ background: "white" }}></hr>
                   </h5>
                   {/* <div className="miniSep" style={{width:'auto',height:'2px', background: 'white' }} ></div> */}
@@ -212,14 +258,24 @@ const ResearchThemes = () => {
               data-aos="zoom-in-down"
               data-aos-duration="1500"
             >
-              <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
+              <div
+                className="card cardhgt phoneheight"
+                style={{ marginBottom: "1rem", borderRadius: "10px" }}
+              >
                 <div
                   className="card-body cardbd"
-                  style={{ background: "rgb(113, 48, 48)", borderRadius: "10px", margin: "2px" }}
+                  style={{
+                    background: "rgb(113, 48, 48)",
+                    borderRadius: "10px",
+                    margin: "2px",
+                  }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
-                    <i className="fas fa-bolt" style={{ paddingRight: "20px" }}></i>
-                  Power Source
+                    <i
+                      className="fas fa-bolt"
+                      style={{ paddingRight: "20px" }}
+                    ></i>
+                    Power Source
                     <hr style={{ background: "white" }}></hr>
                   </h5>
                   {/* <div className="miniSep" style={{width:'auto',height:'2px', background: 'white' }} ></div> */}
@@ -243,14 +299,24 @@ const ResearchThemes = () => {
               data-aos="zoom-in-down"
               data-aos-duration="1500"
             >
-              <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
+              <div
+                className="card cardhgt phoneheight"
+                style={{ marginBottom: "1rem", borderRadius: "10px" }}
+              >
                 <div
                   className="card-body cardbd"
-                  style={{ background: "rgb(113, 48, 48)", borderRadius: "10px", margin: "2px" }}
+                  style={{
+                    background: "rgb(113, 48, 48)",
+                    borderRadius: "10px",
+                    margin: "2px",
+                  }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
-                    <i className="fas fa-microchip" style={{ paddingRight: "20px" }}></i>
-                  Electronics
+                    <i
+                      className="fas fa-microchip"
+                      style={{ paddingRight: "20px" }}
+                    ></i>
+                    Electronics
                     <hr style={{ background: "white" }}></hr>
                   </h5>
                   {/* <div className="miniSep" style={{width:'auto',height:'2px', background: 'white' }} ></div> */}

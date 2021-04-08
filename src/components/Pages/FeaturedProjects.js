@@ -31,27 +31,24 @@ function FeaturedProjects() {
       method: "get",
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        return SetProjects(data);
-      });
+      .then((data) => SetProjects(data));
   }, []);
 
   const [page, SetPage] = useState(1);
-  const projects_per_page = 4;
+  const projects_per_page = 6;
   const no_of_pages = Math.ceil(projects.length / projects_per_page);
 
   return (
     <>
       <Loading time={2} />
       <div className="cont">
-      <h3 className="my-3 titleBold d-flex justify-content-center topic">
-              <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>FLAGSHIP PROJECTS</p>
-            </h3>
-            <div
-              className="miniSep"
-              style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
-            ></div>
+        <h3 className="my-3 titleBold d-flex justify-content-center topic">
+          <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>FLAGSHIP PROJECTS</p>
+        </h3>
+        <div
+          className="miniSep"
+          style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
+        ></div>
         <div
           className="main"
           style={{ overflow: "hidden", minHeight: "31.7vh" }}
@@ -60,9 +57,9 @@ function FeaturedProjects() {
             {projects
               .slice((page - 1) * projects_per_page, page * projects_per_page)
               .map((project) =>
-                project.open || signedin ? (
+                 (
                   <li className="cards_item" data-aos="fade-up" data-aos="flip-left" data-aos-easing="linear"
-                    data-aos-duration="1500">
+                    data-aos-duration="1500" key={project._id}>
                     <div className="card cardproj">
                       <div className="card_image">
                         <img className="evfeatured" src={project.pic} style={{ width: '100%', maxHeight: '18rem', minHeight: '18rem' }} />
@@ -76,7 +73,7 @@ function FeaturedProjects() {
                         <Button
                           className="btns card_btns"
                           variant="danger"
-                          href={`${window.location.origin}/projects/${project._id}`}
+                          href={`/projects/${project._id}`}
                           style={{ marginTop: 10 }}
                         >
                           Read More
@@ -84,8 +81,6 @@ function FeaturedProjects() {
                       </div>
                     </div>
                   </li>
-                ) : (
-                  <div></div>
                 )
               )}
           </ul>

@@ -64,7 +64,7 @@ export default function Dashprojects(props) {
                                 </span>
                               );
                             } else {
-                              if (member.user._id == user?._id) {
+                              if (member.user._id == user?.id) {
                                 badge = (
                                   <LoadingButton projectId={project._id} />
                                 );

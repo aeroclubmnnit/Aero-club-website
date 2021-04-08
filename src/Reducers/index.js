@@ -1,8 +1,8 @@
 import { connectRouter } from "connected-react-router";
 import { adminReducer, adminSaga } from "react-admin";
 import { combineReducers } from "redux";
-import createSagaMiddleware from 'redux-saga'
-import { all, fork } from 'redux-saga/effects';
+import createSagaMiddleware from "redux-saga";
+import { all, fork } from "redux-saga/effects";
 import authProvider from "../components/admin/authProvider";
 import { dataProvider } from "../components/admin/dataProvider";
 
@@ -21,26 +21,36 @@ const userReducer = (user = null, action) => {
         issues: [...user.issues, action.payload],
       };
     case "INVITE_USER":
-      const new_proj_arr = user.projects.map(project => {
-        if (project._id === action.payload._id)
-          return action.payload
-        return project
-      })
+      const new_proj_arr = user.projects.map((project) => {
+        if (project._id === action.payload._id) return action.payload;
+        return project;
+      });
       return {
         ...user,
-        projects: new_proj_arr
+        projects: new_proj_arr,
       };
     case "ACCEPT_INVITE":
       return {
         ...user,
-        projects: [...user.projects, action.payload]
-      }
+        projects: [...user.projects, action.payload],
+      };
 
     case "CREATE_PROJECT":
       return {
         ...user,
-        projects: [...user.projects, action.payload]
-      }
+        projects: [...user.projects, action.payload],
+      };
+
+    case "UPDATE_PROJECT":
+      return {
+        ...user,
+        projects: user.projects.map(p => {
+          if(p._id === action.payload._id)
+            return action.payload
+          else
+            return p
+        })
+      };
     case "CLEAR":
       return null;
     default:
@@ -56,12 +66,8 @@ const rootReducer = (history) =>
   });
 
 const saga = function* rootSaga() {
-  yield all(
-    [
-      adminSaga(dataProvider, authProvider)
-    ].map(fork)
-  );
+  yield all([adminSaga(dataProvider, authProvider)].map(fork));
 };
 const sagaMiddleware = createSagaMiddleware();
 
-export default { rootReducer, sagaMiddleware, saga }
+export default { rootReducer, sagaMiddleware, saga };

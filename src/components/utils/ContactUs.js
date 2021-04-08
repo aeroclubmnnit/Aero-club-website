@@ -3,7 +3,7 @@ import "../../css/Contact.css";
 import logo from "../../images/utils/collegelogo.png";
 import $ from "jquery";
 import { toast } from "react-toastify";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_SERVER } from "../../grobalVars"
 
 const ContactUs = () => {
   const name = useRef("");
@@ -26,7 +26,7 @@ const ContactUs = () => {
     setLoading(true);
     e.preventDefault();
 
-    if (!name || !email || !subject || !body) {
+    if (!name.current.value || !email.current.value || !subject.current.value || !body.current.value) {
       toast.warn('Please specify all the details...!')
       return
     }

@@ -4,11 +4,13 @@ import { toast } from "react-toastify";
 import ProjForm from "./ProjForm";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { REACT_APP_SERVER } from "../../../../grobalVars"
+import { REACT_APP_SERVER } from "../../../../grobalVars";
+import ProjEdit from "./ProjEdit";
+import ProjPreview from "./ProjPreview";
 
 export default function Dashprojects() {
   const [modalShow, setModalShow] = React.useState(false);
-  const user = useSelector(state => state.user);
+  const user = useSelector((state) => state.user);
   const history = useHistory();
 
   useEffect(() => {
@@ -31,9 +33,13 @@ export default function Dashprojects() {
   return (
     <div>
       <div className="container" style={{ minHeight: "60vh" }}>
-        <Accordion>
+        <Accordion className='mt-2 mb-5'>
           {user?.projects?.map((project) => {
             let badge;
+            const leaders = project?.members?.map((m) => {
+              if (m.leader) return m.user._id;
+            });
+            let isCurLeader = leaders?.includes(user.id);
             if (project.status === "Ongoing")
               badge = (
                 <span class="badge badge-pill badge-warning">
@@ -61,7 +67,7 @@ export default function Dashprojects() {
                     <div className="p-3">
                       <div>
                         <div>Members</div>
-                        {user.id === project.leader ? (
+                        {isCurLeader ? (
                           <Button
                             onClick={() => {
                               setModalShow(true);
@@ -74,7 +80,7 @@ export default function Dashprojects() {
                         )}
 
                         <ul>
-                          {project?.members?.map((member) => {
+                          {project?.members?.map((member, i) => {
                             let badge;
                             if (member.accepted && member.leader) {
                               badge = <span>👑</span>;
@@ -92,13 +98,17 @@ export default function Dashprojects() {
                               );
                             }
                             return (
-                              <li>
+                              <li key={i}>
                                 {member.user?.name}
                                 <em className="float-right">{badge}</em>
                               </li>
                             );
                           })}
                         </ul>
+                        {isCurLeader && project.status === "Ongoing" && (
+                          <ProjEdit project={project} />
+                        )}
+                        <ProjPreview project={project} />
                       </div>
                     </div>
                   </Card.Body>
@@ -111,19 +121,8 @@ export default function Dashprojects() {
               </Card>
             );
           })}
-          <Card key="newProj">
-            <Card.Header style={{ cursor: "pointer" }}>
-              <Accordion.Toggle as={Card.Header} eventKey="newProj">
-                <h6>Create New Project</h6>
-              </Accordion.Toggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="newProj">
-              <Card.Body>
-                <ProjForm />
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
         </Accordion>
+        <ProjForm />
       </div>
     </div>
   );
@@ -164,7 +163,10 @@ function MyVerticallyCenteredModal(props) {
               if (res.status == 200) {
                 toast.success("USER INVITED");
                 res.json().then((data) => {
-                  dispatch({ type: "INVITE_USER", payload: data.updatedProject })
+                  dispatch({
+                    type: "INVITE_USER",
+                    payload: data.updatedProject,
+                  });
                 });
               } else {
                 res.json().then((data) => {

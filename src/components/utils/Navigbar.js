@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import "../../css/navbar.css";
 import im1 from "../..//images/utils/logo-aero2.png";
 import { ExitToApp, PermIdentity } from '@material-ui/icons'
-
+import { ASTROWING } from '../../grobalVars'
 
 export default function Navigbar() {
   const [show1, setShow1] = useState(false);
@@ -154,7 +154,7 @@ export default function Navigbar() {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Button className='mr-sm-2 my-2 right-btn btn-danger' href='#'>Astrowing Club</Button>
+          <Button className='mr-sm-2 my-2 right-btn btn-danger' href={ASTROWING}>Astrowing MNNIT</Button>
         </Navbar.Collapse>
       </Navbar>
     </>

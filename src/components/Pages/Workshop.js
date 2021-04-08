@@ -20,8 +20,6 @@ export default function Workshop() {
       .then((data) => SetWorkshops(data));
   }, []);
 
-
-
   return (
     <>
       <Loading time={2} />
@@ -128,9 +126,9 @@ export default function Workshop() {
                     {/* for date */}
                     <span className="object">Target Audience : </span>
                     <span className="value" dangerouslySetInnerHTML={{ __html: singleNews.target }}></span><br />
-                    {/* <span className="object">Description :</span> */}
-                    <span className="value" dangerouslySetInnerHTML={{ __html: singleNews.description }}></span>
-                    <div className="value" dangerouslySetInnerHTML={{ __html: singleNews.about }}></div>
+                    <span className="object">Prerequisites : </span>
+                    <span className="value" dangerouslySetInnerHTML={{ __html: singleNews.prerequisites }}></span>
+                    <div className="value mt-3" dangerouslySetInnerHTML={{ __html: singleNews.about }}></div>
                     {/* <div className="object">
                       <em
                         style={{ fontSize: "small" }}

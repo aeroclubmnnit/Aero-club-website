@@ -45,7 +45,7 @@ export default function Collaboration() {
             in events but also solve real-life problems. Our projects cover all
             aerospace sector domains ranging from RC planes to design, from
             aerodynamic analysis to autonomous drones, and then astronomy. We
-            are also the birthplace of a fully functional startup, TSAW (link).
+            are also the birthplace of a fully functional startup, <a href="https://tsaw.tech/">TSAW</a>.
             With years of hard work and persistence, we have honed our skills in
             multiple domains in aerospace.
           </p>
@@ -64,7 +64,7 @@ export default function Collaboration() {
             passion, and commitment to solving them. We genuinely believe in the
             motto of MNNIT - "Success is born out of action". Since our
             establishment, we have gained expertise in all aspects related to
-            this domain, notably (Research Themes of our Club-link).
+            this domain, notably <a href="http://localhost:3000/#technologies">these</a>.
           </p>
         </div>
         <div className="my-5 collaborate" style={{border: "3px solid rgb(204, 67, 67)", padding:"20px", borderRadius:"7px"}}>
