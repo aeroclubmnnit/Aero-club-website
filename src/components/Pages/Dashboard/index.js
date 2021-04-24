@@ -56,6 +56,17 @@ function Dashboard() {
           </a>
           <a
             className="nav-item nav-link"
+            id="nav-blogs-tab"
+            data-toggle="tab"
+            href="#nav-blogs"
+            role="tab"
+            aria-controls="nav-blogs"
+            aria-selected="false"
+          >
+            Blogs
+          </a>
+          <a
+            className="nav-item nav-link"
             id="nav-projects-tab"
             data-toggle="tab"
             href="#nav-projects"
@@ -97,17 +108,6 @@ function Dashboard() {
             aria-selected="false"
           >
             Component Inventory
-          </a>
-          <a
-            className="nav-item nav-link"
-            id="nav-blogs-tab"
-            data-toggle="tab"
-            href="#nav-blogs"
-            role="tab"
-            aria-controls="nav-blogs"
-            aria-selected="false"
-          >
-            Blogs
           </a>
           <a
             className="nav-item nav-link"

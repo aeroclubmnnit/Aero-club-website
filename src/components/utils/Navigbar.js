@@ -154,7 +154,7 @@ export default function Navigbar() {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Button className='mr-sm-2 my-2 right-btn btn-danger' href={ASTROWING}>Astrowing MNNIT</Button>
+          <Button className='mr-sm-2 my-2 right-btn btn-danger' target="_blank" href={process.env.REACT_APP_ASTROWING}>Astrowing MNNIT</Button>
         </Navbar.Collapse>
       </Navbar>
     </>

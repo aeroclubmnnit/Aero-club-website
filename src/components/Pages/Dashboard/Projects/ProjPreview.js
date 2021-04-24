@@ -62,7 +62,7 @@ export default function ProjPreview({ project }) {
                 <div className="my-5">
                   <h3 className="mb-4 subheaders">Overview</h3>
                   <p
-                    className="px-5"
+                    className="px-5 ql-editor"
                     dangerouslySetInnerHTML={{ __html: project?.overview }}
                   ></p>
                 </div>
@@ -108,7 +108,7 @@ export default function ProjPreview({ project }) {
                   <div className="d-flex justify-content-center mt-5">
                     {project?.description ? (
                       <button
-                        className="btn btn-primary"
+                        className="btn btn-danger"
                         type="button"
                         data-toggle="collapse"
                         data-target="#collapse11"
@@ -126,7 +126,7 @@ export default function ProjPreview({ project }) {
                     <div>
                       <h3 className="my-3 subheaders">Description</h3>
                       <p
-                        className="px-3"
+                        className="px-3 ql-editor"
                         dangerouslySetInnerHTML={{
                           __html: project?.description,
                         }}

@@ -125,10 +125,10 @@ export default function Workshop() {
                     <br />
                     {/* for date */}
                     <span className="object">Target Audience : </span>
-                    <span className="value" dangerouslySetInnerHTML={{ __html: singleNews.target }}></span><br />
+                    <span className="value">{singleNews.target}</span><br />
                     <span className="object">Prerequisites : </span>
-                    <span className="value" dangerouslySetInnerHTML={{ __html: singleNews.prerequisites }}></span>
-                    <div className="value mt-3" dangerouslySetInnerHTML={{ __html: singleNews.about }}></div>
+                    <span className="value ql-editor" dangerouslySetInnerHTML={{ __html: singleNews.prerequisites }}></span>
+                    <div className="value mt-3 ql-editor" dangerouslySetInnerHTML={{ __html: singleNews.about }}></div>
                     {/* <div className="object">
                       <em
                         style={{ fontSize: "small" }}

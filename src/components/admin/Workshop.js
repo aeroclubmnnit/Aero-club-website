@@ -19,9 +19,7 @@ import {
     UrlField,
     ImageField,
 } from "react-admin";
-
-import RichTextInput from "ra-input-rich-text";
-import ImageResize from 'quill-image-resize'
+import RichTextQuill from "./RichTextQuill";
 
 export const WorkshopList = (props) => {
     return (
@@ -44,27 +42,15 @@ export const WorkshopCreate = (props) => {
             <SimpleForm redirect="/workshop">
                 <TextInput source="name" label="Name" validate={required()} />
                 <TextInput source="target" label="Target Audience" validate={required()} />
-                <TextInput source="prerequisites" label="Prerequisites" validate={required()} />
+                <RichTextQuill source="description" label="Description" />
                 <TextInput source="pic" label="Image Link ( Optional )" />
                 <TextInput source="brochure" label="Brochure Link" validate={required()} />
-                <RichTextInput source="about" label="About" validate={required()}
-                    toolbar={[['bold', 'italic', 'underline', 'strike'],
-                    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-                    [{ 'size': ['small', false, 'large', 'huge'] }],
-                    [{ 'font': [] }],
-                    [{ 'color': [] }, { 'background': [] }],
-                    [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-                    [{ 'script': 'sub' }, { 'script': 'super' }],
-                    ['blockquote', 'code-block'],
-                    [{ 'indent': '-1' }, { 'indent': '+1' }],
-                    [{ 'direction': 'rtl' }],
-                    [{ 'align': [] }],
-                    ['image'],
-                    ['clean']]} />
+                <RichTextQuill source="about" label="About" />
                 <DateInput
                     source="date"
                     label="Date"
                     defaultValue={new Date()}
+                    validate={required()}
                 />
             </SimpleForm>
         </Create>
@@ -77,7 +63,7 @@ export const WorkshopShow = (props) => {
             <SimpleShowLayout>
                 <TextField source="name" label="Name" />
                 <TextField source="target" label="Target Audience" />
-                <TextField source="prerequisites" label="Prerequisites" />
+                <RichTextField source="description" label="Description" />
                 <ImageField source="pic" label="Image" />
                 <UrlField source="brochure" label="Brochure Link" target="_blank" />
                 <RichTextField source="about" label="About" />
@@ -94,24 +80,10 @@ export const WorkshopEdit = (props) => {
                 <TextInput disabled label="Id" source="id" />
                 <TextInput source="name" validate={required()} label="Name" />
                 <TextInput source="target" validate={required()} label="Target Audience" />
-                <TextInput source="prerequisites" label="Prerequisites" validate={required()} />
+                <RichTextQuill source="description" label="Description" />
                 <TextInput source="pic" label="Image Link ( Optional ) " />
                 <TextInput source="brochure" validate={required()} label="brochure link" />
-                <RichTextInput source="about" label="About" validate={required()}
-                    toolbar={[['bold', 'italic', 'underline', 'strike'],
-                    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-                    [{ 'size': ['small', false, 'large', 'huge'] }],
-                    [{ 'font': [] }],
-                    [{ 'color': [] }, { 'background': [] }],
-                    [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-                    [{ 'script': 'sub' }, { 'script': 'super' }],
-                    ['blockquote', 'code-block'],
-                    [{ 'indent': '-1' }, { 'indent': '+1' }],
-                    [{ 'direction': 'rtl' }],
-                    [{ 'align': [] }],
-                    ['link', 'image', 'video'],
-                    ['clean']]}
-                />
+                <RichTextQuill source="about" label="About" />
                 <DateInput
                     source="date"
                     label="Date"

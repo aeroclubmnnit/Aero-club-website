@@ -63,7 +63,7 @@ export default function Dashprojects() {
                   </Accordion.Toggle>
                 </Card.Header>
                 <Accordion.Collapse eventKey={project._id}>
-                  <Card.Body>
+                  <Card.Body className='border'>
                     <div className="p-3">
                       <div>
                         <div>Members</div>
@@ -100,7 +100,7 @@ export default function Dashprojects() {
                             return (
                               <li key={i}>
                                 {member.user?.name}
-                                <em className="float-right">{badge}</em>
+                                <div className="float-right">{badge}</div>
                               </li>
                             );
                           })}
@@ -121,6 +121,9 @@ export default function Dashprojects() {
               </Card>
             );
           })}
+          {
+            user?.projects.length === 0 && <h3 className="text-center mt-5">No Project created...!</h3>
+          }
         </Accordion>
         <ProjForm />
       </div>

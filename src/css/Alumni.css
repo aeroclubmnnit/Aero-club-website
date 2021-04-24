@@ -129,7 +129,7 @@
 }
 
 .alumni-container .panel-collapse{
-  background: #fdf9f9;
+  background: #fafafa;
 }
 
 @media screen and (max-width: 619px) {
@@ -168,6 +168,13 @@
   }
   .achievement div {
     font-size: small !important;
+  }
+  .pageTitlea {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 35px;
+    text-align: center;
+    padding-top: 1.7em;
   }
 }
 

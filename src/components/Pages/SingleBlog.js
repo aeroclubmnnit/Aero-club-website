@@ -109,7 +109,7 @@ function SingleBlog() {
               <hr />
             </>
           }
-          <div dangerouslySetInnerHTML={{ __html: blog?.body }} className='my-5'></div>
+          <div dangerouslySetInnerHTML={{ __html: blog?.body }} className='my-5 ql-editor'></div>
           <hr />
         </Container>
       </Jumbotron>

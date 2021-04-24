@@ -27,6 +27,9 @@ export default function News() {
             <div className="pageTitleg titleBoldg">Updates</div>
           </div>
         </div>
+        {
+          news.length === 0 && <h4>No Updates Available !</h4>
+        }
         <Jumbotron
           fluid
           style={{
