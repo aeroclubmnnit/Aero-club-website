@@ -17,7 +17,7 @@ function Blogs() {
   }, []);
 
   const [page, SetPage] = useState(1);
-  const blogs_per_page = 6;
+  const blogs_per_page = 9;
   const no_of_pages = Math.ceil(blogs.length / blogs_per_page);
   const year = {
     1: "1st year",
