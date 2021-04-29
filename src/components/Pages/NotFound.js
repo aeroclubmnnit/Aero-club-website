@@ -10,10 +10,10 @@ export default function NotFound() {
   const particlesOptions = {
     particles: {
       number: {
-        value: 500,
+        value: 300,
         density: {
           enable: true,
-          value_area: 2000,
+          value_area: 1500,
         },
       },
     },

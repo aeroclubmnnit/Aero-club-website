@@ -3,6 +3,16 @@
 @import url('https://fonts.googleapis.com/css2?family=El+Messiri&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+.tsparticles-canvas-el{
+  height: 100%;
+  width: 100%; 
+  background-color: rgb(221 ,148 ,148); 
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  right: 0
+}
+
 body {
   margin: 0;
   padding: 0;

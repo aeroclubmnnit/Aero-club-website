@@ -31,9 +31,10 @@ const types = types_arr.map((type) => ({
   name: type
 }));
 
+
 export const ComponentList = (props) => {
   return (
-    <List {...props}>
+    <List {...props} bulkActionButtons={false} >
       <Datagrid>
         <TextField source="id" />
         <TextField source="name" />

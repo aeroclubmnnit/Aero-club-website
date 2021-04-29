@@ -34,7 +34,10 @@ function SingleProject() {
       .then((res) => res.json())
       .then((data) => {
         if (data.error) history.push("/404");
-        setProject(data);
+        else {
+          document.title = `${data.title} | ${REACT_APP_BASE_TITLE}`;
+          setProject(data);
+        }
       });
   }, []);
 

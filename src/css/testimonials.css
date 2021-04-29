@@ -210,7 +210,7 @@
   padding: 20px;
   position: relative;
   text-align: center;
-  background-color: rgb(79 23 23);
+  background: linear-gradient(90deg, rgb(155, 57, 57) 0%, rgba(0,0,0,1) 50%, rgba(71, 8, 8) 100%);
     border-radius: 20px;
 }
 .testimonial4_slide:after {
@@ -333,5 +333,9 @@
     font-size: small;
 
 }
+}
+
+.fab{
+  color: white;
 }
 /* ------testimonial  close-------*/

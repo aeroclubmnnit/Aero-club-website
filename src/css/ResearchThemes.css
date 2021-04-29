@@ -37,3 +37,9 @@
     list-style-type:circle !important;
     padding-inline-start: 10px;
   }
+
+.bgchange{
+    background: linear-gradient( 
+        70deg
+         , rgb(0, 0, 0) 0%, rgb(51, 13, 13) 50%, rgb(117, 46, 46) 100%)
+}

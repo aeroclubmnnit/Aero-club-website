@@ -89,9 +89,9 @@ const ResearchThemes = () => {
                 style={{ marginBottom: "1rem", borderRadius: "10px" }}
               >
                 <div
-                  className="card-body cardbd"
+                  className="card-body cardbd bgchange"
                   style={{
-                    background: "rgb(113, 48, 48)",
+                    
                     borderRadius: "10px",
                     margin: "2px",
                   }}
@@ -134,9 +134,9 @@ const ResearchThemes = () => {
                 style={{ marginBottom: "1rem", borderRadius: "10px" }}
               >
                 <div
-                  className="card-body cardbd"
+                  className="card-body cardbd bgchange"
                   style={{
-                    background: "rgb(113, 48, 48)",
+                    
                     borderRadius: "10px",
                     margin: "2px",
                   }}
@@ -181,9 +181,9 @@ const ResearchThemes = () => {
                 style={{ marginBottom: "1rem", borderRadius: "10px" }}
               >
                 <div
-                  className="card-body cardbd"
+                  className="card-body cardbd bgchange"
                   style={{
-                    background: "rgb(113, 48, 48)",
+                    
                     borderRadius: "10px",
                     margin: "2px",
                   }}
@@ -221,9 +221,9 @@ const ResearchThemes = () => {
                 style={{ marginBottom: "1rem", borderRadius: "10px" }}
               >
                 <div
-                  className="card-body cardbd"
+                  className="card-body cardbd bgchange"
                   style={{
-                    background: "rgb(113, 48, 48)",
+                    
                     borderRadius: "10px",
                     margin: "2px",
                   }}
@@ -262,9 +262,9 @@ const ResearchThemes = () => {
                 style={{ marginBottom: "1rem", borderRadius: "10px" }}
               >
                 <div
-                  className="card-body cardbd"
+                  className="card-body cardbd bgchange"
                   style={{
-                    background: "rgb(113, 48, 48)",
+                   
                     borderRadius: "10px",
                     margin: "2px",
                   }}
@@ -303,9 +303,9 @@ const ResearchThemes = () => {
                 style={{ marginBottom: "1rem", borderRadius: "10px" }}
               >
                 <div
-                  className="card-body cardbd"
+                  className="card-body cardbd bgchange"
                   style={{
-                    background: "rgb(113, 48, 48)",
+                    
                     borderRadius: "10px",
                     margin: "2px",
                   }}

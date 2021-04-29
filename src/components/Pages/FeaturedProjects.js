@@ -8,7 +8,7 @@ function FeaturedProjects() {
 
   const [projects, SetProjects] = useState([]);
   const [signedin, setsignedin] = useState(false)
-  document.title = `Projects | ${REACT_APP_BASE_TITLE}`;
+  document.title = `Flagship Projects | ${REACT_APP_BASE_TITLE}`;
 
   useEffect(() => {
 
