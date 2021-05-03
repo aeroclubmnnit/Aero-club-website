@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import Loading from "../../Animations/Loading";
 import "../../css/Alumni.css";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
 
 export default function Collaboration() {
   useEffect(() => {
     document.title = `Collaborate | ${REACT_APP_BASE_TITLE}`;
-  }, [])
+  }, []);
 
   return (
     <>
@@ -21,16 +21,27 @@ export default function Collaboration() {
             >
               "Alone we can do so little; together we can do so much." ~Helen
               Keller
-          </p>
+            </p>
           </div>
         </div>
       </div>
 
       <div className="container col-10 col-md-10">
-
-        <div className="my-5 collaborate" style={{border: "3px solid rgb(204, 67, 67)", padding:"20px", borderRadius:"7px"}}>
+        <div
+          className="my-5 collaborate"
+          style={{
+            border: "3px solid rgb(204, 67, 67)",
+            padding: "20px",
+            borderRadius: "7px",
+          }}
+        >
           <h4 className="my-3 titleBold d-flex justify-content-center topic">
-            <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>About us</p>
+            <p
+              className=""
+              style={{ marginBottom: "0px", textAlign: "center" }}
+            >
+              About us
+            </p>
           </h4>
           <div
             className="miniSep"
@@ -45,12 +56,20 @@ export default function Collaboration() {
             in events but also solve real-life problems. Our projects cover all
             aerospace sector domains ranging from RC planes to design, from
             aerodynamic analysis to autonomous drones, and then astronomy. We
-            are also the birthplace of a fully functional startup, <a href="https://tsaw.tech/">TSAW</a>.
-            With years of hard work and persistence, we have honed our skills in
-            multiple domains in aerospace.
+            are also the birthplace of a fully functional startup,{" "}
+            <a href="https://tsaw.tech/">TSAW</a>. With years of hard work and
+            persistence, we have honed our skills in multiple domains in
+            aerospace.
           </p>
         </div>
-        <div className="my-5 collaborate" style={{border: "3px solid rgb(204, 67, 67)", padding:"20px", borderRadius:"7px"}}>
+        <div
+          className="my-5 collaborate"
+          style={{
+            border: "3px solid rgb(204, 67, 67)",
+            padding: "20px",
+            borderRadius: "7px",
+          }}
+        >
           <h4 className="my-3 titleBold d-flex justify-content-center topic">
             <p>What We Have to Offer</p>
           </h4>
@@ -58,16 +77,23 @@ export default function Collaboration() {
             className="miniSep"
             style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
           ></div>
-          <p  className="text-xl paragr" style={{ textAlign: "justify" }}>
+          <p className="text-xl paragr" style={{ textAlign: "justify" }}>
             There is no denying that we in our hand have many challenges which
             are yet far from being solved. We offer our skills, experience,
             passion, and commitment to solving them. We genuinely believe in the
             motto of MNNIT - "Success is born out of action". Since our
             establishment, we have gained expertise in all aspects related to
-            this domain, notably <a href="http://localhost:3000/#technologies">these</a>.
+            this domain, notably <a href={`/#technologies`}>these</a>.
           </p>
         </div>
-        <div className="my-5 collaborate" style={{border: "3px solid rgb(204, 67, 67)", padding:"20px", borderRadius:"7px"}}>
+        <div
+          className="my-5 collaborate"
+          style={{
+            border: "3px solid rgb(204, 67, 67)",
+            padding: "20px",
+            borderRadius: "7px",
+          }}
+        >
           <h4 className="my-3 titleBold d-flex justify-content-center topic">
             <p>Technical Collaboration</p>
           </h4>
@@ -89,11 +115,20 @@ export default function Collaboration() {
             dedication from our end with anything you trust us.
           </p>
         </div>
-        <div className="my-5 collaborate" style={{border: "3px solid rgb(204, 67, 67)", padding:"20px", borderRadius:"7px"}}>
+        <div
+          className="my-5 collaborate"
+          style={{
+            border: "3px solid rgb(204, 67, 67)",
+            padding: "20px",
+            borderRadius: "7px",
+          }}
+        >
           <h4 className="my-3 titleBold d-flex justify-content-center topic">
-            <p style={{textAlign:"center"}}>Collaboration for Learning and Workshops</p>
+            <p style={{ textAlign: "center" }}>
+              Collaboration for Learning and Workshops
+            </p>
           </h4>
-          
+
           <div
             className="miniSep"
             style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}

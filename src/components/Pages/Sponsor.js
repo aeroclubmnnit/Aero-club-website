@@ -374,7 +374,7 @@ export default function Ṣponsors() {
             <div className="img-wrappers mx-auto">
               <a
                 className="card-title text-center sponimg"
-                href="http://www.mnnit.ac.in/"
+                href="https://alumni.mnnit.ac.in/"
                 target="_blank"
               >
                 <img
@@ -390,7 +390,7 @@ export default function Ṣponsors() {
               {/* <h5 className="card-title text-center">MNNIT Allahabad</h5> */}
               <a
                 className="card-title text-center sponabt"
-                href="https://alumni.mnnit.ac.in/"
+                href=""
                 target="_blank"
               >
                 MNNIT Alumni Association

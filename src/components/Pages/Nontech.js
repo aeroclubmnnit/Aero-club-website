@@ -185,7 +185,7 @@ export default function Nontech() {
       <div className="pageTitle my-5 titleBold header white-heading padtop">
         Content Team
       </div>
-      <div className="container alumni-container">
+      <div className="fluid-container alumni-container">
         <div className="d-flex flex-wrap m-auto justify-content-center align-items-center">
           {members.map(
             (member, i) =>
@@ -220,7 +220,7 @@ export default function Nontech() {
       <div className="pageTitle my-5 titleBold header white-heading padtop">
         Design Team
       </div>
-      <div className="container alumni-container">
+      <div className="fluid-container alumni-container">
         <div className="d-flex flex-wrap m-auto justify-content-center align-items-center">
           {members.map(
             (member, i) =>
@@ -255,7 +255,7 @@ export default function Nontech() {
       <div className="pageTitle my-5 titleBold header white-heading padtop">
         Outreach Team
       </div>
-      <div className="container alumni-container">
+      <div className="fluid-container alumni-container">
         <div className="d-flex flex-wrap m-auto justify-content-center align-items-center">
           {members.map(
             (member, i) =>

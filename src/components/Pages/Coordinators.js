@@ -191,7 +191,7 @@ export default function Coordinators() {
       <div className="pageTitle my-5 titleBold header white-heading padtop">
         Core Coordinators
       </div>
-      <div className="container alumni-container">
+      <div className="fluid-container alumni-container">
         <div className="d-flex flex-wrap m-auto justify-content-center align-items-center">
           {members.map(
             (member, i) =>
@@ -208,7 +208,8 @@ export default function Coordinators() {
                       {member.name}
                     </h5>
                     <p
-                      className="card-text text-center"
+                      id='style-2'
+                      className="card-text text-center scroller"
                       style={{ minHeight: "5rem" }}
                     >
                       <strong>Area of Interest</strong> :{" "}
@@ -228,7 +229,7 @@ export default function Coordinators() {
       {/* <div className="pageTitle my-5 titleBold header white-heading padtop">
         Senior Coordinators
       </div>
-      <div className="container alumni-container">
+      <div className="fluid-container alumni-container">
         <div className="d-flex flex-wrap m-auto justify-content-center align-items-center">
           {members.map(
             (member, i) =>
@@ -244,8 +245,9 @@ export default function Coordinators() {
                     >
                       {member.name}
                     </h5>
-                    <p
-                      className="card-text text-center"
+                     <p
+                      id='style-2'
+                      className="card-text text-center scroller"
                       style={{ minHeight: "5rem" }}
                     >
                       <strong>Area of Interest</strong> :{" "}
@@ -265,7 +267,7 @@ export default function Coordinators() {
       <div className="pageTitle my-5 titleBold header white-heading padtop">
         Junior Coordinators
       </div>
-      <div className="container alumni-container">
+      <div className="fluid-container alumni-container">
         <div className="d-flex flex-wrap m-auto justify-content-center align-items-center">
           {members.map(
             (member, i) =>
@@ -282,7 +284,8 @@ export default function Coordinators() {
                       {member.name}
                     </h5>
                     <p
-                      className="card-text text-center"
+                      id='style-2'
+                      className="card-text text-center scroller"
                       style={{ minHeight: "5rem" }}
                     >
                       <strong>Area of Interest</strong> :{" "}

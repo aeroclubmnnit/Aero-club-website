@@ -83,9 +83,6 @@ function FeaturedProjects() {
               )
               )}
           </ul>
-          {!projects.length && (
-            <h3 className="text-center mt-5">No projects available...!</h3>
-          )}
           <div className="float-right mr-5 mb-3 mt-5">
             {page > 1 && (
               <Button

@@ -24,17 +24,16 @@ const types_arr = [
   "Electronic Components and Sensors",
   "Development Boards",
   "Material For Drones and Planes",
-  "Others"
+  "Other",
 ];
 const types = types_arr.map((type) => ({
   id: type,
-  name: type
+  name: type,
 }));
-
 
 export const ComponentList = (props) => {
   return (
-    <List {...props} bulkActionButtons={false} >
+    <List {...props} bulkActionButtons={false}>
       <Datagrid>
         <TextField source="id" />
         <TextField source="name" />
