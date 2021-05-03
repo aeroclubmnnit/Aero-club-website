@@ -11,7 +11,6 @@ function SingleProject() {
   const history = useHistory();
 
   useEffect(() => {
-    document.title = `Project-${projectId} | ${REACT_APP_BASE_TITLE}`;
 
     $(document).ready(function () {
       $('#collapsebtn').on('click', function () {
@@ -131,7 +130,7 @@ function SingleProject() {
               <div >
                 <h3 className='my-3 subheaders'>Description</h3>
                 <p
-                  className="px-3 ql-editor"
+                  className="px-3 ql-editor container"
                   dangerouslySetInnerHTML={{ __html: project?.description }}
                 ></p>
               </div>
